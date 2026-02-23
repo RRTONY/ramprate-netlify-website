@@ -1,7 +1,7 @@
 /*
- * /about — About RampRate.
- * Hero: "Since 2000. Five Principals. One Mission."
- * Sections: Story, Leadership, Values, Concentric Model, CTA.
+ * /about — About RampRate
+ * ALL CONTENT FROM: ramprate.com/about-us/, /values/, /it-sourcing/leadership-team/
+ * EXCLUDED: Kavon Soltani, Adelle Magsombol, Oxana Vusova, Reuben Sadowsky
  */
 import { motion } from "framer-motion";
 import { Link } from "wouter";
@@ -9,163 +9,306 @@ import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import { ArrowRight } from "lucide-react";
 
-const leaders = [
+/* ── REAL CORE TEAM (5) from ramprate.com/it-sourcing/leadership-team/ ── */
+const coreTeam = [
   {
     name: "Tony Greenberg",
-    role: "CEO & Co-Founder",
-    bio: "25+ years building and advising technology companies. Former investment banker. Board member and advisor to dozens of startups and growth-stage companies. The connective tissue of the RampRate network.",
+    role: "CEO & Board Member",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/pXhfZFSxoHWvNtJl.jpg",
+    bio: "Tony Greenberg is the CEO and co-founder of RampRate. Since founding the firm in 2000, he has built it into a global advisory practice spanning IT sourcing, growth strategy, Web3, and social impact. A forward-thinking investor backing over 25 companies worldwide across blockchain, healthcare, sustainability, and more. His influence extends to social justice, where he is a passionate advocate for tribal rights in Latin America and Africa. Through RampRate, he has led Global 500 companies toward sustainable practices, pioneering projects like eBay's digital service efficiency dashboard.",
   },
   {
-    name: "Peter Feldman",
-    role: "Managing Director",
-    bio: "Enterprise infrastructure expert with deep relationships across the data center, cloud, and telecom industries. Leads RampRate's sourcing practice and the SPY Index.",
+    name: "Alex Veytsel",
+    role: "CSO & Board Member",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/rKUjHJhkfaGAoLgr.png",
+    bio: "Alex is an expert in digital media business models, revenue streams, and technical backbones, specifically around hosting, delivery, and optimization of the user experience. Since joining RampRate in 2004, he has served as a business planning and strategy advisor to technology giants like Microsoft, Sony, and Intel. As a sourcing advisor, he has helped both major TV networks (NBC, Fox) and industry pioneers (iFilm, Audible) reduce costs, improve performance, and reinvest negotiated savings in innovative technologies. Prior to RampRate, Alex covered subjects such as peer-to-peer delivery and Web analytics as a senior research analyst at Aberdeen Group.",
   },
   {
-    name: "Jeff Bray",
-    role: "Managing Director",
-    bio: "Former enterprise CIO turned advisor. Brings the buyer's perspective to every engagement. Specializes in complex multi-vendor negotiations and digital transformation strategy.",
+    name: "Josh Bykowski",
+    role: "Corporate Development & Legal Consultant",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/RMQMfjHVdQbFgjvi.png",
+    bio: "Josh is a seasoned legal and corporate development professional with a people-centric approach to business. His expertise in blockchain technology and role as a Voting Associate for a decentralized organization with over $250 million AUM demonstrate his cutting-edge approach. A strategic thinker in M&A, Josh skillfully conducts thorough due diligence, maximizing intellectual property value and enhancing entity valuations. Recognized by Columbia Law School's Blog on Corporations and Capital Markets and panelist at legal CLE conferences.",
   },
   {
-    name: "Mike Manzo",
-    role: "Managing Director",
-    bio: "Technology operations leader with experience across media, entertainment, and financial services. Expert in hybrid infrastructure architecture and vendor management.",
+    name: "Rob Holmes",
+    role: "Web3 & Grants Manager, ImpactSoul",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/elFOqWUcwPCIIOQB.png",
+    bio: "Rob Holmes is a Web3 strategist and business development advisor driven by a simple belief: blockchain should solve real problems for real people. With over seven years in the space, he helps founders, protocols, and ecosystems bridge crypto and the physical world, focusing on tokenized infrastructure, DePIN, clean energy, and real-world asset (RWA) integration. Before Web3, Rob spent a decade in engineering and infrastructure, beginning his career at Halcrow, one of the UK's oldest engineering firms.",
   },
   {
-    name: "Darin Stanchfield",
-    role: "Managing Director",
-    bio: "Serial entrepreneur and technology executive. Founder of KeepKey (acquired by ShapeShift). Leads RampRate's Web3 and blockchain advisory practice.",
+    name: "Jeff Alinsangan",
+    role: "Operations",
+    img: null,
+    bio: "Jeff Alinsangan leads operations at RampRate, ensuring the firm's advisory engagements run with precision and efficiency across all four practice areas.",
   },
 ];
 
+/* ── REAL BOARD OF ADVISORS (10) from ramprate.com/it-sourcing/leadership-team/ ── */
+const boardAdvisors = [
+  {
+    name: "Stuart Newton",
+    role: "Strategic Advisor",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/ILlNmwvCsckXBqPO.jpg",
+    bio: "Stuart is a consummate networker. He recently retired from Deloitte where he led business development nationally for the Blockchain and Digital Asset Practice as well as globally for the Wine Practice. He was also a Portfolio Success Leader for select numerous private equity firms and their portfolio companies. His vast network allows him to provide referrals to potential customers, vendors, service providers and others. Co-founder of Abundant Village.",
+  },
+  {
+    name: "Gulliver Smithers",
+    role: "ex-CTO Sony D2C",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/eUVmQqArMuCNZtXr.png",
+    bio: "Product-oriented CTO with over 20 years across media. Previously CTO at Sony D2C, VP of Product at the BBC, CTO at Base79 (successful exit), and Director of On-Demand at ITV. Expertise spans content management; streaming and video architecture; product road maps, growth and management; multi-platform application development; and video on demand.",
+  },
+  {
+    name: "Purvee Kondal",
+    role: "VP Sephora, Global Procurement",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/DmFFlqTRTIEZwtwI.webp",
+    bio: "Vice President at SEPHORA, Global Procurement Officer, and advisory board member with Sourcing Industry Group and Athena Alliance. Seasoned Procurement executive with over 15 years at J&J, GE, Capgemini, Ross Stores, Globality, and Albertsons. Pioneering Indian American woman to hold the NACD.DC designation. MBA from Kellogg at Northwestern University.",
+  },
+  {
+    name: "Curt Hessler",
+    role: "ex-Asst. Secretary of Treasury",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/YLsgxbxwspMjUSdw.png",
+    bio: "Extensive experience in M&A, finance, strategic development, and law. Served on the boards of five public companies and numerous private companies. Served as Assistant Secretary of the Treasury for Economic Policy. Senior positions at Unisys and Times-Mirror Group. Chairman and founding CEO of 101communications. Rhodes Scholar. Harvard BA, Yale Law JD, UC Berkeley MA in Economics.",
+  },
+  {
+    name: "Barry Patmore",
+    role: "34yr Accenture Partner",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/yOBAXZZhcHZhmOMj.png",
+    bio: "Distinguished 34-year career at Accenture. Clients included Microsoft, US West, Capital Group, Visa, Disney, Mazda, and JPL. Managing partner of the Pacific Northwest and Southern California offices and global managing partner of the business process competency. Co-developed Method/1 and collaborated with Michael Hammer on business process re-engineering.",
+  },
+  {
+    name: "Peter Gross",
+    role: "VP Bloom Energy",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/kkqxDucjDNUUXIpQ.png",
+    bio: "VP at Bloom Energy with deep expertise in sustainable energy infrastructure and enterprise technology. Advisory board member at Redivider, driving the company's mission of delivering energy with impact.",
+  },
+  {
+    name: "Peter Hirshberg",
+    role: "ex-Apple, $1B Enterprise Revenue",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/QmgSWAnZPqduAHKb.png",
+    bio: "A Silicon Valley executive with several high profile marketing and branding related ventures. Headed Enterprise Marketing at Apple Computer, growing large business and government revenue to $1 billion annually. Chairman of the executive committee of Technorati, tracking over 100 million Weblogs. Co-founder and chairman of The Conversation Group. Clients included AOL, Microsoft, NBC, Estee Lauder.",
+  },
+  {
+    name: "Joe Weinman",
+    role: "Author, Cloudonomics",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/OXBRrCfquIfGdqNH.png",
+    bio: "Author of 'Cloudonomics: The Business Value of Cloud Computing' (Wiley), considered the seminal work on cloud computing economics. Awarded 20 U.S. and international patents in cloud computing, homomorphic encryption, and network technologies. Senior executive at Telx, AT&T, Bell Labs, and Hewlett Packard. Named Top 10 Cloud Computing Leader. Cornell BS, UW-Madison MS in Computer Science.",
+  },
+  {
+    name: "Sandy Climan",
+    role: "ex-CAA / Universal Studios",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/jeEhGYbagnzDkfJe.jpg",
+    bio: "CEO of Entertainment Media Ventures, active in media investment and strategic advisory. Senior management at Creative Artists Agency, representing Robert Redford, Robert De Niro, Kevin Costner. Corporate EVP and President of Worldwide Business Development for Universal Studios. Producer of 'The Aviator' (Golden Globe, BAFTA). Harvard BA in Chemistry, Harvard MBA, Harvard MS in Health Policy.",
+  },
+  {
+    name: "Tyler Kolodney",
+    role: "ex-Baltimore Orioles",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/UVyoiPewtvstKrsa.jpg",
+    bio: "Former executive with the Baltimore Orioles organization, bringing sports industry expertise and business development acumen to RampRate's advisory board.",
+  },
+];
+
+/* ── REAL VALUES from ramprate.com/values/ ── */
 const values = [
-  {
-    title: "Skin in the Game",
-    desc: "We tie our compensation to outcomes. If we don't deliver outsized value, we don't earn outsized fees. This alignment of incentives is non-negotiable.",
-  },
-  {
-    title: "Radical Transparency",
-    desc: "We show you the data, the methodology, and the alternatives. No black boxes, no hidden agendas. You always know exactly why we're recommending what we're recommending.",
-  },
-  {
-    title: "Relationships Over Transactions",
-    desc: "92% of our clients are repeat clients. We build relationships that compound over decades, not engagements that end at the invoice.",
-  },
-  {
-    title: "Impact as a Feature",
-    desc: "As a certified B Corp, we evaluate every engagement through the lens of stakeholder impact. Profit and purpose aren't in tension — they're in alignment.",
-  },
+  "We serve others — we provide the tools they need, and together we build their future and dreams.",
+  "We choose who we work with — we forge a bond through shared values with those who are innovative, inspiring, impact-focused change agents.",
+  "We deal in rationality and pragmatism — hope is not a strategy; anecdotes are not data; inputs are not impacts.",
+  "We dream big — rationality and audacity are not mutually exclusive. We partner with inspirational leaders and unravel the world's greatest challenges together.",
+  "We support execution — we not only recommend the course of action, but back our recommendations with the work required to implement them successfully.",
+  "We earn trust — we follow through on our commitments, and require our partners and anyone we vouch for to do likewise.",
+  "We overdeliver on our promises — we are resourceful and our effort is only bound by what benefits our client.",
+  "We support diversity, equity, and inclusion — for powerful change to happen, people with a variety of lived experiences come together to form creative and productive teams.",
+  "We are engines of transparency — we raise the bar on each ecosystem we touch by shining the light on greenwashing, corruption, and self-dealing.",
+  "We believe in the transformational power of technology and innovation — that new impact-focused approaches in tech, health, and crypto should be embraced even if their adoption results in creative destruction.",
 ];
 
-const modelRings = [
-  {
-    ring: "Core",
-    count: "5 Principals",
-    desc: "The founding team. 24 years of shared history, complementary expertise, and a combined network that spans every major technology vendor and enterprise buyer on the planet.",
-  },
-  {
-    ring: "Board",
-    count: "10 Advisors",
-    desc: "Former CIOs, CTOs, and industry leaders who bring domain expertise and executive relationships. They're not on a website — they're on speed dial.",
-  },
-  {
-    ring: "Bench",
-    count: "35+ Specialists",
-    desc: "Deep technical experts in specific domains — from cloud architecture to telecom pricing to blockchain security. Activated on-demand for specific engagements.",
-  },
+/* ── REAL TIMELINE from ramprate.com/about-us/ ── */
+const timeline = [
+  { year: "2000", event: "RampRate founded. IT sourcing advisory begins." },
+  { year: "2004", event: "Alex Veytsel joins as CSO. Enterprise client roster grows to include Sony, Microsoft, Intel." },
+  { year: "2010", event: "$10B+ in IT decisions brokered. Offices in Santa Monica and East Coast." },
+  { year: "2015", event: "Stratum launched — bridging Web3 and enterprise." },
+  { year: "2018", event: "Syzygy launched — growth advisory for founders and impactpreneurs." },
+  { year: "2022", event: "RampRate at Davos / World Economic Forum. DevXDAO + XPRIZE €4M grant." },
+  { year: "2023", event: "B Corp certified. $24B+ in cumulative decisions brokered." },
+  { year: "2024", event: "ImpactSoul launched — tokenizing cultural treasures for impact movements." },
+  { year: "2026", event: "Four brands. One coalition. 50+ countries. The purpose-driven economy is here." },
+];
+
+/* ── REAL CORPORATE FACTS from ramprate.com/about-us/ ── */
+const corporateFacts = [
+  { label: "Founded", value: "2000" },
+  { label: "Structure", value: "Private & self-funded, profitable since birth" },
+  { label: "HQ", value: "Santa Monica, CA" },
+  { label: "EU HQ", value: "Ibiza, Spain" },
+  { label: "Additional Offices", value: "Massachusetts, North Carolina, Florida" },
+  { label: "IT Deals", value: "200+ locations, 50+ countries" },
 ];
 
 export default function About() {
   return (
     <PageLayout>
       <PageHero
-        sectionLabel="About"
+        sectionLabel="About RampRate"
         headline={
           <>
-            Since 2000.{" "}
-            <span className="text-[#6B21A8]">Five Principals.</span>{" "}
-            One Mission.
+            Impact and Technology-Focused Advisor for{" "}
+            <span className="text-[oklch(0.55_0.15_30)]">Enterprise & Startups</span>
           </>
         }
-        subCopy="We're a fractional team of superstars who've spent 24 years building the relationships, data, and trust that turn enterprise decisions into trajectory-changing outcomes."
+        subCopy="RampRate is a global advisory firm focused on the most impactful, positive opportunities in tech and wellness, from DAOs and blockchain to VR and psychedelics. Founded in 2000. Private & self-funded. Profitable since birth."
         stats={[
           { value: "2000", label: "Founded" },
-          { value: "5", label: "Principals" },
-          { value: "$24B+", label: "Decisions" },
+          { value: "$24B+", label: "Decisions Brokered" },
+          { value: "50+", label: "Countries" },
           { value: "B Corp", label: "Certified" },
         ]}
       />
 
-      {/* Story */}
+      {/* Founder's Story — REAL from ramprate.com/values/ */}
       <section className="section-warm py-20 sm:py-28">
         <div className="max-w-4xl mx-auto px-5 sm:px-8">
-          <h2
-            className="text-3xl sm:text-4xl font-bold tracking-tight mb-8"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            The Story
+          <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[oklch(0.55_0.15_30)]" style={{ fontFamily: "var(--font-body)" }}>
+            Founder's Story
+          </span>
+          <h2 className="mt-4 text-3xl sm:text-4xl font-bold tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
+            Elevating the Way Business Does Business
           </h2>
-          <div className="space-y-6" style={{ fontFamily: "var(--font-body)" }}>
-            <p className="text-base text-[oklch(0.35_0.02_50)] leading-relaxed">
-              RampRate was founded in 2000 with a simple observation: enterprise technology decisions were broken. Companies were overpaying for infrastructure, locked into bad contracts, and making critical decisions with incomplete information.
+          <div className="mt-8 space-y-5 text-base text-[oklch(0.4_0.02_50)] leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
+            <p>
+              Hi, We're Tony and Alex, we founded RampRate in 2000 on the premise of elevating the way business does business. We could take the same connections that allowed us to cut 24% of each IT budget we touched and use them to kick down the barriers for tech innovators. We could take the same business planning rigor that we used to guide Sony, McKinsey, Microsoft or Intel on entering new markets and use it to help impact-driven startups reach their potential.
             </p>
-            <p className="text-base text-[oklch(0.35_0.02_50)] leading-relaxed">
-              We built the SPY Index — a proprietary database of infrastructure pricing, performance, and contract intelligence — and used it to give enterprises the leverage they needed. Over 24 years, we've brokered more than $24 billion in technology decisions across 50+ countries.
+            <p>
+              So that's what we're doing today — we find the next unicorns and gatekeepers to impact that will not just earn millions yet better millions of lives. We grok their vision while putting them through bootcamp to be ready for life-changing opportunities. And then we kick down the barriers to their success by connecting them with our ecosystem and leveraging the trust we've built in the Fortune 1000 over 20 plus years to create opportunities few others can access.
             </p>
-            <p className="text-base text-[oklch(0.35_0.02_50)] leading-relaxed">
-              But data alone doesn't change trajectories. Relationships do. Our five principals have spent decades building trust with the vendors, operators, and decision-makers who shape the technology landscape. That trust — earned through thousands of engagements — is what makes RampRate different.
-            </p>
-            <p className="text-base text-[oklch(0.35_0.02_50)] leading-relaxed">
-              Today, RampRate operates as a coalition of four practices — Sourcing, Syzygy, Stratum, and ImpactSoul — each serving a different audience but sharing the same network, data, and commitment to creating outsized value.
+            <p>
+              The purpose driven economy is here. And its leaders, in one way or another, will be powered by RampRate.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Leadership */}
+      {/* Corporate Facts — REAL from ramprate.com/about-us/ */}
+      <section className="section-light py-16 sm:py-20">
+        <div className="max-w-5xl mx-auto px-5 sm:px-8">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-8" style={{ fontFamily: "var(--font-display)" }}>
+            Corporate <span className="text-[oklch(0.55_0.15_30)]">Facts</span>
+          </h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {corporateFacts.map((f, i) => (
+              <div key={i} className="bg-white rounded-lg p-5 border border-black/5">
+                <div className="text-xs font-semibold tracking-[0.15em] uppercase text-[oklch(0.55_0.15_30)] mb-1" style={{ fontFamily: "var(--font-body)" }}>{f.label}</div>
+                <div className="text-sm text-[oklch(0.3_0.02_50)]" style={{ fontFamily: "var(--font-body)" }}>{f.value}</div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 p-5 bg-white rounded-lg border border-black/5">
+            <div className="text-xs font-semibold tracking-[0.15em] uppercase text-[oklch(0.55_0.15_30)] mb-2" style={{ fontFamily: "var(--font-body)" }}>Areas of Expertise</div>
+            <div className="flex flex-wrap gap-2">
+              {["Social Impact", "IT Infrastructure", "Strategic Research", "Digital Media", "Blockchain", "Health & Wellness Innovation"].map(a => (
+                <span key={a} className="px-3 py-1 text-xs rounded-full bg-[oklch(0.55_0.15_30)]/10 text-[oklch(0.45_0.1_30)]" style={{ fontFamily: "var(--font-body)" }}>{a}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Timeline — REAL milestones from ramprate.com */}
+      <section className="section-dark py-20 sm:py-28">
+        <div className="max-w-4xl mx-auto px-5 sm:px-8">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-12" style={{ fontFamily: "var(--font-display)" }}>
+            Our <span className="text-[oklch(0.55_0.15_30)]">Journey</span>
+          </h2>
+          <div className="space-y-0">
+            {timeline.map((t, i) => (
+              <motion.div
+                key={t.year}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="flex gap-6 py-5 border-b border-white/10 last:border-0"
+              >
+                <div className="text-2xl font-bold text-[oklch(0.55_0.15_30)] shrink-0 w-16" style={{ fontFamily: "var(--font-mono)" }}>{t.year}</div>
+                <p className="text-white/70 text-sm leading-relaxed pt-1" style={{ fontFamily: "var(--font-body)" }}>{t.event}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Core Team — REAL 5 from spec */}
       <section className="section-light py-20 sm:py-28">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
-          <h2
-            className="text-3xl sm:text-4xl font-bold tracking-tight mb-12"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            Leadership
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4" style={{ fontFamily: "var(--font-display)" }}>
+            Core <span className="text-[oklch(0.55_0.15_30)]">Team</span>
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {leaders.map((l, i) => (
+          <p className="text-base text-[oklch(0.45_0.02_50)] mb-12 max-w-2xl" style={{ fontFamily: "var(--font-body)" }}>
+            We deploy time-dependent configurations. Principals stay. Advisors guide. Specialists rotate.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {coreTeam.map((m, i) => (
               <motion.div
-                key={l.name}
+                key={m.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-[oklch(0.97_0.01_80)] rounded-xl p-7 border border-black/5"
+                className="bg-white rounded-xl overflow-hidden border border-black/5 shadow-sm"
               >
-                <div className="w-14 h-14 rounded-full bg-[#6B21A8]/10 flex items-center justify-center mb-5">
-                  <span
-                    className="text-lg font-bold text-[#6B21A8]"
-                    style={{ fontFamily: "var(--font-display)" }}
-                  >
-                    {l.name.split(" ").map(n => n[0]).join("")}
-                  </span>
+                {m.img ? (
+                  <div className="h-56 bg-[oklch(0.92_0.01_80)] overflow-hidden">
+                    <img src={m.img} alt={m.name} className="w-full h-full object-cover object-top" loading="lazy" />
+                  </div>
+                ) : (
+                  <div className="h-56 bg-[oklch(0.92_0.01_80)] flex items-center justify-center">
+                    <span className="text-5xl font-bold text-[oklch(0.55_0.15_30)]/20" style={{ fontFamily: "var(--font-display)" }}>
+                      {m.name.split(" ").map(n => n[0]).join("")}
+                    </span>
+                  </div>
+                )}
+                <div className="p-6">
+                  <h3 className="text-lg font-bold" style={{ fontFamily: "var(--font-display)" }}>{m.name}</h3>
+                  <p className="text-xs font-semibold text-[oklch(0.55_0.15_30)] mt-1 tracking-wide uppercase" style={{ fontFamily: "var(--font-body)" }}>{m.role}</p>
+                  <p className="mt-3 text-sm text-[oklch(0.45_0.02_50)] leading-relaxed line-clamp-5" style={{ fontFamily: "var(--font-body)" }}>{m.bio}</p>
                 </div>
-                <h3
-                  className="text-lg font-bold mb-1"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
-                  {l.name}
-                </h3>
-                <div
-                  className="text-xs text-[#6B21A8] font-semibold uppercase tracking-wider mb-4"
-                  style={{ fontFamily: "var(--font-body)" }}
-                >
-                  {l.role}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Board of Advisors — REAL 10 from spec */}
+      <section className="section-warm py-20 sm:py-28">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-12" style={{ fontFamily: "var(--font-display)" }}>
+            Board of <span className="text-[oklch(0.55_0.15_30)]">Advisors</span>
+          </h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {boardAdvisors.map((m, i) => (
+              <motion.div
+                key={m.name}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.06 }}
+                className="bg-white rounded-xl overflow-hidden border border-black/5"
+              >
+                {m.img ? (
+                  <div className="h-44 bg-[oklch(0.92_0.01_80)] overflow-hidden">
+                    <img src={m.img} alt={m.name} className="w-full h-full object-cover object-top" loading="lazy" />
+                  </div>
+                ) : (
+                  <div className="h-44 bg-[oklch(0.92_0.01_80)] flex items-center justify-center">
+                    <span className="text-4xl font-bold text-[oklch(0.55_0.15_30)]/20" style={{ fontFamily: "var(--font-display)" }}>
+                      {m.name.split(" ").map(n => n[0]).join("")}
+                    </span>
+                  </div>
+                )}
+                <div className="p-5">
+                  <h3 className="text-base font-bold" style={{ fontFamily: "var(--font-display)" }}>{m.name}</h3>
+                  <p className="text-xs text-[oklch(0.55_0.15_30)] mt-0.5 font-semibold" style={{ fontFamily: "var(--font-body)" }}>{m.role}</p>
+                  <p className="mt-2 text-xs text-[oklch(0.45_0.02_50)] leading-relaxed line-clamp-3" style={{ fontFamily: "var(--font-body)" }}>{m.bio}</p>
                 </div>
-                <p
-                  className="text-sm text-[oklch(0.45_0.02_50)] leading-relaxed"
-                  style={{ fontFamily: "var(--font-body)" }}
-                >
-                  {l.bio}
-                </p>
               </motion.div>
             ))}
           </div>
@@ -175,14 +318,15 @@ export default function About() {
       {/* Concentric Model */}
       <section className="section-dark py-20 sm:py-28">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
-          <h2
-            className="text-3xl sm:text-4xl font-bold text-white mb-12"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            The <span className="text-[#6B21A8]">Concentric</span> Model
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-12" style={{ fontFamily: "var(--font-display)" }}>
+            The <span className="text-[oklch(0.55_0.15_30)]">Concentric</span> Model
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
-            {modelRings.map((r, i) => (
+            {[
+              { ring: "Core", count: "5 Principals", desc: "Tony Greenberg, Alex Veytsel, Josh Bykowski, Rob Holmes, and Jeff Alinsangan. 24 years of shared history, complementary expertise, and a combined network spanning every major technology vendor and enterprise buyer." },
+              { ring: "Board", count: "10 Advisors", desc: "Stuart Newton (Deloitte), Gulliver Smithers (Sony), Purvee Kondal (Sephora), Curt Hessler (US Treasury), Barry Patmore (Accenture), Peter Gross (Bloom Energy), Peter Hirshberg (Apple), Joe Weinman (Cloudonomics), Sandy Climan (CAA/Universal), Tyler Kolodney." },
+              { ring: "Bench", count: "35+ Specialists", desc: "Deep technical experts in specific domains — from cloud architecture to telecom pricing to blockchain security to ESG measurement. Activated on-demand for specific engagements. Fortune 500 alumni. Davos, YPO, Summit, Hatch, XPRIZE, Aspen." },
+            ].map((r, i) => (
               <motion.div
                 key={r.ring}
                 initial={{ opacity: 0, y: 16 }}
@@ -191,61 +335,35 @@ export default function About() {
                 transition={{ delay: i * 0.15 }}
                 className="bg-white/5 rounded-xl p-7 border border-white/10 text-center"
               >
-                <div
-                  className="text-3xl font-bold text-[#6B21A8] mb-2"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
-                  {r.ring}
-                </div>
-                <div
-                  className="text-sm text-white/50 mb-4"
-                  style={{ fontFamily: "var(--font-mono)" }}
-                >
-                  {r.count}
-                </div>
-                <p
-                  className="text-sm text-white/60 leading-relaxed"
-                  style={{ fontFamily: "var(--font-body)" }}
-                >
-                  {r.desc}
-                </p>
+                <div className="text-3xl font-bold text-[oklch(0.55_0.15_30)] mb-2" style={{ fontFamily: "var(--font-display)" }}>{r.ring}</div>
+                <div className="text-sm text-white/50 mb-4" style={{ fontFamily: "var(--font-mono)" }}>{r.count}</div>
+                <p className="text-sm text-white/60 leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>{r.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Values */}
+      {/* Values — REAL from ramprate.com/values/ */}
       <section className="section-warm py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
-          <h2
-            className="text-3xl sm:text-4xl font-bold tracking-tight mb-12"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            Our Values
+        <div className="max-w-5xl mx-auto px-5 sm:px-8">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4" style={{ fontFamily: "var(--font-display)" }}>
+            Our <span className="text-[oklch(0.55_0.15_30)]">Values</span> & Principles
           </h2>
-          <div className="grid md:grid-cols-2 gap-6">
+          <p className="text-base text-[oklch(0.45_0.02_50)] mb-12 max-w-3xl" style={{ fontFamily: "var(--font-body)" }}>
+            We build an ecosystem of impact-preneurs and trailblazers powered by opportunities, resources, innovation and human spirit.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-5">
             {values.map((v, i) => (
               <motion.div
-                key={v.title}
-                initial={{ opacity: 0, y: 16 }}
+                key={i}
+                initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-white rounded-xl p-7 border border-black/5"
+                transition={{ delay: i * 0.06 }}
+                className="bg-white rounded-lg p-6 border border-black/5 shadow-sm"
               >
-                <h3
-                  className="text-lg font-bold mb-3"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
-                  {v.title}
-                </h3>
-                <p
-                  className="text-sm text-[oklch(0.45_0.02_50)] leading-relaxed"
-                  style={{ fontFamily: "var(--font-body)" }}
-                >
-                  {v.desc}
-                </p>
+                <p className="text-sm text-[oklch(0.4_0.02_50)] leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>{v}</p>
               </motion.div>
             ))}
           </div>
@@ -253,25 +371,15 @@ export default function About() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[#6B21A8] py-16 sm:py-20">
+      <section className="bg-[oklch(0.55_0.15_30)] py-16 sm:py-20">
         <div className="max-w-4xl mx-auto px-5 sm:px-8 text-center">
-          <h2
-            className="text-3xl sm:text-4xl font-bold text-white mb-4"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            Let's Build Something Together
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-display)" }}>
+            Trust Us With What You Hate to Do
           </h2>
-          <p
-            className="text-white/70 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl mx-auto"
-            style={{ fontFamily: "var(--font-body)" }}
-          >
-            Whether you're an enterprise looking to optimize, a founder seeking growth, or an organization pursuing impact — we'd love to hear from you.
+          <p className="text-white/80 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl mx-auto" style={{ fontFamily: "var(--font-body)" }}>
+            And focus on the change you want to create in the world.
           </p>
-          <Link
-            href="/connect"
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md text-sm font-semibold bg-white text-[#6B21A8] hover:bg-white/90 transition-all shadow-lg"
-            style={{ fontFamily: "var(--font-body)" }}
-          >
+          <Link href="/connect" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md text-sm font-semibold bg-white text-[oklch(0.35_0.1_30)] hover:bg-white/90 transition-all shadow-lg" style={{ fontFamily: "var(--font-body)" }}>
             Start a Conversation <ArrowRight size={16} />
           </Link>
         </div>

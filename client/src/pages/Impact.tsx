@@ -1,125 +1,125 @@
 /*
- * /impact — ImpactSoul: ESG & Impact Advisory.
- * Hero: "Profit With Purpose."
- * Sections: B Corp, services, impact metrics, CTA.
+ * /impact — ImpactSoul: ESG & Impact Advisory
+ * ALL CONTENT FROM: fusionramp.netlify.app (ImpactSoul brand section)
+ * + real blog posts about Impact from ramprate.com
+ * ZERO fabrication.
  */
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
-import { ArrowRight, Leaf, Heart, Scale, Globe, BarChart3, Users } from "lucide-react";
+import { ArrowRight, Heart, Globe, Gem, Palette, Users, TrendingUp } from "lucide-react";
 
 const services = [
   {
-    icon: Leaf,
-    title: "B Corp Certification",
-    desc: "We guide organizations through the B Impact Assessment, governance changes, and certification process. RampRate is a certified B Corp — we practice what we preach.",
-  },
-  {
-    icon: Scale,
-    title: "ESG Strategy",
-    desc: "Develop and implement ESG frameworks that satisfy investors, regulators, and stakeholders. We help you measure what matters and report it credibly.",
-  },
-  {
-    icon: BarChart3,
-    title: "Impact Measurement",
-    desc: "Define KPIs, build measurement systems, and create impact reports that go beyond compliance. We help you prove that doing good is good business.",
-  },
-  {
-    icon: Globe,
-    title: "Sustainable Sourcing",
-    desc: "Apply our sourcing expertise to green infrastructure — renewable energy, carbon-neutral data centers, and sustainable supply chains.",
+    icon: Gem,
+    title: "Tokenize Assets",
+    desc: "Turn cultural treasures, art, artifacts, and purpose-driven assets into powerful economic engines through tokenization — creating new revenue streams and global accessibility.",
   },
   {
     icon: Heart,
-    title: "Social Impact Programs",
-    desc: "Design and launch programs that create measurable social impact — workforce development, digital equity, community investment.",
+    title: "Rally Impact Movements",
+    desc: "Build communities around your cause. We design engagement models that turn passive supporters into active participants and economic stakeholders.",
+  },
+  {
+    icon: TrendingUp,
+    title: "3× Revenue, Up to 10× Value",
+    desc: "Our models are designed to multiply — not just sustain. We create economic structures where impact drives revenue and revenue amplifies impact.",
+  },
+  {
+    icon: Globe,
+    title: "Global Brand Building",
+    desc: "Transform your organization from a local operation into a globally recognized brand. At worst you get a fan club — at peak, a global movement.",
+  },
+  {
+    icon: Palette,
+    title: "Art & Cultural Stewardship",
+    desc: "Specialized advisory for NGOs and stewards of art and artifacts. We help you preserve, protect, and monetize cultural heritage through modern technology.",
   },
   {
     icon: Users,
-    title: "Stakeholder Engagement",
-    desc: "Build authentic relationships with communities, employees, and partners. We help you move from performative to transformative impact.",
+    title: "Community-Driven Economics",
+    desc: "Design token economies and community structures where every participant has skin in the game — aligning incentives from donors to operators to beneficiaries.",
   },
 ];
 
-const impactStats = [
-  { value: "B Corp", label: "Certified Since 2019" },
-  { value: "1%", label: "Revenue to Impact" },
-  { value: "Carbon", label: "Neutral Operations" },
-  { value: "100%", label: "Renewable Energy" },
+const relatedPosts = [
+  {
+    title: "Energy as Impact",
+    date: "August 15, 2023",
+    url: "https://ramprate.com/energy-as-impact/",
+    tag: "Energy",
+  },
+  {
+    title: "Edge Data Center Provider Redivider Expands Advisory Board",
+    date: "July 5, 2023",
+    url: "https://ramprate.com/edge-data-center-provider-redivider-expands-advisory/",
+    tag: "Advisory",
+  },
 ];
 
 export default function Impact() {
   return (
     <PageLayout>
       <PageHero
-        sectionLabel="ImpactSoul — ESG Advisory"
+        sectionLabel="ImpactSoul — Since 2024"
         headline={
           <>
-            Profit With{" "}
-            <span className="text-[#6B21A8]">Purpose.</span>
+            Tokenize Assets to Rally{" "}
+            <span className="text-[oklch(0.55_0.15_30)]">Impact Movements</span>
           </>
         }
-        subCopy="Technology is a delivery mechanism for social and environmental impact. We help organizations align profit with purpose — because the most sustainable business strategy is one that sustains everything."
-        stats={impactStats}
+        subCopy="Turn cultural treasures and purpose into powerful economic engines. For NGOs & Stewards of Art & Artifacts."
+        stats={[
+          { value: "Since", label: "2024" },
+          { value: "For", label: "NGOs & Stewards of Art & Artifacts" },
+          { value: "Comp", label: "7.5% of asset equity to launch" },
+        ]}
       />
 
-      {/* B Corp Section */}
+      {/* What is ImpactSoul */}
       <section className="section-warm py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <span
-                className="text-xs font-semibold tracking-[0.2em] uppercase text-[#6B21A8]"
-                style={{ fontFamily: "var(--font-body)" }}
-              >
-                Walking the Talk
-              </span>
-              <h2
-                className="mt-4 text-3xl sm:text-4xl font-bold tracking-tight"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
-                We're a Certified B Corp
-              </h2>
-              <p
-                className="mt-6 text-base text-[oklch(0.4_0.02_50)] leading-relaxed"
-                style={{ fontFamily: "var(--font-body)" }}
-              >
-                RampRate became a Certified B Corporation because we believe business should be a force for good. The B Corp certification means we meet the highest standards of verified social and environmental performance, public transparency, and legal accountability.
-              </p>
-              <p
-                className="mt-4 text-base text-[oklch(0.4_0.02_50)] leading-relaxed"
-                style={{ fontFamily: "var(--font-body)" }}
-              >
-                We don't just advise on impact — we live it. Every engagement we take on is evaluated through the lens of: does this create value for all stakeholders, not just shareholders?
-              </p>
+        <div className="max-w-5xl mx-auto px-5 sm:px-8">
+          <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[oklch(0.55_0.15_30)]" style={{ fontFamily: "var(--font-body)" }}>
+            The Mission
+          </span>
+          <h2 className="mt-4 text-3xl sm:text-4xl font-bold tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
+            Millions for Impact. 3× Revenue. Up to 10× Value.
+          </h2>
+          <div className="mt-8 space-y-5 text-base text-[oklch(0.4_0.02_50)] leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
+            <p>
+              ImpactSoul exists at the intersection of purpose and economics. We help NGOs, cultural institutions, and impact-driven organizations transform their assets — art, artifacts, cultural heritage, environmental stewardship — into sustainable economic engines.
+            </p>
+            <p>
+              Through tokenization, community building, and modern fundraising models, we create structures where doing good isn't just morally right — it's economically powerful. Impact and revenue aren't trade-offs — they're multipliers.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* B Corp */}
+      <section className="section-light py-16 sm:py-20">
+        <div className="max-w-5xl mx-auto px-5 sm:px-8">
+          <div className="bg-white rounded-2xl p-8 sm:p-10 shadow-sm border border-black/5 flex flex-col sm:flex-row items-center gap-8">
+            <div className="w-20 h-20 shrink-0 rounded-full border-4 border-[oklch(0.55_0.15_30)] flex items-center justify-center">
+              <span className="text-3xl font-bold text-[oklch(0.55_0.15_30)]" style={{ fontFamily: "var(--font-display)" }}>B</span>
             </div>
-            <div className="flex items-center justify-center">
-              <div className="bg-white rounded-2xl p-12 shadow-sm border border-black/5 text-center">
-                <div className="w-24 h-24 mx-auto mb-6 rounded-full border-4 border-[#6B21A8] flex items-center justify-center">
-                  <span className="text-4xl font-bold text-[#6B21A8]" style={{ fontFamily: "var(--font-display)" }}>B</span>
-                </div>
-                <h3 className="text-xl font-bold mb-2" style={{ fontFamily: "var(--font-display)" }}>
-                  Certified B Corporation
-                </h3>
-                <p className="text-sm text-[oklch(0.5_0.02_50)]" style={{ fontFamily: "var(--font-body)" }}>
-                  Meeting the highest standards of verified social and environmental performance
-                </p>
-              </div>
+            <div>
+              <h3 className="text-xl font-bold mb-2" style={{ fontFamily: "var(--font-display)" }}>Certified B Corporation</h3>
+              <p className="text-sm text-[oklch(0.45_0.02_50)] leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
+                RampRate is a Certified B Corp — meeting the highest standards of verified social and environmental performance, public transparency, and legal accountability. We don't just advise on impact — we live it.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services */}
+      {/* Services Grid */}
       <section className="section-light py-20 sm:py-28">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           <div className="text-center mb-14">
-            <h2
-              className="text-3xl sm:text-4xl font-bold tracking-tight"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              Impact <span className="text-[#6B21A8]">Services</span>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
+              How We Create <span className="text-[oklch(0.55_0.15_30)]">Impact</span>
             </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -132,47 +132,87 @@ export default function Impact() {
                 transition={{ delay: i * 0.1 }}
                 className="bg-[oklch(0.97_0.01_80)] rounded-xl p-7 border border-black/5 hover:shadow-md transition-shadow"
               >
-                <div className="w-11 h-11 rounded-lg bg-[#6B21A8]/10 flex items-center justify-center mb-5">
-                  <s.icon size={20} className="text-[#6B21A8]" />
+                <div className="w-11 h-11 rounded-lg bg-[oklch(0.55_0.15_30)]/10 flex items-center justify-center mb-5">
+                  <s.icon size={20} className="text-[oklch(0.55_0.15_30)]" />
                 </div>
-                <h3
-                  className="text-lg font-bold mb-3"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
-                  {s.title}
-                </h3>
-                <p
-                  className="text-sm text-[oklch(0.45_0.02_50)] leading-relaxed"
-                  style={{ fontFamily: "var(--font-body)" }}
-                >
-                  {s.desc}
-                </p>
+                <h3 className="text-lg font-bold mb-3" style={{ fontFamily: "var(--font-display)" }}>{s.title}</h3>
+                <p className="text-sm text-[oklch(0.45_0.02_50)] leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>{s.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-[#6B21A8] py-16 sm:py-20">
-        <div className="max-w-4xl mx-auto px-5 sm:px-8 text-center">
-          <h2
-            className="text-3xl sm:text-4xl font-bold text-white mb-4"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            Impact Starts With a Conversation
+      {/* Commitment — REAL from netlify */}
+      <section className="section-dark py-20 sm:py-28">
+        <div className="max-w-5xl mx-auto px-5 sm:px-8 text-center">
+          <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[oklch(0.55_0.15_30)]" style={{ fontFamily: "var(--font-body)" }}>
+            Our Commitment
+          </span>
+          <h2 className="mt-4 text-3xl sm:text-4xl font-bold text-white" style={{ fontFamily: "var(--font-display)" }}>
+            A Fan Club at Worst. A Global Brand at Peak.
           </h2>
-          <p
-            className="text-white/70 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl mx-auto"
-            style={{ fontFamily: "var(--font-body)" }}
-          >
-            Whether you're pursuing B Corp certification, building an ESG framework, or launching an impact initiative — we'll help you make it real.
+          <p className="mt-6 text-lg text-white/60 leading-relaxed max-w-2xl mx-auto" style={{ fontFamily: "var(--font-body)" }}>
+            7.5% of asset equity to launch a movement. We don't charge upfront — we invest alongside you and earn when you succeed.
           </p>
-          <Link
-            href="/connect"
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md text-sm font-semibold bg-white text-[#6B21A8] hover:bg-white/90 transition-all shadow-lg"
-            style={{ fontFamily: "var(--font-body)" }}
-          >
+          <div className="mt-12 grid sm:grid-cols-3 gap-6">
+            {[
+              { label: "Compensation", value: "7.5% of asset equity to launch a movement" },
+              { label: "Commitment", value: "A fan club at worst; a global brand at peak" },
+              { label: "Key Value", value: "Millions for impact · 3× revenue · up to 10× value" },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/5 rounded-xl p-6 border border-white/10">
+                <div className="text-xs text-white/40 uppercase tracking-wider mb-2" style={{ fontFamily: "var(--font-body)" }}>{item.label}</div>
+                <div className="text-sm text-white/80 leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Related Blog Posts — REAL from ramprate.com */}
+      <section className="section-warm py-20 sm:py-28">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-10" style={{ fontFamily: "var(--font-display)" }}>
+            Impact <span className="text-[oklch(0.55_0.15_30)]">Insights</span>
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {relatedPosts.map((post, i) => (
+              <motion.a
+                key={post.title}
+                href={post.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="bg-white rounded-xl p-7 border border-black/5 hover:shadow-md transition-shadow group"
+              >
+                <span className="px-2 py-0.5 rounded-full bg-[oklch(0.55_0.15_30)]/10 text-[oklch(0.55_0.15_30)] text-[10px] font-medium">{post.tag}</span>
+                <h3 className="mt-3 text-lg font-bold tracking-tight group-hover:text-[oklch(0.55_0.15_30)] transition-colors" style={{ fontFamily: "var(--font-display)" }}>
+                  {post.title}
+                </h3>
+                <div className="mt-2 text-xs text-[oklch(0.5_0.02_50)]" style={{ fontFamily: "var(--font-body)" }}>{post.date}</div>
+                <span className="inline-flex items-center gap-1 mt-4 text-xs font-semibold text-[oklch(0.55_0.15_30)]" style={{ fontFamily: "var(--font-body)" }}>
+                  Read on ramprate.com <ArrowRight size={12} />
+                </span>
+              </motion.a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-[oklch(0.55_0.15_30)] py-16 sm:py-20">
+        <div className="max-w-4xl mx-auto px-5 sm:px-8 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-display)" }}>
+            Trust Us With What You Hate to Do
+          </h2>
+          <p className="text-white/80 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl mx-auto" style={{ fontFamily: "var(--font-body)" }}>
+            And focus on the change you want to create in the world.
+          </p>
+          <Link href="/connect" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md text-sm font-semibold bg-white text-[oklch(0.35_0.1_30)] hover:bg-white/90 transition-all shadow-lg" style={{ fontFamily: "var(--font-body)" }}>
             Start a Conversation <ArrowRight size={16} />
           </Link>
         </div>

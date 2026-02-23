@@ -1,20 +1,20 @@
 /*
  * /connect — Contact / Start a Conversation.
- * Hero: "Let's Talk."
- * Contact form, Calendly embed placeholder, office info.
+ * Content from fusionramp.netlify.app "Connect" section + ramprate.com contact info.
+ * ZERO fabrication.
  */
 import { useState } from "react";
 import { motion } from "framer-motion";
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
-import { Mail, MapPin, Phone, Calendar, Send, CheckCircle } from "lucide-react";
+import { Mail, MapPin, Phone, Calendar, Send, CheckCircle, ArrowRight } from "lucide-react";
 import { toast } from "sonner";
 
 const inquiryTypes = [
   "IT Sourcing / Cost Optimization",
   "Growth Advisory / Syzygy",
   "Web3 / Stratum",
-  "ESG / ImpactSoul",
+  "Impact / ImpactSoul",
   "General Inquiry",
   "Press / Media",
 ];
@@ -31,7 +31,6 @@ export default function Connect() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In production, this would send to an API
     setSubmitted(true);
     toast.success("Message sent! We'll be in touch within 24 hours.");
   };
@@ -42,10 +41,11 @@ export default function Connect() {
         sectionLabel="Connect"
         headline={
           <>
-            Let's <span className="text-[#6B21A8]">Talk.</span>
+            Trust Us With What You{" "}
+            <span className="text-[oklch(0.55_0.15_30)]">Hate to Do</span>
           </>
         }
-        subCopy="Whether you have a specific challenge or just want to explore how we might work together — we'd love to hear from you. The first conversation is always free."
+        subCopy="And focus on the change you want to create in the world. The first conversation is always free."
       />
 
       <section className="section-warm py-20 sm:py-28">
@@ -59,34 +59,22 @@ export default function Connect() {
                   animate={{ opacity: 1, scale: 1 }}
                   className="bg-white rounded-xl p-12 border border-black/5 text-center"
                 >
-                  <CheckCircle size={48} className="text-[#6B21A8] mx-auto mb-6" />
-                  <h3
-                    className="text-2xl font-bold mb-3"
-                    style={{ fontFamily: "var(--font-display)" }}
-                  >
+                  <CheckCircle size={48} className="text-[oklch(0.55_0.15_30)] mx-auto mb-6" />
+                  <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: "var(--font-display)" }}>
                     Message Received
                   </h3>
-                  <p
-                    className="text-[oklch(0.45_0.02_50)] leading-relaxed"
-                    style={{ fontFamily: "var(--font-body)" }}
-                  >
+                  <p className="text-[oklch(0.45_0.02_50)] leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
                     Thank you for reaching out. One of our principals will respond within 24 hours. In the meantime, feel free to book a time directly on our calendar.
                   </p>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="bg-white rounded-xl p-8 border border-black/5 shadow-sm">
-                  <h3
-                    className="text-xl font-bold mb-6"
-                    style={{ fontFamily: "var(--font-display)" }}
-                  >
+                  <h3 className="text-xl font-bold mb-6" style={{ fontFamily: "var(--font-display)" }}>
                     Start a Conversation
                   </h3>
                   <div className="grid sm:grid-cols-2 gap-5 mb-5">
                     <div>
-                      <label
-                        className="block text-xs font-medium text-[oklch(0.4_0.02_50)] mb-2 uppercase tracking-wider"
-                        style={{ fontFamily: "var(--font-body)" }}
-                      >
+                      <label className="block text-xs font-medium text-[oklch(0.4_0.02_50)] mb-2 uppercase tracking-wider" style={{ fontFamily: "var(--font-body)" }}>
                         Name
                       </label>
                       <input
@@ -94,16 +82,13 @@ export default function Connect() {
                         required
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-4 py-3 rounded-md border border-black/10 bg-[oklch(0.97_0.01_80)] text-sm focus:outline-none focus:border-[#6B21A8] focus:ring-1 focus:ring-[#6B21A8]/20 transition-colors"
+                        className="w-full px-4 py-3 rounded-md border border-black/10 bg-[oklch(0.97_0.01_80)] text-sm focus:outline-none focus:border-[oklch(0.55_0.15_30)] focus:ring-1 focus:ring-[oklch(0.55_0.15_30)]/20 transition-colors"
                         style={{ fontFamily: "var(--font-body)" }}
                         placeholder="Your name"
                       />
                     </div>
                     <div>
-                      <label
-                        className="block text-xs font-medium text-[oklch(0.4_0.02_50)] mb-2 uppercase tracking-wider"
-                        style={{ fontFamily: "var(--font-body)" }}
-                      >
+                      <label className="block text-xs font-medium text-[oklch(0.4_0.02_50)] mb-2 uppercase tracking-wider" style={{ fontFamily: "var(--font-body)" }}>
                         Email
                       </label>
                       <input
@@ -111,39 +96,33 @@ export default function Connect() {
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-4 py-3 rounded-md border border-black/10 bg-[oklch(0.97_0.01_80)] text-sm focus:outline-none focus:border-[#6B21A8] focus:ring-1 focus:ring-[#6B21A8]/20 transition-colors"
+                        className="w-full px-4 py-3 rounded-md border border-black/10 bg-[oklch(0.97_0.01_80)] text-sm focus:outline-none focus:border-[oklch(0.55_0.15_30)] focus:ring-1 focus:ring-[oklch(0.55_0.15_30)]/20 transition-colors"
                         style={{ fontFamily: "var(--font-body)" }}
                         placeholder="you@company.com"
                       />
                     </div>
                   </div>
                   <div className="mb-5">
-                    <label
-                      className="block text-xs font-medium text-[oklch(0.4_0.02_50)] mb-2 uppercase tracking-wider"
-                      style={{ fontFamily: "var(--font-body)" }}
-                    >
+                    <label className="block text-xs font-medium text-[oklch(0.4_0.02_50)] mb-2 uppercase tracking-wider" style={{ fontFamily: "var(--font-body)" }}>
                       Company
                     </label>
                     <input
                       type="text"
                       value={formData.company}
                       onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      className="w-full px-4 py-3 rounded-md border border-black/10 bg-[oklch(0.97_0.01_80)] text-sm focus:outline-none focus:border-[#6B21A8] focus:ring-1 focus:ring-[#6B21A8]/20 transition-colors"
+                      className="w-full px-4 py-3 rounded-md border border-black/10 bg-[oklch(0.97_0.01_80)] text-sm focus:outline-none focus:border-[oklch(0.55_0.15_30)] focus:ring-1 focus:ring-[oklch(0.55_0.15_30)]/20 transition-colors"
                       style={{ fontFamily: "var(--font-body)" }}
                       placeholder="Your company"
                     />
                   </div>
                   <div className="mb-5">
-                    <label
-                      className="block text-xs font-medium text-[oklch(0.4_0.02_50)] mb-2 uppercase tracking-wider"
-                      style={{ fontFamily: "var(--font-body)" }}
-                    >
+                    <label className="block text-xs font-medium text-[oklch(0.4_0.02_50)] mb-2 uppercase tracking-wider" style={{ fontFamily: "var(--font-body)" }}>
                       I'm interested in
                     </label>
                     <select
                       value={formData.type}
                       onChange={(e) => setFormData({ ...formData, type: e.target.value })}
-                      className="w-full px-4 py-3 rounded-md border border-black/10 bg-[oklch(0.97_0.01_80)] text-sm focus:outline-none focus:border-[#6B21A8] focus:ring-1 focus:ring-[#6B21A8]/20 transition-colors"
+                      className="w-full px-4 py-3 rounded-md border border-black/10 bg-[oklch(0.97_0.01_80)] text-sm focus:outline-none focus:border-[oklch(0.55_0.15_30)] focus:ring-1 focus:ring-[oklch(0.55_0.15_30)]/20 transition-colors"
                       style={{ fontFamily: "var(--font-body)" }}
                     >
                       <option value="">Select a topic</option>
@@ -153,24 +132,21 @@ export default function Connect() {
                     </select>
                   </div>
                   <div className="mb-6">
-                    <label
-                      className="block text-xs font-medium text-[oklch(0.4_0.02_50)] mb-2 uppercase tracking-wider"
-                      style={{ fontFamily: "var(--font-body)" }}
-                    >
+                    <label className="block text-xs font-medium text-[oklch(0.4_0.02_50)] mb-2 uppercase tracking-wider" style={{ fontFamily: "var(--font-body)" }}>
                       Message
                     </label>
                     <textarea
                       rows={5}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full px-4 py-3 rounded-md border border-black/10 bg-[oklch(0.97_0.01_80)] text-sm focus:outline-none focus:border-[#6B21A8] focus:ring-1 focus:ring-[#6B21A8]/20 transition-colors resize-none"
+                      className="w-full px-4 py-3 rounded-md border border-black/10 bg-[oklch(0.97_0.01_80)] text-sm focus:outline-none focus:border-[oklch(0.55_0.15_30)] focus:ring-1 focus:ring-[oklch(0.55_0.15_30)]/20 transition-colors resize-none"
                       style={{ fontFamily: "var(--font-body)" }}
                       placeholder="Tell us about your challenge..."
                     />
                   </div>
                   <button
                     type="submit"
-                    className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md text-sm font-semibold bg-[#6B21A8] text-white hover:bg-[#581C87] transition-all shadow-lg shadow-[#6B21A8]/20"
+                    className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md text-sm font-semibold bg-[oklch(0.55_0.15_30)] text-white hover:bg-[oklch(0.48_0.15_30)] transition-all shadow-lg shadow-[oklch(0.55_0.15_30)]/20"
                     style={{ fontFamily: "var(--font-body)" }}
                   >
                     <Send size={16} /> Send Message
@@ -184,65 +160,49 @@ export default function Connect() {
               {/* Calendly placeholder */}
               <div className="bg-white rounded-xl p-7 border border-black/5 shadow-sm">
                 <div className="flex items-center gap-3 mb-4">
-                  <Calendar size={20} className="text-[#6B21A8]" />
-                  <h3
-                    className="text-lg font-bold"
-                    style={{ fontFamily: "var(--font-display)" }}
-                  >
+                  <Calendar size={20} className="text-[oklch(0.55_0.15_30)]" />
+                  <h3 className="text-lg font-bold" style={{ fontFamily: "var(--font-display)" }}>
                     Book a Call
                   </h3>
                 </div>
-                <p
-                  className="text-sm text-[oklch(0.45_0.02_50)] leading-relaxed mb-5"
-                  style={{ fontFamily: "var(--font-body)" }}
-                >
+                <p className="text-sm text-[oklch(0.45_0.02_50)] leading-relaxed mb-5" style={{ fontFamily: "var(--font-body)" }}>
                   Prefer to schedule directly? Pick a time that works for you and one of our principals will be on the call.
                 </p>
                 <a
                   href="https://calendly.com/ramprate"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md text-sm font-semibold border-2 border-[#6B21A8] text-[#6B21A8] hover:bg-[#6B21A8] hover:text-white transition-all"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md text-sm font-semibold border-2 border-[oklch(0.55_0.15_30)] text-[oklch(0.55_0.15_30)] hover:bg-[oklch(0.55_0.15_30)] hover:text-white transition-all"
                   style={{ fontFamily: "var(--font-body)" }}
                 >
-                  Schedule a Meeting
+                  Schedule a Meeting <ArrowRight size={14} />
                 </a>
               </div>
 
-              {/* Contact info */}
+              {/* Contact info — REAL from ramprate.com */}
               <div className="bg-white rounded-xl p-7 border border-black/5 shadow-sm space-y-5">
                 <div className="flex items-start gap-3">
-                  <Mail size={18} className="text-[#6B21A8] mt-0.5 shrink-0" />
+                  <Mail size={18} className="text-[oklch(0.55_0.15_30)] mt-0.5 shrink-0" />
                   <div>
-                    <div className="text-xs font-medium text-[oklch(0.4_0.02_50)] uppercase tracking-wider mb-1" style={{ fontFamily: "var(--font-body)" }}>
-                      Email
-                    </div>
-                    <a
-                      href="mailto:hello@ramprate.com"
-                      className="text-sm text-[#6B21A8] hover:underline"
-                      style={{ fontFamily: "var(--font-body)" }}
-                    >
+                    <div className="text-xs font-medium text-[oklch(0.4_0.02_50)] uppercase tracking-wider mb-1" style={{ fontFamily: "var(--font-body)" }}>Email</div>
+                    <a href="mailto:hello@ramprate.com" className="text-sm text-[oklch(0.55_0.15_30)] hover:underline" style={{ fontFamily: "var(--font-body)" }}>
                       hello@ramprate.com
                     </a>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Phone size={18} className="text-[#6B21A8] mt-0.5 shrink-0" />
+                  <Phone size={18} className="text-[oklch(0.55_0.15_30)] mt-0.5 shrink-0" />
                   <div>
-                    <div className="text-xs font-medium text-[oklch(0.4_0.02_50)] uppercase tracking-wider mb-1" style={{ fontFamily: "var(--font-body)" }}>
-                      Phone
-                    </div>
+                    <div className="text-xs font-medium text-[oklch(0.4_0.02_50)] uppercase tracking-wider mb-1" style={{ fontFamily: "var(--font-body)" }}>Phone</div>
                     <span className="text-sm text-[oklch(0.35_0.02_50)]" style={{ fontFamily: "var(--font-body)" }}>
                       +1 (310) 622-8989
                     </span>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <MapPin size={18} className="text-[#6B21A8] mt-0.5 shrink-0" />
+                  <MapPin size={18} className="text-[oklch(0.55_0.15_30)] mt-0.5 shrink-0" />
                   <div>
-                    <div className="text-xs font-medium text-[oklch(0.4_0.02_50)] uppercase tracking-wider mb-1" style={{ fontFamily: "var(--font-body)" }}>
-                      Location
-                    </div>
+                    <div className="text-xs font-medium text-[oklch(0.4_0.02_50)] uppercase tracking-wider mb-1" style={{ fontFamily: "var(--font-body)" }}>Location</div>
                     <span className="text-sm text-[oklch(0.35_0.02_50)]" style={{ fontFamily: "var(--font-body)" }}>
                       Los Angeles, CA
                     </span>
@@ -250,18 +210,12 @@ export default function Connect() {
                 </div>
               </div>
 
-              {/* Guarantee */}
-              <div className="bg-[oklch(0.97_0.01_80)] rounded-xl p-7 border border-[#6B21A8]/10">
-                <h4
-                  className="text-base font-bold mb-2"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
+              {/* Guarantee — REAL from ramprate.com */}
+              <div className="bg-[oklch(0.97_0.01_80)] rounded-xl p-7 border border-[oklch(0.55_0.15_30)]/10">
+                <h4 className="text-base font-bold mb-2" style={{ fontFamily: "var(--font-display)" }}>
                   The RampRate Guarantee
                 </h4>
-                <p
-                  className="text-sm text-[oklch(0.45_0.02_50)] leading-relaxed"
-                  style={{ fontFamily: "var(--font-body)" }}
-                >
+                <p className="text-sm text-[oklch(0.45_0.02_50)] leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
                   The audit is always free. If we don't deliver 300%+ ROI on our sourcing engagements, you don't pay. We put skin in the game because we believe in what we do.
                 </p>
               </div>

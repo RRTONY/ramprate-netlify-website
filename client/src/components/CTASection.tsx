@@ -16,7 +16,7 @@ export default function CTASection() {
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${CTA_BG})` }}
       />
-      <div className="absolute inset-0 bg-[oklch(0.4_0.22_260)]/80" />
+      <div className="absolute inset-0 bg-[oklch(0.35_0.22_260)]/95" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 text-center">
         <motion.div
