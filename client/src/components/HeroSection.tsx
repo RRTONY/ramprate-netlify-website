@@ -1,174 +1,159 @@
-/**
- * HeroSection — "Luminous Interference" design
- * H1: "5 principals. 10 senior advisors. 35+ specialists. One collective consciousness."
- * Sub: "Since 2000, $24B+ in enterprise decisions across 50+ countries."
- * CTAs: Find Your Path↓ | Start a Conversation→/connect
- * BG: concentric ripple animation (CSS + canvas)
+/*
+ * Hero: Full-bleed cinematic image — professionals converging at illuminated building at dusk.
+ * Image composition: dark left half (text zone), warm-lit right half (visual).
+ * Value-led headline: "The right person. The right room. The right time."
+ * White text on dark left side — no bleed, no overlap.
  */
-import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import { Link } from "wouter";
+import { ArrowRight, ArrowDown } from "lucide-react";
+
+const HERO_IMG =
+  "https://private-us-east-1.manuscdn.com/sessionFile/m6kc1Tn353i2D6rxZBg8XB/sandbox/J7HEXUnaovvTBQvdWYHk6M-img-2_1771884573000_na1fn_aGVyby1jb252ZXJnZW5jZS12Mg.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvbTZrYzFUbjM1M2kyRDZyeFpCZzhYQi9zYW5kYm94L0o3SEVYVW5hb3Z2VEJRdmRXWUhrNk0taW1nLTJfMTc3MTg4NDU3MzAwMF9uYTFmbl9hR1Z5YnkxamIyNTJaWEpuWlc1alpTMTJNZy5wbmc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=dR8T9HY3gTId1kbm5~sRaczbVNRMTI0pb4eePWr5NSovZ4J2cqRm2TXlwcNnQDGNke5A-sRevt51xkxV9ncZqnHZeHChDGPkuKzFDDSEQSJiYSlhQDINZfrQhUcDhfH69AryM~jkJvoGu2FEN8PlICaOdV1c8tLovvk3JA0MUcwBcn1t-jripUvbE9WpjJdwBXRzrC6eGMcsinhFBvUfihrr8v1~Hz8cfo5Qxvlg1WzJFe8QspW~Ah-Tb2f5bv5nryfqizSi-CjDgLge6PZap4xIipojP-88nrUZlzQEOzfz5Yvne6Bg7AehzgweeKWG-24HipP0CnPjpb2DFvjElA__";
 
 export default function HeroSection() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    let animId: number;
-    let time = 0;
-
-    const resize = () => {
-      canvas.width = canvas.offsetWidth * window.devicePixelRatio;
-      canvas.height = canvas.offsetHeight * window.devicePixelRatio;
-      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-    };
-    resize();
-    window.addEventListener("resize", resize);
-
-    const draw = () => {
-      const w = canvas.offsetWidth;
-      const h = canvas.offsetHeight;
-      ctx.clearRect(0, 0, w, h);
-
-      const cx = w / 2;
-      const cy = h / 2;
-      const maxR = Math.max(w, h) * 0.7;
-
-      // Draw concentric ripples
-      for (let i = 0; i < 12; i++) {
-        const baseR = (i / 12) * maxR;
-        const r = baseR + Math.sin(time * 0.8 + i * 0.5) * 15;
-        const alpha = 0.03 + Math.sin(time * 0.5 + i * 0.3) * 0.02;
-
-        ctx.beginPath();
-        ctx.arc(cx, cy, Math.max(0, r), 0, Math.PI * 2);
-        ctx.strokeStyle = i % 3 === 0
-          ? `rgba(255, 107, 53, ${alpha})`
-          : i % 3 === 1
-          ? `rgba(255, 179, 71, ${alpha * 0.7})`
-          : `rgba(100, 160, 255, ${alpha * 0.5})`;
-        ctx.lineWidth = 1;
-        ctx.stroke();
-      }
-
-      // Draw subtle grid lines
-      ctx.strokeStyle = "rgba(255, 255, 255, 0.008)";
-      ctx.lineWidth = 0.5;
-      for (let x = 0; x < w; x += 60) {
-        ctx.beginPath();
-        ctx.moveTo(x, 0);
-        ctx.lineTo(x, h);
-        ctx.stroke();
-      }
-      for (let y = 0; y < h; y += 60) {
-        ctx.beginPath();
-        ctx.moveTo(0, y);
-        ctx.lineTo(w, y);
-        ctx.stroke();
-      }
-
-      time += 0.016;
-      animId = requestAnimationFrame(draw);
-    };
-
-    // Intersection observer to pause off-screen
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          draw();
-        } else {
-          cancelAnimationFrame(animId);
-        }
-      },
-      { threshold: 0.1 }
-    );
-    observer.observe(canvas);
-
-    return () => {
-      cancelAnimationFrame(animId);
-      window.removeEventListener("resize", resize);
-      observer.disconnect();
-    };
-  }, []);
-
-  const scrollToContent = () => {
-    const el = document.getElementById("trust-bar");
-    el?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Canvas animation */}
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 w-full h-full"
-        style={{ zIndex: 0 }}
-      />
+    <section className="relative min-h-screen flex flex-col overflow-hidden bg-[#0a0f1a]">
+      {/* Background image — positioned to keep dark area on left */}
+      <div className="absolute inset-0">
+        <img
+          src={HERO_IMG}
+          alt=""
+          className="w-full h-full object-cover object-right"
+          loading="eager"
+        />
+        {/* Gradient overlays to deepen the left side for text */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0f1a] via-[#0a0f1a]/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1a]/90 via-transparent to-[#0a0f1a]/40" />
+      </div>
 
-      {/* Gradient mesh overlay */}
-      <div className="absolute inset-0 mesh-gradient-1" style={{ zIndex: 1 }} />
+      {/* Content — pinned to the left half */}
+      <div className="relative z-10 flex flex-col justify-center min-h-screen max-w-7xl mx-auto px-5 sm:px-8 w-full">
+        <div className="max-w-xl lg:max-w-2xl pt-28 pb-32">
+          {/* Tagline pill */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="mb-8"
+          >
+            <span className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-[oklch(0.82_0.15_75)]" />
+              <span
+                className="text-[11px] sm:text-xs font-medium tracking-[0.2em] uppercase text-white/60"
+                style={{ fontFamily: "var(--font-body)" }}
+              >
+                Enterprise Decisions Collective
+              </span>
+            </span>
+          </motion.div>
 
-      {/* Noise texture */}
-      <div className="absolute inset-0 noise-overlay" style={{ zIndex: 2 }} />
-
-      {/* Content */}
-      <div className="relative z-10 container text-center px-4 pt-20">
-        <div className="max-w-4xl mx-auto">
-          {/* H1 */}
-          <h1
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.15] tracking-tight text-white mb-6"
+          {/* Headline — value-led */}
+          <motion.h1
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.5 }}
+            className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[4.25rem] font-bold leading-[1.08] tracking-[-0.02em] text-white"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            <span className="chromatic-shift inline" data-text="5 principals.">5 principals.</span>{" "}
-            <span className="text-foreground/70">10 senior advisors.</span>{" "}
-            <span className="text-foreground/70">35+ specialists.</span>
+            The right person.
             <br />
-            <span className="text-coral">One collective consciousness.</span>
-          </h1>
+            The right room.
+            <br />
+            <span className="text-[oklch(0.82_0.15_75)]">The right time.</span>
+          </motion.h1>
 
-          {/* Sub */}
-          <p
-            className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
+          {/* Sub-copy */}
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="mt-7 text-base sm:text-lg text-white/55 leading-relaxed max-w-lg"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            Since 2000,{" "}
-            <span className="font-mono text-amber">$24B+</span> in enterprise
-            decisions across{" "}
-            <span className="font-mono text-amber">50+</span> countries.
-          </p>
+            Since 2000, we've brokered $24B+ in trajectory-changing connections
+            across 50+ countries. We clean up intractable messes, speed up &amp;
+            de-risk innovation, and align profit with purpose.
+          </motion.p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button
-              onClick={scrollToContent}
-              className="group px-6 py-3 rounded-lg border border-glass-border text-sm font-medium text-foreground/80 hover:text-white hover:border-coral/40 transition-all"
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.9 }}
+            className="mt-10 flex flex-wrap gap-4"
+          >
+            <a
+              href="#brands"
+              className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-md text-sm font-semibold bg-[oklch(0.82_0.15_75)] text-[oklch(0.15_0.03_50)] hover:bg-[oklch(0.78_0.16_75)] transition-all duration-300 shadow-lg shadow-[oklch(0.82_0.15_75)]/15"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              Find Your Path{" "}
-              <span className="inline-block transition-transform group-hover:translate-y-0.5">
-                ↓
-              </span>
-            </button>
+              Explore Our Brands
+              <ArrowRight
+                size={16}
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
+            </a>
             <Link
               href="/connect"
-              className="px-6 py-3 rounded-lg bg-coral text-white text-sm font-semibold hover:bg-coral/90 transition-all hover:shadow-lg hover:shadow-coral/20"
+              className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-md text-sm font-semibold border border-white/20 text-white/80 hover:text-white hover:border-white/40 hover:bg-white/5 transition-all duration-300"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              Start a Conversation →
+              Start a Conversation
             </Link>
-          </div>
+          </motion.div>
+
+          {/* Micro-stats row */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 1.2 }}
+            className="mt-16 flex gap-8 sm:gap-12"
+          >
+            {[
+              { value: "$24B+", label: "Decisions Brokered" },
+              { value: "50+", label: "Countries" },
+              { value: "24", label: "Years Deep" },
+            ].map((stat) => (
+              <div key={stat.label}>
+                <div
+                  className="text-xl sm:text-2xl font-bold text-white/90 tracking-tight"
+                  style={{ fontFamily: "var(--font-mono)" }}
+                >
+                  {stat.value}
+                </div>
+                <div
+                  className="mt-0.5 text-[10px] sm:text-xs text-white/35 tracking-wide uppercase"
+                  style={{ fontFamily: "var(--font-body)" }}
+                >
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-        <div className="w-5 h-8 rounded-full border border-glass-border flex items-start justify-center p-1">
-          <div className="w-1 h-2 rounded-full bg-coral animate-bounce" />
-        </div>
-      </div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.8 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-white/30"
+      >
+        <span
+          className="text-[10px] tracking-[0.3em] uppercase"
+          style={{ fontFamily: "var(--font-body)" }}
+        >
+          Scroll
+        </span>
+        <motion.div
+          animate={{ y: [0, 6, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <ArrowDown size={14} />
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

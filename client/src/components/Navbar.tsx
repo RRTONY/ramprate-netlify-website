@@ -1,19 +1,21 @@
-/**
- * Navbar — "Luminous Interference" design
- * Sticky glassmorphic nav with RampRate + B Corp badge
- * Nav: Practices · Proof · About · Blog · Connect | [Start a Conversation→]
+/*
+ * Design: Transparent overlay nav on hero, transitions to solid on scroll.
+ * Warm earth tones, Playfair Display logo, DM Sans nav items.
+ * Matches fusionramp.manus.space aesthetic.
  */
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 
-const navLinks = [
-  { label: "Practices", items: [
-    { label: "Sourcing", href: "/sourcing" },
-    { label: "Syzygy", href: "/growth" },
-    { label: "Stratum", href: "/web3" },
-    { label: "ImpactSoul", href: "/impact" },
-  ]},
+const practices = [
+  { label: "Sourcing", href: "/sourcing", desc: "Enterprise IT" },
+  { label: "Syzygy", href: "/growth", desc: "Founders" },
+  { label: "Stratum", href: "/web3", desc: "Web3" },
+  { label: "ImpactSoul", href: "/impact", desc: "NGOs" },
+];
+
+const navItems = [
+  { label: "Practices", href: "#practices", hasDropdown: true },
   { label: "Proof", href: "/proof" },
   { label: "About", href: "/about" },
   { label: "Blog", href: "/blog" },
@@ -27,7 +29,7 @@ export default function Navbar() {
   const [location] = useLocation();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -41,51 +43,58 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "glass-card shadow-lg shadow-black/20"
+          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-black/5"
           : "bg-transparent"
       }`}
     >
-      <div className="container flex items-center justify-between h-16 lg:h-18">
-        {/* Logo + B Corp */}
-        <Link href="/" className="flex items-center gap-2.5 group">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between h-16 sm:h-20">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-3">
           <span
-            className="text-xl lg:text-2xl font-bold tracking-tight text-white"
-            style={{ fontFamily: "var(--font-body)" }}
+            className={`text-xl sm:text-2xl font-bold tracking-tight transition-colors duration-500 ${
+              scrolled ? "text-[oklch(0.18_0.03_50)]" : "text-white"
+            }`}
+            style={{ fontFamily: "var(--font-display)" }}
           >
-            Ramp<span className="text-coral">Rate</span>
-          </span>
-          <span className="text-[10px] font-mono text-muted-foreground border border-glass-border rounded px-1.5 py-0.5 leading-none tracking-wider uppercase opacity-70 group-hover:opacity-100 transition-opacity">
-            B Corp
+            RampRate<span className="text-[oklch(0.82_0.15_75)]">.</span>
           </span>
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-1">
-          {navLinks.map((link) =>
-            link.items ? (
+        <div className="hidden lg:flex items-center gap-8">
+          {navItems.map((item) =>
+            item.hasDropdown ? (
               <div
-                key={link.label}
+                key={item.label}
                 className="relative"
                 onMouseEnter={() => setPracticesOpen(true)}
                 onMouseLeave={() => setPracticesOpen(false)}
               >
                 <button
-                  className="px-3 py-2 text-sm font-medium text-foreground/80 hover:text-white transition-colors"
+                  className={`text-sm font-medium tracking-wide uppercase transition-colors duration-300 ${
+                    scrolled
+                      ? "text-[oklch(0.35_0.03_50)] hover:text-[oklch(0.18_0.03_50)]"
+                      : "text-white/80 hover:text-white"
+                  }`}
                   style={{ fontFamily: "var(--font-body)" }}
                 >
-                  {link.label}
+                  {item.label}
                 </button>
                 {practicesOpen && (
-                  <div className="absolute top-full left-0 pt-1">
-                    <div className="glass-card rounded-lg py-2 min-w-[180px] shadow-xl shadow-black/30">
-                      {link.items.map((item) => (
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3">
+                    <div className="bg-white rounded-lg shadow-xl border border-black/5 p-4 min-w-[220px]">
+                      {practices.map((p) => (
                         <Link
-                          key={item.href}
-                          href={item.href}
-                          className="block px-4 py-2 text-sm text-foreground/70 hover:text-coral hover:bg-white/5 transition-all"
-                          style={{ fontFamily: "var(--font-body)" }}
+                          key={p.href}
+                          href={p.href}
+                          className="flex items-center justify-between px-3 py-2.5 rounded-md hover:bg-[oklch(0.94_0.03_80)] transition-colors group"
                         >
-                          {item.label}
+                          <span className="text-sm font-medium text-[oklch(0.18_0.03_50)] group-hover:text-[oklch(0.82_0.15_75)]">
+                            {p.label}
+                          </span>
+                          <span className="text-xs text-[oklch(0.5_0.02_50)]">
+                            {p.desc}
+                          </span>
                         </Link>
                       ))}
                     </div>
@@ -94,70 +103,76 @@ export default function Navbar() {
               </div>
             ) : (
               <Link
-                key={link.href}
-                href={link.href!}
-                className="px-3 py-2 text-sm font-medium text-foreground/80 hover:text-white transition-colors"
+                key={item.label}
+                href={item.href}
+                className={`text-sm font-medium tracking-wide uppercase transition-colors duration-300 ${
+                  scrolled
+                    ? "text-[oklch(0.35_0.03_50)] hover:text-[oklch(0.18_0.03_50)]"
+                    : "text-white/80 hover:text-white"
+                }`}
                 style={{ fontFamily: "var(--font-body)" }}
               >
-                {link.label}
+                {item.label}
               </Link>
             )
           )}
           <Link
             href="/connect"
-            className="ml-3 px-5 py-2 text-sm font-semibold rounded-lg bg-coral text-white hover:bg-coral/90 transition-all hover:shadow-lg hover:shadow-coral/20"
+            className="ml-2 px-5 py-2.5 rounded-md text-sm font-semibold transition-all duration-300 bg-[oklch(0.82_0.15_75)] text-[oklch(0.18_0.03_50)] hover:bg-[oklch(0.78_0.16_75)] shadow-sm"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            Start a Conversation →
+            Start a Conversation
           </Link>
         </div>
 
-        {/* Mobile hamburger */}
+        {/* Mobile toggle */}
         <button
-          className="lg:hidden p-2 text-foreground/80 hover:text-white"
           onClick={() => setMobileOpen(!mobileOpen)}
+          className={`lg:hidden p-2 transition-colors ${
+            scrolled ? "text-[oklch(0.18_0.03_50)]" : "text-white"
+          }`}
           aria-label="Toggle menu"
         >
-          {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden glass-card border-t border-glass-border">
-          <div className="container py-4 space-y-1">
-            {navLinks.map((link) =>
-              link.items ? (
-                <div key={link.label}>
-                  <div className="px-3 py-2 text-xs font-mono uppercase tracking-widest text-muted-foreground">
-                    {link.label}
-                  </div>
-                  {link.items.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className="block px-6 py-2 text-sm text-foreground/80 hover:text-coral transition-colors"
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
-              ) : (
+        <div className="lg:hidden bg-white border-t border-black/5 shadow-lg">
+          <div className="px-5 py-6 space-y-1">
+            {practices.map((p) => (
+              <Link
+                key={p.href}
+                href={p.href}
+                className="block px-3 py-3 text-sm font-medium text-[oklch(0.18_0.03_50)] hover:bg-[oklch(0.94_0.03_80)] rounded-md"
+              >
+                {p.label}
+                <span className="text-xs text-[oklch(0.5_0.02_50)] ml-2">
+                  {p.desc}
+                </span>
+              </Link>
+            ))}
+            <div className="border-t border-black/5 my-3" />
+            {navItems
+              .filter((i) => !i.hasDropdown)
+              .map((item) => (
                 <Link
-                  key={link.href}
-                  href={link.href!}
-                  className="block px-3 py-2 text-sm text-foreground/80 hover:text-coral transition-colors"
+                  key={item.label}
+                  href={item.href}
+                  className="block px-3 py-3 text-sm font-medium text-[oklch(0.18_0.03_50)] hover:bg-[oklch(0.94_0.03_80)] rounded-md"
                 >
-                  {link.label}
+                  {item.label}
                 </Link>
-              )
-            )}
-            <Link
-              href="/connect"
-              className="block mx-3 mt-3 px-5 py-2.5 text-sm font-semibold text-center rounded-lg bg-coral text-white"
-            >
-              Start a Conversation →
-            </Link>
+              ))}
+            <div className="pt-3">
+              <Link
+                href="/connect"
+                className="block text-center px-5 py-3 rounded-md text-sm font-semibold bg-[oklch(0.82_0.15_75)] text-[oklch(0.18_0.03_50)]"
+              >
+                Start a Conversation
+              </Link>
+            </div>
           </div>
         </div>
       )}
