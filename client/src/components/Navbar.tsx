@@ -6,6 +6,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
+import Logo from "@/components/Logo";
 
 const practices = [
   { label: "Sourcing", href: "/sourcing", desc: "Enterprise IT" },
@@ -50,14 +51,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between h-16 sm:h-20">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
-          <span
-            className={`text-xl sm:text-2xl font-bold tracking-tight transition-colors duration-500 ${
-              scrolled ? "text-[oklch(0.18_0.03_50)]" : "text-white"
-            }`}
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            RampRate<span className="text-[oklch(0.82_0.15_75)]">.</span>
-          </span>
+          <Logo variant={scrolled ? "dark" : "light"} size="md" />
         </Link>
 
         {/* Desktop Nav */}

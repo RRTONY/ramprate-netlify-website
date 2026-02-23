@@ -5,20 +5,27 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import Sourcing from "./pages/Sourcing";
+import Growth from "./pages/Growth";
+import Web3 from "./pages/Web3";
+import Impact from "./pages/Impact";
+import Proof from "./pages/Proof";
+import About from "./pages/About";
+import Connect from "./pages/Connect";
+import Blog from "./pages/Blog";
 
 function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
-      <Route path={"/sourcing"} component={() => <div>Sourcing</div>} />
-      <Route path={"/growth"} component={() => <div>Growth</div>} />
-      <Route path={"/web3"} component={() => <div>Web3</div>} />
-      <Route path={"/impact"} component={() => <div>Impact</div>} />
-      <Route path={"/proof"} component={() => <div>Proof</div>} />
-      <Route path={"/about"} component={() => <div>About</div>} />
-      <Route path={"/connect"} component={() => <div>Connect</div>} />
-      <Route path={"/blog"} component={() => <div>Blog</div>} />
-      <Route path={"/blog/:slug"} component={() => <div>Blog Post</div>} />
+      <Route path={"/sourcing"} component={Sourcing} />
+      <Route path={"/growth"} component={Growth} />
+      <Route path={"/web3"} component={Web3} />
+      <Route path={"/impact"} component={Impact} />
+      <Route path={"/proof"} component={Proof} />
+      <Route path={"/about"} component={About} />
+      <Route path={"/connect"} component={Connect} />
+      <Route path={"/blog"} component={Blog} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>

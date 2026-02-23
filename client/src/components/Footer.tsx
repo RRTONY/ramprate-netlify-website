@@ -3,6 +3,7 @@
  * Dark charcoal background, matches manus.space footer.
  */
 import { Link } from "wouter";
+import Logo from "@/components/Logo";
 
 const brandLinks = [
   { label: "RampRate", href: "/sourcing" },
@@ -25,12 +26,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div>
-            <span
-              className="text-xl font-bold text-white tracking-tight"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              RampRate<span className="text-[oklch(0.82_0.15_75)]">.</span>
-            </span>
+            <Logo variant="light" size="sm" />
             <p
               className="mt-3 text-sm leading-relaxed text-white/40"
               style={{ fontFamily: "var(--font-body)" }}
