@@ -1,25 +1,45 @@
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { Streamdown } from 'streamdown';
-
 /**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Best Practices, Design Guide and Common Pitfalls
+ * Home Page — RampRate "Luminous Interference" design
+ * Sections in order:
+ * 1. Navbar (sticky)
+ * 2. Hero (full-screen concentric ripple)
+ * 3. Trust Bar (scrolling logos)
+ * 4. Concentric Model (interactive rings)
+ * 5. Intervention Cards (6 cards + 3-step)
+ * 6. Practice Cards (4 practices)
+ * 7. Proof Preview (3 testimonials)
+ * 8. Network Viz (particle canvas)
+ * 9. CTA Section
+ * 10. Footer
  */
-export default function Home() {
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import TrustBar from "@/components/TrustBar";
+import ConcentricModel from "@/components/ConcentricModel";
+import InterventionCards from "@/components/InterventionCards";
+import PracticeCards from "@/components/PracticeCards";
+import ProofPreview from "@/components/ProofPreview";
+import NetworkViz from "@/components/NetworkViz";
+import CTASection from "@/components/CTASection";
+import Footer from "@/components/Footer";
 
+export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-background text-foreground">
+      <Navbar />
       <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
+        <HeroSection />
+        <div id="trust-bar">
+          <TrustBar />
+        </div>
+        <ConcentricModel />
+        <InterventionCards />
+        <PracticeCards />
+        <ProofPreview />
+        <NetworkViz />
+        <CTASection />
       </main>
+      <Footer />
     </div>
   );
 }
