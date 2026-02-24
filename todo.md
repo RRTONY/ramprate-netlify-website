@@ -62,3 +62,5 @@
 - [x] Practice sub-pages (sourcing, growth, web3, impact)
 - [ ] Fix blog thumbnail alt text overlay bug
 - [x] Add Stratum deep-dive links (https://stratumweb-2pprew4h.manus.space) throughout the site wherever Stratum is referenced
+- [x] Interlink Flow Circuit throughout the site in business-relevant contexts
+- [x] Interlink FindMyMe throughout the site in business-relevant contexts

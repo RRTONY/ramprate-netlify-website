@@ -19,6 +19,8 @@ const companyLinks = [
   { label: "Proof", href: "/proof" },
   { label: "About", href: "/about" },
   { label: "Blog", href: "/blog" },
+  { label: "Flow Circuit", href: "/process#flow-circuit" },
+  { label: "Find Your Me", href: "/process#find-me" },
   { label: "Engage", href: "/connect" },
 ];
 

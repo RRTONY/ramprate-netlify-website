@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
-import { ArrowRight, Linkedin, Twitter } from "lucide-react";
+import { ArrowRight, Linkedin, Twitter, Zap, Target } from "lucide-react";
 
 /* ── REAL CORE TEAM (5) — enriched bios from paste ── */
 const coreTeam = [
@@ -306,6 +306,22 @@ export default function About() {
                 <span key={a} className="px-3 py-1 text-xs rounded-full bg-[oklch(0.55_0.15_30)]/10 text-[oklch(0.45_0.1_30)]" style={{ fontFamily: "var(--font-body)" }}>{a}</span>
               ))}
             </div>
+          </div>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link
+              href="/process#flow-circuit"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md text-xs font-bold bg-[oklch(0.55_0.15_30)] text-white hover:bg-[oklch(0.5_0.15_30)] transition-all"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              <Zap size={13} /> Flow Circuit Assessment
+            </Link>
+            <Link
+              href="/process#find-me"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md text-xs font-bold border border-[oklch(0.6_0.2_280)]/30 text-[oklch(0.6_0.2_280)] hover:bg-[oklch(0.6_0.2_280)]/5 transition-all"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              <Target size={13} /> Find Your Me / Way / Our
+            </Link>
           </div>
         </div>
       </section>

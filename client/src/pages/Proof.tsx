@@ -10,7 +10,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
-import { ArrowRight, Quote, Building2, TrendingDown, ShieldCheck, BarChart3, Linkedin, Twitter, Filter, Lock, Building, Film, Gamepad2, Link2, Globe } from "lucide-react";
+import { ArrowRight, Quote, Building2, TrendingDown, ShieldCheck, BarChart3, Linkedin, Twitter, Filter, Lock, Building, Film, Gamepad2, Link2, Globe, Zap, Target } from "lucide-react";
 
 /* ── 7 REAL CASE STUDIES from ramprate.com ── */
 const caseStudies = [
@@ -580,9 +580,25 @@ export default function Proof() {
           <p className="text-white/80 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl mx-auto" style={{ fontFamily: "var(--font-body)" }}>
             The audit is free. The ROI guarantee is real. Let's talk.
           </p>
-          <Link href="/connect" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md text-sm font-semibold bg-white text-[oklch(0.35_0.1_30)] hover:bg-white/90 transition-all shadow-lg" style={{ fontFamily: "var(--font-body)" }}>
-            Start a Conversation <ArrowRight size={16} />
-          </Link>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/connect" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md text-sm font-semibold bg-white text-[oklch(0.35_0.1_30)] hover:bg-white/90 transition-all shadow-lg" style={{ fontFamily: "var(--font-body)" }}>
+              Start a Conversation <ArrowRight size={16} />
+            </Link>
+            <Link
+              href="/process#flow-circuit"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md text-sm font-semibold border-2 border-white/30 text-white hover:bg-white/10 transition-all"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              <Zap size={14} /> Flow Circuit Assessment
+            </Link>
+            <Link
+              href="/process#find-me"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md text-sm font-semibold border-2 border-white/30 text-white hover:bg-white/10 transition-all"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              <Target size={14} /> Find Your Me
+            </Link>
+          </div>
         </div>
       </section>
     </PageLayout>

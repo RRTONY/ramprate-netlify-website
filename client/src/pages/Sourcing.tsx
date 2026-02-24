@@ -559,9 +559,17 @@ export default function Sourcing() {
           <p className="text-white/70 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl mx-auto" style={{ fontFamily: "var(--font-body)" }}>
             The audit is always free. If we don't deliver 300%+ ROI on our sourcing engagements, you don't pay. We put skin in the game because we believe in what we do.
           </p>
-          <Link href="/connect" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md text-sm font-semibold bg-white text-[oklch(0.35_0.1_30)] hover:bg-white/90 transition-all shadow-lg" style={{ fontFamily: "var(--font-body)" }}>
-            Start a Conversation <ArrowRight size={16} />
-          </Link>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/connect" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md text-sm font-semibold bg-white text-[oklch(0.35_0.1_30)] hover:bg-white/90 transition-all shadow-lg" style={{ fontFamily: "var(--font-body)" }}>
+              Start a Conversation <ArrowRight size={16} />
+            </Link>
+            <Link href="/process#flow-circuit" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md text-sm font-semibold border-2 border-white/30 text-white hover:bg-white/10 transition-all" style={{ fontFamily: "var(--font-body)" }}>
+              <Zap size={14} /> Flow Circuit
+            </Link>
+            <Link href="/process#find-me" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md text-sm font-semibold border-2 border-white/30 text-white hover:bg-white/10 transition-all" style={{ fontFamily: "var(--font-body)" }}>
+              <Target size={14} /> Find Your Me
+            </Link>
+          </div>
         </div>
       </section>
     </PageLayout>

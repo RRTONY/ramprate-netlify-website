@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
-import { ArrowRight, Rocket, Users, Target, Compass, LineChart, Handshake, Search, FileText, Coins, Award, Shield, Megaphone, FlaskConical } from "lucide-react";
+import { ArrowRight, Rocket, Users, Target, Compass, LineChart, Handshake, Search, FileText, Coins, Award, Shield, Megaphone, FlaskConical, Zap } from "lucide-react";
 
 /* ── ALL 10 STARTUP ADVISORY SERVICES — REAL from paste ── */
 const advisoryServices = [
@@ -229,9 +229,17 @@ export default function Growth() {
           <p className="text-white/80 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl mx-auto" style={{ fontFamily: "var(--font-body)" }}>
             And focus on the change you want to create in the world.
           </p>
-          <Link href="/connect" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md text-sm font-semibold bg-white text-[oklch(0.35_0.1_30)] hover:bg-white/90 transition-all shadow-lg" style={{ fontFamily: "var(--font-body)" }}>
-            Start a Conversation <ArrowRight size={16} />
-          </Link>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/connect" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md text-sm font-semibold bg-white text-[oklch(0.35_0.1_30)] hover:bg-white/90 transition-all shadow-lg" style={{ fontFamily: "var(--font-body)" }}>
+              Start a Conversation <ArrowRight size={16} />
+            </Link>
+            <Link href="/process#flow-circuit" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md text-sm font-semibold border-2 border-white/30 text-white hover:bg-white/10 transition-all" style={{ fontFamily: "var(--font-body)" }}>
+              <Zap size={14} /> Flow Circuit
+            </Link>
+            <Link href="/process#find-me" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md text-sm font-semibold border-2 border-white/30 text-white hover:bg-white/10 transition-all" style={{ fontFamily: "var(--font-body)" }}>
+              <Target size={14} /> Find Your Me
+            </Link>
+          </div>
         </div>
       </section>
     </PageLayout>

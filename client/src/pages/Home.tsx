@@ -154,18 +154,21 @@ const operateSteps = [
     title: "Deep Research",
     desc: "$24B+ transaction intelligence. Million+ data points. 350+ vendors. 80 countries. Forecasts within 5-10% of outcome.",
     icon: Database,
+    link: { label: "Flow Circuit Assessment →", href: "/process#flow-circuit" },
   },
   {
     num: "02",
     title: "Strategic Blueprint",
     desc: "Pressure-test positioning, vendor structures, GTM, revenue pathways against real market data. Not theory.",
     icon: Target,
+    link: { label: "Find Your Me / Way / Our →", href: "/process#find-me" },
   },
   {
     num: "03",
     title: "Relationship Activation",
     desc: "25 years of enterprise trust. When we call, doors open. Not pitch. History. 99% of intros convert to contracts.",
     icon: Users,
+    link: { label: "See Full Process →", href: "/process" },
   },
 ];
 
@@ -545,6 +548,28 @@ export default function Home() {
             <br className="hidden sm:block" />
             The people on the testimonials are the people who serve you.
           </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-8 flex flex-wrap justify-center gap-4"
+          >
+            <Link
+              href="/process#flow-circuit"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md text-xs font-bold border border-[oklch(0.55_0.15_30)]/30 text-[oklch(0.55_0.15_30)] hover:bg-[oklch(0.55_0.15_30)]/5 transition-all"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              <Zap size={13} /> Take the Flow Circuit Assessment
+            </Link>
+            <Link
+              href="/process#find-me"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md text-xs font-bold border border-[oklch(0.6_0.2_280)]/30 text-[oklch(0.6_0.2_280)] hover:bg-[oklch(0.6_0.2_280)]/5 transition-all"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              <Target size={13} /> Find Your Me / Way / Our
+            </Link>
+          </motion.div>
         </div>
       </section>
 
@@ -847,6 +872,15 @@ export default function Home() {
                 >
                   {step.desc}
                 </p>
+                {step.link && (
+                  <Link
+                    href={step.link.href}
+                    className="inline-block mt-4 text-xs font-semibold text-[oklch(0.55_0.15_30)] hover:text-[oklch(0.65_0.15_30)] transition-colors"
+                    style={{ fontFamily: "var(--font-body)" }}
+                  >
+                    {step.link.label}
+                  </Link>
+                )}
               </motion.div>
             ))}
           </div>

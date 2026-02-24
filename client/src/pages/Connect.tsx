@@ -8,7 +8,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
-import { Mail, MapPin, Phone, Calendar, Send, CheckCircle, ArrowRight, Globe, Loader2 } from "lucide-react";
+import { Mail, MapPin, Phone, Calendar, Send, CheckCircle, ArrowRight, Globe, Loader2, Zap, Target } from "lucide-react";
+import { Link } from "wouter";
 import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
 
@@ -301,6 +302,32 @@ export default function Connect() {
                 <p className="text-sm text-[oklch(0.45_0.02_50)] leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
                   The audit is always free. If we don't deliver 300%+ ROI on our sourcing engagements, you don't pay. We put skin in the game because we believe in what we do.
                 </p>
+              </div>
+
+              {/* Assessments */}
+              <div className="bg-white rounded-xl p-7 border border-black/5 shadow-sm">
+                <h4 className="text-base font-bold mb-3" style={{ fontFamily: "var(--font-display)" }}>
+                  Start With an Assessment
+                </h4>
+                <p className="text-xs text-[oklch(0.45_0.02_50)] leading-relaxed mb-4" style={{ fontFamily: "var(--font-body)" }}>
+                  Not ready to talk? Explore our diagnostic tools first.
+                </p>
+                <div className="space-y-2">
+                  <Link
+                    href="/process#flow-circuit"
+                    className="flex items-center gap-2 px-4 py-2.5 rounded-md text-xs font-bold bg-[oklch(0.55_0.15_30)]/10 text-[oklch(0.55_0.15_30)] hover:bg-[oklch(0.55_0.15_30)]/20 transition-all w-full"
+                    style={{ fontFamily: "var(--font-body)" }}
+                  >
+                    <Zap size={13} /> Flow Circuit Assessment
+                  </Link>
+                  <Link
+                    href="/process#find-me"
+                    className="flex items-center gap-2 px-4 py-2.5 rounded-md text-xs font-bold bg-[oklch(0.6_0.2_280)]/10 text-[oklch(0.6_0.2_280)] hover:bg-[oklch(0.6_0.2_280)]/20 transition-all w-full"
+                    style={{ fontFamily: "var(--font-body)" }}
+                  >
+                    <Target size={13} /> Find Your Me / Way / Our
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
