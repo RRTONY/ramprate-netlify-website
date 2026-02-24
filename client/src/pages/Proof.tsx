@@ -57,63 +57,68 @@ const caseStudies = [
   },
 ];
 
-/* ── ALL 28 REAL TESTIMONIALS — ordered by formal priority ── */
-const testimonials = [
-  // #1 — Phil Wiser, 16-year relationship, top executive
-  { quote: "For over 16 years, RampRate helped my companies understand the differences between suppliers. They saved us millions, created agility and new budget out of thin air with each engagement.", name: "Phil Wiser", title: "EVP & CTO", company: "ViacomCBS" },
-  // #2 — Accenture, 20-40% savings
-  { quote: "Each time they have saved significant time in negotiating and closing contracts, which provided at least 20 if not 40% savings over what we could have done alone.", name: "Michael Montalto", title: "Consultant", company: "Accenture" },
-  // #3 — Disney / Warner Bros
-  { quote: "The deal that RampRate got for the Walt Disney Internet Group was one of the best deals in IT services I saw during my tenure at Disney.", name: "Robert Gonsalves", title: "Former Director of Production Operations", company: "Warner Bros. Online / Walt Disney" },
-  // #4 — Sony, deep 8-figure deals
-  { quote: "Since engaging them they have helped me significantly reduce my cost structure through several major outsourcing deals worth deep 8 figures. They made me look like a hero to my executive management.", name: "Peter Borner", title: "Former Head of IT", company: "Sony Music" },
-  // #5 — Microsoft, hundreds of millions in spend
-  { quote: "Your team stayed on schedule and stayed within the price dozens of times across hundreds of millions in spend. You have always saved us tremendous time and money.", name: "Rich Lappenbusch", title: "Executive", company: "Microsoft" },
-  // #6 — eBay VP, millions in value
-  { quote: "We can count on RampRate to be precise, timely and create millions in value. They are no-nonsense data driven and responsive to a T.", name: "Dean Nelson", title: "VP Global Foundation Services", company: "eBay" },
-  // #7 — eBay, 27% savings
-  { quote: "RampRate was a risk-free proposition money-wise. If they didn't save or create us at least twice their initial fee we'd get a full refund. They hit 27% savings and the relationships are stronger than ever.", name: "Paul Santana", title: "Manager of Data Center Operations", company: "eBay" },
-  // #8 — Blizzard COO
-  { quote: "RampRate has been my most reliable global resource and is ready to perform at a moment's notice. They made scaling easier.", name: "Paul Sams", title: "COO", company: "Blizzard Entertainment" },
-  // #9 — Microsoft, 50+ studies
-  { quote: "RampRate helped us cut the clutter, gain insight and distill our team's thoughts for over 50 digital media, IT and product studies. RampRate is an invaluable partner for us.", name: "Gary Share", title: "Windows Marketing and Product", company: "Microsoft" },
-  // #10 — Intel
-  { quote: "Intel engaged RampRate as we launched our Digital Home content strategy & alliances group. They provided valuable and highly targeted research — truly understanding our needs, timeline and budget.", name: "Ron Vaisbort", title: "Executive", company: "Intel" },
-  // #11 — Frequency/Viacom, 75% reduction
-  { quote: "RampRate knows this business better than anyone. We reduced our monthly expenditure by over 75%.", name: "Blair Harrison", title: "CEO", company: "Frequency (formerly Viacom)" },
-  // #12 — Hearst CIO, 16+ years
-  { quote: "Keeping us focused, educating us on our options, identifying well qualified suppliers, and operating under tight deadlines were all things that RampRate did exceptionally well.", name: "Todd Miller", title: "CIO", company: "SF Chronicle – Hearst Corp" },
-  // #13 — BBC / Razorfish EVP
-  { quote: "I would recommend either he or his firm unequivocally for business planning, scale or cost containment. They are globally astute consummate analysts and deal pros extraordinaire.", name: "Richard Titus", title: "EVP BBC, Managing Director Razorfish LA", company: "BBC / Razorfish" },
-  // #14 — Sony VP
-  { quote: "I have always considered RampRate a trusted advisor when it comes to digital entertainment services. RampRate combines a unique approach with consulting professionals who deliver results.", name: "Geoff Campbell", title: "Former VP", company: "Sony Corporation of America" },
-  // #15 — Sony EVP
-  { quote: "In a field filled with prognosticators, RampRate applies sound business judgment and analytics to assist senior management in making crucial, time-sensitive decisions.", name: "Jay Samit", title: "Former EVP", company: "Sony Corporation of America" },
-  // #16 — Beats Music / Apple
-  { quote: "Not only did RampRate save us an incredible amount of time, resources, and money, but also we know we have the best possible solution for our needs now and far beyond.", name: "Ian Rodgers", title: "CEO Beats Music, GM Yahoo Music", company: "Beats Music (acquired by Apple)" },
-  // #17 — AOL, 17-36% reductions
-  { quote: "They brought in two other providers, had all providers re-quote, and lowered overall prices between 17-36%. They helped us achieve breakthrough innovative best-of-breed SLA coverage.", name: "Charles Butler", title: "Director of Network Operations", company: "AOL" },
-  // #18 — Miramax, 40%+ savings
-  { quote: "RampRate handled our project with the utmost professionalism and requisite confidentiality. They work fast, saved us over 40% and months of due diligence.", name: "Andrew Robbins", title: "Vice President of New Media", company: "Miramax" },
-  // #19 — Thomson Reuters, saved millions
-  { quote: "RampRate was adaptable, brilliant and innovative. Their team stayed on schedule and stayed within the price. We saved millions.", name: "Niles Triget", title: "Executive", company: "Thomson Reuters / Delphion" },
-  // #20 — WAX / Clearstone
-  { quote: "Tony and his team are very well connected in the global high-tech community. He is a generous giver of his time and energy to worthy causes, driving impact to become measurable, attainable and reportable.", name: "William Quigley", title: "Managing Director", company: "WAX / Clearstone Venture Partners" },
-  // #21 — Primedia / MSNBC CIO
-  { quote: "RampRate's comprehensive, organized expert approach to assessing our needs allowed us to complete this process in record time.", name: "Michael Whelan", title: "CIO", company: "Primedia / MSNBC" },
-  // #22 — NHL
-  { quote: "RampRate simply got us better pricing and better SLA protections than we got for ourselves!", name: "Ryan Hughes", title: "Network Operations", company: "National Hockey League" },
-  // #23 — Isabel Maxwell
-  { quote: "RampRate are out-of-the-box thinkers and are extremely professional. The caliber of their teams is excellent.", name: "Isabel Maxwell", title: "Entrepreneur at Large", company: "" },
-  // #24 — Menagerie
-  { quote: "Tony's network is of a depth that allows almost instantaneous connectivity at the highest level with significant yield across industries.", name: "Wulf Kaal", title: "Entrepreneur & Co-Founder", company: "Menagerie" },
-  // #25 — IWA
-  { quote: "RampRate is in a league of its own when it comes to matching the right solutions with the right clients.", name: "Kevin Shively", title: "Executive Director", company: "International Webcasting Association" },
-  // #26 — World Telecom Group
-  { quote: "When we receive a RampRate RFP it is professionally prepared and provides the information required for WTG to provide a quality proposal.", name: "Stacey McCormick", title: "Director of Sales", company: "World Telecom Group" },
-  // #27-28 — Syntropy consolidated at bottom
-  { quote: "Partnering with RampRate was and continues to be game-changing for Syntropy. Within just a couple of months we expanded our reach beyond what we thought was possible. RampRate's experience navigating telecom and cloud serves as an invaluable asset.", name: "Domantas Jaskunas", title: "Co-Founder", company: "Syntropy" },
-  { quote: "As our key growth consultant, investor and activator, Tony and RampRate's team have under-promised and over-delivered for more than 4 years. They are a force of nature.", name: "Kipras Kazlauskas", title: "Co-Founder", company: "Syntropy" },
+/* ── TESTIMONIALS — interleaved Principal (Tony) + Firm (RampRate) — lightly upgraded from paste ── */
+const testimonials: { quote: string; name: string; title: string; company: string; tier: "principal" | "firm"; tag: string }[] = [
+  // 1 — FIRM / IMPACT
+  { quote: "Since engaging them they have helped me significantly reduce my cost structure through several major outsourcing deals worth deep 8 figures. Hard work, diligence and attention to detail are phenomenal. They made me look like a hero to my executive management. They are a secret weapon.", name: "Peter Borner", title: "Former Head of IT", company: "Sony Music", tier: "firm", tag: "Enterprise" },
+  // 2 — PRINCIPAL
+  { quote: "Tony operates on a level very few can hope to reach. His experience working with C-Suite execs across Fortune 100 and startups alike is hard to come by. The breadth and depth of his network is unparalleled.", name: "Executive Recommendation", title: "", company: "", tier: "principal", tag: "Enterprise" },
+  // 3 — FIRM / ENDURANCE
+  { quote: "For over 16 years, Tony and his team helped my companies understand the differences between suppliers. They saved us millions, created agility and new budget out of thin air with each engagement. A secret weapon in my toolbox for truth, transparency, and actionable direction.", name: "Phil Wiser", title: "EVP & CTO", company: "ViacomCBS", tier: "firm", tag: "Media" },
+  // 4 — FIRM / NUMBERS
+  { quote: "Risk-free proposition money-wise. If they didn't save or create us at least twice their initial fee we'd get a full refund. When they said they could carve out 27% savings, I thought it was impossible without undermining key relationships. Tony and his team hit that number and the relationships are stronger than ever.", name: "Paul Santana", title: "Manager of Data Center Operations", company: "eBay", tier: "firm", tag: "Enterprise" },
+  // 5 — PRINCIPAL
+  { quote: "Tony is uniquely qualified to do exactly what he does best. Tuned in to what would improve the impact of his clients and partners. He listens for when opportunities align, and powerfully connects dots to make magic happen. His commitment to positive social impact through business is both real and admirable.", name: "Executive Recommendation", title: "", company: "", tier: "principal", tag: "Enterprise" },
+  // 6 — FIRM / SPEED
+  { quote: "Tony and his team are my most reliable global resource, ready to perform at a moment's notice. Inside knowledge and ability to handle high-level complex negotiations helped us move fast. They made scaling easier.", name: "Paul Sams", title: "COO", company: "Blizzard Entertainment", tier: "firm", tag: "Gaming" },
+  // 7 — PRINCIPAL
+  { quote: "Tony Greenberg individually has made a most significant difference in the trajectory of my decade-long journey as an entrepreneur. Tony's network allows almost instantaneous connectivity at the highest level with significant yield across industries. Unparalleled ability to screen deals and bring out long-term success at the highest ethical standards.", name: "Wulf Kaal", title: "Entrepreneur & Co-Founder", company: "Menagerie", tier: "principal", tag: "Blockchain" },
+  // 8 — FIRM / AUTHORITY
+  { quote: "The deal Tony and his team got for the Walt Disney Internet Group was one of the best deals in IT services I saw during my tenure at Disney. No hurdle or objection they did not address quickly and completely. Always looking for a win-win.", name: "Robert Gonsalves", title: "Former Director of Production Operations", company: "Warner Bros. Online / Walt Disney", tier: "firm", tag: "Media" },
+  // 9 — FIRM / SCALE
+  { quote: "Tony and his team helped us cut the clutter, gain insight, and distill our team's thoughts for over 50 digital media, IT, and product studies. Their access to global top-level executives, granular bottom-up approach, and understanding of our corporate strategy differentiate their offering.", name: "Gary Share", title: "Windows Marketing and Product", company: "Microsoft", tier: "firm", tag: "Enterprise" },
+  // 10 — PRINCIPAL
+  { quote: "I've known Tony for in excess of 10 years. An amazingly talented entrepreneur who understands media, IT & infrastructure like no one I've ever met. I would recommend either he or his firm unequivocally for business planning, scale, or cost containment. Globally astute consummate analysts and deal pros extraordinaire.", name: "Richard Titus", title: "EVP BBC, Managing Director Razorfish LA", company: "BBC / Razorfish", tier: "principal", tag: "Media" },
+  // 11 — FIRM / NUMBERS
+  { quote: "Each time Tony and his team saved significant time in negotiating and closing contracts, providing at least 20 if not 40% savings over what we could have done alone. Cut processes in half. Extremely knowledgeable, always bringing innovation and out-of-the-box thinking.", name: "Michael Montalto", title: "Consultant", company: "Accenture", tier: "firm", tag: "Enterprise" },
+  // 12 — FIRM / ENDURANCE
+  { quote: "Under-promised and over-delivered for more than 4 years. Tony and his team are our daily go-to for each step toward our vision. They paid for themselves by accelerating our growth by years and remain a vital resource.", name: "Kipras Kazlauskas", title: "Co-Founder", company: "Syntropy", tier: "firm", tag: "Blockchain" },
+  // 13 — PRINCIPAL
+  { quote: "Tony and his team are very well connected in the global high-tech community. He runs a great organization that is well thought of, especially in media, gaming, IT, and blockchain. A generous giver of his time and energy to worthy causes, driving impact to become measurable, attainable, and reportable.", name: "William Quigley", title: "Managing Director", company: "WAX / Clearstone Venture Partners / Idealab", tier: "principal", tag: "Blockchain" },
+  // 14 — FIRM / SPEED
+  { quote: "Within 30 hours of our decision, we were fully installed and up and running. Tony and his team not only saved an incredible amount of time, resources, and money, but we know we have the best possible solution now and far beyond.", name: "Ian Rodgers", title: "CEO Beats Music, GM Yahoo Music", company: "Beats Music (acquired by Apple)", tier: "firm", tag: "Media" },
+  // 15 — FIRM / NUMBERS
+  { quote: "Tony and his team helped us understand the differences between suppliers, build strong new partnerships, and reduced our monthly expenditure by over 75%. Using RampRate is one of the smartest moves a business-minded CTO can make.", name: "Blair Harrison", title: "CEO", company: "Frequency (formerly Viacom)", tier: "firm", tag: "Media" },
+  // 16 — FIRM / TRUST
+  { quote: "Keeping us focused, educating us on our options, identifying well-qualified suppliers, and operating under tight deadlines — all things Tony and his team did exceptionally well. Uniquely rare data and a solid practice. They opened my eyes to the possibilities of outsourcing on a broader scale.", name: "Todd Miller", title: "CIO", company: "SF Chronicle – Hearst Corp", tier: "firm", tag: "Media" },
+  // 17 — FIRM / NUMBERS
+  { quote: "Had already received quotes from four top-tier providers. Tony and his team brought in two others, had all re-quote, and lowered prices 17-36%. Achieved breakthrough innovative SLA coverage. WOW is the best I can say.", name: "Charles Butler", title: "Director of Network Operations", company: "AOL", tier: "firm", tag: "Enterprise" },
+  // 18 — PRINCIPAL / AUTHORITY
+  { quote: "In a field filled with prognosticators who claim to know the next great thing, Tony and his team apply sound business judgment and analytics to assist senior management in making crucial, time-sensitive decisions.", name: "Jay Samit", title: "Former EVP", company: "Sony Corporation of America", tier: "principal", tag: "Media" },
+  // 19 — FIRM / NUMBERS
+  { quote: "Tony and his team handled our project with utmost professionalism and requisite confidentiality. Saved us over 40% and months of due diligence. I intend on using RampRate again.", name: "Andrew Robbins", title: "Vice President of New Media", company: "Miramax", tier: "firm", tag: "Media" },
+  // 20 — FIRM / GROWTH
+  { quote: "Game-changing. Within just a couple of months, Tony and his team expanded our reach beyond what we thought was possible. RampRate's experience navigating telecom and cloud industries is an invaluable asset.", name: "Domantas Jaskunas", title: "Co-Founder", company: "Syntropy", tier: "firm", tag: "Blockchain" },
+  // 21 — FIRM / SCALE
+  { quote: "I knew I was leaving a bit on the table in our outsourced contracts. We can count on Tony and his team to be precise, timely, and create millions in value. No-nonsense, data-driven, and responsive to a T.", name: "Dean Nelson", title: "VP Global Foundation Services", company: "eBay", tier: "firm", tag: "Enterprise" },
+  // 22 — FIRM / SCALE
+  { quote: "Adaptable. Tony and his team stayed on schedule and within price dozens of times across hundreds of millions in spend. Always saved us tremendous time and money.", name: "Rich Lappenbusch", title: "Executive", company: "Microsoft", tier: "firm", tag: "Enterprise" },
+  // 23 — FIRM / INTEL
+  { quote: "Intel — and three other firms I worked at — engaged Tony and his team. They provided valuable and highly targeted research, truly understanding our project needs, timeline, and budget. RampRate defines professionalism and runs a world-class team.", name: "Ron Vaisbort", title: "Executive", company: "Intel / Blackberry / Ivalua", tier: "firm", tag: "Enterprise" },
+  // 24 — FIRM / MILLIONS
+  { quote: "Tony and his team were adaptable, brilliant, and innovative. Stayed on schedule, within price. We saved millions.", name: "Niles Triget", title: "Executive", company: "Thomson Reuters / Delphion", tier: "firm", tag: "Finance" },
+  // 25 — FIRM / IWA
+  { quote: "In a league of its own when it comes to matching solutions with clients. Tony and his team's ability to understand what clients need often outpaces even the clients' own understanding.", name: "Kevin Shively", title: "Executive Director", company: "International Webcasting Association", tier: "firm", tag: "Media" },
+  // 26 — FIRM / SONY VP
+  { quote: "I have always considered Tony and his team a trusted advisor when it comes to digital entertainment services. RampRate combines a unique approach with consulting professionals who deliver results.", name: "Geoff Campbell", title: "Former VP", company: "Sony Corporation of America", tier: "firm", tag: "Media" },
+  // 27 — FIRM / PRIMEDIA
+  { quote: "Tony and his team's comprehensive, organized expert approach to assessing our needs allowed us to complete this process in record time.", name: "Michael Whelan", title: "CIO", company: "Primedia / MSNBC", tier: "firm", tag: "Media" },
+  // 28 — FIRM / NHL
+  { quote: "Tony and his team simply got us better pricing and better SLA protections than we got for ourselves!", name: "Ryan Hughes", title: "Network Operations", company: "National Hockey League", tier: "firm", tag: "Gaming" },
+  // 29 — FIRM / ISABEL
+  { quote: "Tony and his team are out-of-the-box thinkers and are extremely professional. The caliber of their teams is excellent.", name: "Isabel Maxwell", title: "Entrepreneur at Large", company: "", tier: "firm", tag: "Enterprise" },
+  // 30 — FIRM / WTG
+  { quote: "When we receive a RampRate RFP it is professionally prepared and provides the information required for WTG to provide a quality proposal.", name: "Stacey McCormick", title: "Director of Sales", company: "World Telecom Group", tier: "firm", tag: "Enterprise" },
 ];
 
 /* ── REAL CLIENT LOGO IMAGES from ramprate.com ── */
@@ -296,12 +301,15 @@ export default function Proof() {
         </div>
       </section>
 
-      {/* ALL 28 Testimonials — masonry layout */}
+      {/* 30 Testimonials — interleaved Principal + Firm — masonry layout */}
       <section className="section-light py-20 sm:py-28">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-12" style={{ fontFamily: "var(--font-display)" }}>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4" style={{ fontFamily: "var(--font-display)" }}>
             What Our <span className="text-[oklch(0.55_0.15_30)]">Clients</span> Say
           </h2>
+          <p className="text-sm text-[oklch(0.5_0.02_50)] mb-12" style={{ fontFamily: "var(--font-body)" }}>
+            30 voices. Two decades. One consistent thread: Tony and his team deliver.
+          </p>
           <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
             {testimonials.map((t, i) => (
               <motion.div
@@ -310,9 +318,25 @@ export default function Proof() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: (i % 6) * 0.08 }}
-                className="break-inside-avoid bg-[oklch(0.97_0.01_80)] rounded-xl p-7 border border-black/5 hover:shadow-md transition-shadow"
+                className={`break-inside-avoid rounded-xl p-7 border hover:shadow-md transition-shadow ${
+                  t.tier === "principal"
+                    ? "bg-[oklch(0.97_0.02_30)] border-[oklch(0.55_0.15_30)]/15"
+                    : "bg-[oklch(0.97_0.01_80)] border-black/5"
+                }`}
               >
-                <Quote size={20} className="text-[oklch(0.55_0.15_30)]/30 mb-4" />
+                <div className="flex items-center justify-between mb-4">
+                  <Quote size={20} className="text-[oklch(0.55_0.15_30)]/30" />
+                  <div className="flex items-center gap-2">
+                    <span className="text-[9px] px-2 py-0.5 rounded-full bg-[oklch(0.94_0.03_80)] text-[oklch(0.45_0.02_50)] font-semibold tracking-wide uppercase" style={{ fontFamily: "var(--font-mono)" }}>
+                      {t.tag}
+                    </span>
+                    {t.tier === "principal" && (
+                      <span className="text-[9px] px-2 py-0.5 rounded-full bg-[oklch(0.55_0.15_30)]/10 text-[oklch(0.45_0.12_30)] font-semibold tracking-wide uppercase" style={{ fontFamily: "var(--font-mono)" }}>
+                        Principal
+                      </span>
+                    )}
+                  </div>
+                </div>
                 <p className="text-sm text-[oklch(0.35_0.02_50)] leading-relaxed mb-5 italic" style={{ fontFamily: "var(--font-body)" }}>
                   "{t.quote}"
                 </p>
