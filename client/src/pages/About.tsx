@@ -14,7 +14,7 @@ const coreTeam = [
   {
     name: "Tony Greenberg",
     role: "Founder & CEO",
-    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/pXhfZFSxoHWvNtJl.jpg",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/EtSyoZsiJamreUAA.png",
     bio: "25+ years. Helped take Exodus Communications public (revenue $5M to $600M). Founded RampRate in 2000. 250+ enterprise clients including Microsoft, eBay, Nike, Sony, CBS, Intel, Hearst. 75+ strategy/sourcing projects for Microsoft alone. Investor/advisor to 25+ impact startups across blockchain, psychedelic medicine, healthcare. Emissary to Bhutan's Gross National Happiness Centre. Speaker at Harvard, USC. Published in Forbes, Business Insider, HuffPost. Clinton Global Initiative, Aspen Institute, Tech Coast Angels.",
     linkedin: "https://www.linkedin.com/in/tonygreenberg",
     twitter: "https://x.com/thinktony",
@@ -22,7 +22,7 @@ const coreTeam = [
   {
     name: "Alex Veytsel",
     role: "Co-Founder & CSO",
-    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/rKUjHJhkfaGAoLgr.png",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/YWxJJXOzOBUuHshp.png",
     bio: "Expert in digital media business models, revenue streams, and technical infrastructure. Business planning and strategy advisor to Microsoft, Sony, Intel on value chain mapping, partner strategies, and pioneering business models. Joined RampRate 2004. As a sourcing advisor, he has helped both major TV networks (NBC, Fox) and industry pioneers (iFilm, Audible) reduce costs, improve performance, and reinvest negotiated savings in innovative technologies. Former senior research analyst at Aberdeen Group.",
     linkedin: "https://www.linkedin.com/in/aveytsel",
     twitter: null,
@@ -30,7 +30,7 @@ const coreTeam = [
   {
     name: "Josh Bykowski",
     role: "Corporate Development & Legal",
-    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/RMQMfjHVdQbFgjvi.png",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/aZCBGfwJAwMiioqX.png",
     bio: "Licensed US attorney. M&A advisory, data privacy, IP, emerging technologies. Expertise in blockchain technology and role as a Voting Associate for a decentralized organization with over $250 million AUM. Recognized by Columbia Law School's Blog on Corporations and Capital Markets. Panelist at legal CLE conferences.",
     linkedin: "https://www.linkedin.com/in/josh-bykowski-b445211b5",
     twitter: null,
@@ -38,7 +38,7 @@ const coreTeam = [
   {
     name: "Rob Holmes",
     role: "Web3 & Grants Manager, ImpactSoul",
-    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/elFOqWUcwPCIIOQB.png",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/olBFuRMEniuQAaTo.png",
     bio: "Web3 strategist and business development advisor. Over seven years in the space helping founders, protocols, and ecosystems bridge crypto and the physical world — focusing on tokenized infrastructure, DePIN, clean energy, and real-world asset (RWA) integration. Before Web3, spent a decade in engineering and infrastructure, beginning at Halcrow, one of the UK's oldest engineering firms.",
     linkedin: "https://www.linkedin.com/in/rob-holmes-7a479016",
     twitter: null,
@@ -58,80 +58,90 @@ const boardAdvisors = [
   {
     name: "Stuart Newton",
     role: "Strategic Advisor",
-    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/ILlNmwvCsckXBqPO.jpg",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/iyZuFkUvbFZRaLIv.png",
     bio: "Recently retired from Deloitte where he led business development nationally for the Blockchain and Digital Asset Practice as well as globally for the Wine Practice. Portfolio Success Leader for select private equity firms. Co-founder of Abundant Village.",
+    whyAdvise: "RampRate operates at the intersection of blockchain and enterprise trust — exactly where the next decade of value creation lives. I advise because they don't just talk about transformation, they broker it.",
     linkedin: "https://pr.linkedin.com/in/stuartnewton",
     twitter: null,
   },
   {
     name: "Gulliver Smithers",
     role: "ex-CTO Sony D2C",
-    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/eUVmQqArMuCNZtXr.png",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/kKJJUsyZjjyWxRiZ.png",
     bio: "Product-oriented CTO with over 20 years across media. Previously CTO at Sony D2C, VP of Product at the BBC, CTO at Base79 (successful exit), and Director of On-Demand at ITV. Expertise spans streaming architecture, product management, and multi-platform development.",
+    whyAdvise: "Having built streaming platforms at Sony and the BBC, I know how rare it is to find advisors who understand both the technology and the business model. RampRate does both — and they've been doing it longer than anyone.",
     linkedin: "https://uk.linkedin.com/in/gulliversmithers",
     twitter: "https://x.com/GulliverSmither",
   },
   {
     name: "Purvee Kondal",
     role: "VP Sephora, Global Procurement",
-    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/DmFFlqTRTIEZwtwI.webp",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/YSxTQFUJHlUuFtlE.png",
     bio: "Vice President at SEPHORA, Global Procurement Officer. Over 15 years at J&J, GE, Capgemini, Ross Stores, Globality, and Albertsons. Pioneering Indian American woman to hold the NACD.DC designation. MBA from Kellogg at Northwestern University.",
+    whyAdvise: "Procurement at the enterprise level is a battlefield of information asymmetry. RampRate levels that field with data nobody else has. That's why I'm here — they make procurement honest.",
     linkedin: "https://www.linkedin.com/in/purveek",
     twitter: null,
   },
   {
     name: "Curt Hessler",
     role: "ex-Asst. Secretary of Treasury",
-    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/YLsgxbxwspMjUSdw.png",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/CLTxUwdWDeYNuRdP.png",
     bio: "Served as Assistant Secretary of the Treasury for Economic Policy. Senior positions at Unisys and Times-Mirror Group. Chairman and founding CEO of 101communications. Rhodes Scholar. Harvard BA, Yale Law JD, UC Berkeley MA in Economics.",
+    whyAdvise: "I've served at the highest levels of government and industry. RampRate brings the same rigor I demanded at Treasury — data-driven, conflict-free, and accountable to outcomes, not hours billed.",
     linkedin: "https://www.linkedin.com/in/curt-hessler-a3682b3a",
     twitter: null,
   },
   {
     name: "Barry Patmore",
     role: "34yr Accenture Partner",
-    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/yOBAXZZhcHZhmOMj.png",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/gyKtcYcxpmXoEpQB.png",
     bio: "Distinguished 34-year career at Accenture. Clients included Microsoft, Disney, Visa, JPL. Managing partner of Pacific Northwest and Southern California offices. Co-developed Method/1 and collaborated with Michael Hammer on business process re-engineering.",
+    whyAdvise: "After 34 years at Accenture, I know what consulting should be and what it usually isn't. RampRate is what it should be — principals who execute, not associates who present.",
     linkedin: "https://www.linkedin.com/in/barry-patmore-8188b526",
     twitter: null,
   },
   {
     name: "Peter Gross",
     role: "VP Bloom Energy",
-    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/kkqxDucjDNUUXIpQ.png",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/KnqUilgCDpoTOQMX.png",
     bio: "Former CEO EYP Mission Critical Facilities. Data center strategic planning, design, operations. VP at Bloom Energy with deep expertise in sustainable energy infrastructure. Advisory board member at Redivider.",
+    whyAdvise: "Infrastructure decisions are permanent and expensive. RampRate's SPY Index gives enterprises the data to make those decisions right the first time. That's worth more than any consulting engagement.",
     linkedin: "https://www.linkedin.com/in/petrgross",
     twitter: null,
   },
   {
     name: "Peter Hirshberg",
     role: "ex-Apple, $1B Enterprise Revenue",
-    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/QmgSWAnZPqduAHKb.png",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/wCigzGydvwbnZpVw.png",
     bio: "9 years at Apple, grew enterprise revenue to $1B annually. Chairman of the executive committee of Technorati, tracking over 100 million Weblogs. Co-founder and chairman of The Conversation Group. Clients included AOL, Microsoft, NBC, Estee Lauder.",
+    whyAdvise: "I grew Apple's enterprise business to a billion dollars. The one thing I learned: relationships compound. RampRate has 25 years of compounded trust with the world's most important buyers. That's irreplaceable.",
     linkedin: "https://www.linkedin.com/in/hirshberg",
     twitter: "https://x.com/hirshberg",
   },
   {
     name: "Joe Weinman",
     role: "Author, Cloudonomics",
-    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/OXBRrCfquIfGdqNH.png",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/uuVlUAhjtxyNCxXB.png",
     bio: "Author of 'Cloudonomics: The Business Value of Cloud Computing' (Wiley). Awarded 20 U.S. and international patents. Senior executive at Telx, AT&T, Bell Labs, and Hewlett Packard. Named Top 10 Cloud Computing Leader. Cornell BS, UW-Madison MS in Computer Science.",
+    whyAdvise: "I wrote the book on cloud economics. RampRate lives it — they have the only dataset that can tell you what cloud infrastructure actually costs versus what vendors claim. That's the difference between theory and leverage.",
     linkedin: "https://www.linkedin.com/in/joeweinman",
     twitter: "https://x.com/joeweinman",
   },
   {
     name: "Sandy Climan",
     role: "ex-CAA / Universal Studios",
-    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/jeEhGYbagnzDkfJe.jpg",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/XzkRpmGIMlRHdLfQ.png",
     bio: "CEO of Entertainment Media Ventures. Senior management at Creative Artists Agency, representing Robert Redford, Robert De Niro, Kevin Costner. EVP and President of Worldwide Business Development for Universal Studios. Producer of 'The Aviator.' Harvard BA, Harvard MBA, Harvard MS in Health Policy.",
+    whyAdvise: "In Hollywood, the deal is everything. RampRate understands deal architecture the way CAA understands talent — they structure outcomes where everyone wins, and that's why the relationships last decades.",
     linkedin: "https://www.linkedin.com/in/sandycliman",
     twitter: "https://x.com/ClimanSandy",
   },
   {
     name: "Tyler Kolodney",
     role: "ex-Baltimore Orioles",
-    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/UVyoiPewtvstKrsa.jpg",
+    img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/neoMXOKFotRSwfyT.png",
     bio: "Former executive with the Baltimore Orioles organization, bringing sports industry expertise and business development acumen to RampRate's advisory board.",
+    whyAdvise: "Sports teaches you that winning is about preparation, not luck. RampRate prepares their clients with intelligence that turns negotiations from coin flips into calculated advantages.",
     linkedin: "https://www.linkedin.com/in/tyler-kolodny-451522192",
     twitter: "https://x.com/kolodnytyler",
   },
@@ -341,7 +351,7 @@ export default function About() {
               >
                 {m.img ? (
                   <div className="h-56 bg-[oklch(0.92_0.01_80)] overflow-hidden">
-                    <img src={m.img} alt={m.name} className="w-full h-full object-cover object-top" loading="lazy" />
+                    <img src={m.img} alt={m.name} className="w-full h-full object-cover object-[center_20%]" loading="lazy" />
                   </div>
                 ) : (
                   <div className="h-56 bg-[oklch(0.92_0.01_80)] flex items-center justify-center">
@@ -395,7 +405,7 @@ export default function About() {
               >
                 {m.img ? (
                   <div className="h-44 bg-[oklch(0.92_0.01_80)] overflow-hidden">
-                    <img src={m.img} alt={m.name} className="w-full h-full object-cover object-top" loading="lazy" />
+                    <img src={m.img} alt={m.name} className="w-full h-full object-cover object-[center_20%]" loading="lazy" />
                   </div>
                 ) : (
                   <div className="h-44 bg-[oklch(0.92_0.01_80)] flex items-center justify-center">
@@ -423,7 +433,13 @@ export default function About() {
                       )}
                     </div>
                   </div>
-                  <p className="mt-2 text-xs text-[oklch(0.45_0.02_50)] leading-relaxed line-clamp-3" style={{ fontFamily: "var(--font-body)" }}>{m.bio}</p>
+                  <p className="mt-2 text-xs text-[oklch(0.45_0.02_50)] leading-relaxed line-clamp-4" style={{ fontFamily: "var(--font-body)" }}>{m.bio}</p>
+                  {m.whyAdvise && (
+                    <div className="mt-3 p-3 rounded-lg bg-gradient-to-br from-[oklch(0.55_0.15_30)]/5 to-[oklch(0.82_0.15_75)]/5 border border-[oklch(0.55_0.15_30)]/10 backdrop-blur-sm">
+                      <p className="text-[10px] font-semibold uppercase tracking-wider text-[oklch(0.55_0.15_30)] mb-1" style={{ fontFamily: "var(--font-body)" }}>Why I Advise RampRate</p>
+                      <p className="text-[11px] text-[oklch(0.4_0.02_50)] leading-relaxed italic" style={{ fontFamily: "var(--font-body)" }}>"{m.whyAdvise}"</p>
+                    </div>
+                  )}
                 </div>
               </motion.div>
             ))}

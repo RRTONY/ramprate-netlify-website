@@ -19,30 +19,38 @@ import BrandsSection from "@/components/BrandsSection";
 const HERO_IMG =
   "https://private-us-east-1.manuscdn.com/sessionFile/m6kc1Tn353i2D6rxZBg8XB/sandbox/J7HEXUnaovvTBQvdWYHk6M-img-2_1771884573000_na1fn_aGVyby1jb252ZXJnZW5jZS12Mg.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvbTZrYzFUbjM1M2kyRDZyeFpCZzhYQi9zYW5kYm94L0o3SEVYVW5hb3Z2VEJRdmRXWUhrNk0taW1nLTJfMTc3MTg4NDU3MzAwMF9uYTFmbl9hR1Z5YnkxamIyNTJaWEpuWlc1alpTMTJNZy5wbmc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=dR8T9HY3gTId1kbm5~sRaczbVNRMTI0pb4eePWr5NSovZ4J2cqRm2TXlwcNnQDGNke5A-sRevt51xkxV9ncZqnHZeHChDGPkuKzFDDSEQSJiYSlhQDINZfrQhUcDhfH69AryM~jkJvoGu2FEN8PlICaOdV1c8tLovvk3JA0MUcwBcn1t-jripUvbE9WpjJdwBXRzrC6eGMcsinhFBvUfihrr8v1~Hz8cfo5Qxvlg1WzJFe8QspW~Ah-Tb2f5bv5nryfqizSi-CjDgLge6PZap4xIipojP-88nrUZlzQEOzfz5Yvne6Bg7AehzgweeKWG-24HipP0CnPjpb2DFvjElA__";
 
-/* ── CLIENT DOMINANCE WALL ── */
-const clients = [
-  { name: "Microsoft", context: "50+ product/media studies for Windows Marketing" },
-  { name: "eBay", context: "27% infrastructure savings; global data center optimization" },
-  { name: "Sony", context: "Deep 8-figure outsourcing; M&A research; global IT" },
-  { name: "ViacomCBS", context: "Budget optimization across Broadcast, Satellite, Telecom, Cloud, CDN" },
-  { name: "Intel", context: "Digital Home strategy, alliances, global product analysis" },
-  { name: "Nike", context: "Multi-year procurement, 7-figure cost reductions" },
-  { name: "Hearst", context: "16+ years optimization; saved millions globally" },
-  { name: "Blizzard", context: "Complex negotiations; rapid global scaling" },
-  { name: "Disney", context: "Best IT deal during executive tenure" },
+/* ── CLIENT LOGO WALL — Two-Tier ── */
+const tier1Clients = [
+  { name: "Microsoft", context: "50+ strategy & product studies" },
+  { name: "eBay", context: "27% infrastructure savings" },
+  { name: "Sony", context: "Deep 8-figure outsourcing deals" },
+  { name: "ViacomCBS", context: "Budget optimization across all IT categories" },
+  { name: "Intel", context: "Digital strategy & alliances research" },
+  { name: "Nike", context: "Multi-year procurement, 7-figure reductions" },
+  { name: "Hearst", context: "16+ years, saved millions globally" },
+  { name: "Blizzard", context: "Complex negotiations, rapid scaling" },
+];
+const tier2Clients = [
+  { name: "Disney", context: "Best IT services deal during executive tenure" },
   { name: "AOL", context: "17-36% price reductions; breakthrough SLAs" },
-  { name: "NHL", context: "Breakthrough PPV streaming; total outsourcing solution" },
-  { name: "Miramax", context: "40%+ savings; months of diligence compressed" },
-  { name: "Warner Bros", context: "Win-win structures across two studio engagements" },
-  { name: "Verizon", context: "Enterprise telecom optimization" },
-  { name: "AT&T", context: "Strategic infrastructure advisory" },
-  { name: "Merrill Lynch", context: "Financial services IT transformation" },
-  { name: "Thomson Reuters", context: "Saved millions; adaptable and on-budget" },
-  { name: "Primedia", context: "Record-time outsourcing assessment" },
+  { name: "NHL", context: "Breakthrough PPV streaming solution" },
+  { name: "Miramax", context: "40%+ savings; diligence compressed" },
+  { name: "Warner Bros.", context: "Win-win structures across two engagements" },
+  { name: "Verizon", context: "Enterprise telecom partnerships" },
+  { name: "AT&T", context: "Telecom infrastructure navigation" },
+  { name: "Merrill Lynch", context: "Fortune 500 IT cost optimization" },
   { name: "Accenture", context: "20-40% savings; cut processes in half" },
-  { name: "Beats Music", context: "Best solution for scalability; acquired by Apple" },
+  { name: "Thomson Reuters", context: "Saved millions; marketplace mapping" },
+  { name: "Primedia", context: "Needs assessment in record time" },
+  { name: "Beats Music", context: "Fully installed in 30 hours" },
   { name: "XPRIZE", context: "$3M+ grant funding managed" },
-  { name: "Syntropy", context: "US market penetration; enterprise partnerships" },
+  { name: "Syntropy", context: "4+ year daily engagement; growth accelerated" },
+  { name: "Riot Games", context: "Rapid scaling for multiplayer platforms" },
+  { name: "NBC", context: "Content delivery optimization" },
+  { name: "Fox", context: "Broadcast infrastructure advisory" },
+  { name: "Ticketmaster", context: "eCommerce infrastructure" },
+  { name: "McGraw Hill", context: "Publishing infrastructure optimization" },
+  { name: "Vodafone", context: "Global telecom advisory" },
 ];
 
 /* ── SELECTED ENGAGEMENTS ── */
@@ -183,9 +191,29 @@ function useCarousel(length: number, interval = 5000) {
   return { active, next, prev, goTo };
 }
 
+function ClientCard({ name, context }: { name: string; context: string }) {
+  return (
+    <div className="text-center px-2 py-4">
+      <h3
+        className="text-xs sm:text-sm font-bold tracking-[0.15em] uppercase text-white/60"
+        style={{ fontFamily: "var(--font-display)" }}
+      >
+        {name}
+      </h3>
+      <p
+        className="text-[11px] sm:text-xs text-white/30 mt-1 leading-snug"
+        style={{ fontFamily: "var(--font-body)" }}
+      >
+        {context}
+      </p>
+    </div>
+  );
+}
+
 export default function Home() {
   const { active, next, prev, goTo } = useCarousel(testimonials.length, 6000);
   const timelineRef = useRef<HTMLDivElement>(null);
+  const [showAllClients, setShowAllClients] = useState(false);
 
   return (
     <div className="min-h-screen">
@@ -200,6 +228,11 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#0a0f1a] via-[#0a0f1a]/85 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1a]/90 via-transparent to-[#0a0f1a]/40" />
         </div>
+
+        {/* Glassmorphic orbs */}
+        <div className="glass-orb glass-orb-amber w-[500px] h-[500px] -top-40 -right-40 z-[1] animate-pulse" style={{ animationDuration: '8s' }} />
+        <div className="glass-orb glass-orb-rust w-[300px] h-[300px] bottom-20 left-10 z-[1] animate-pulse" style={{ animationDuration: '12s' }} />
+        <div className="glass-orb glass-orb-blue w-[200px] h-[200px] top-1/3 right-1/4 z-[1] animate-pulse" style={{ animationDuration: '10s' }} />
 
         <div className="relative z-10 flex-1 flex items-center">
           <div className="max-w-7xl mx-auto px-5 sm:px-8 w-full pt-28 pb-16">
@@ -281,50 +314,71 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          CLIENT DOMINANCE WALL
+          CLIENT LOGO WALL — Two-Tier Expandable
       ═══════════════════════════════════════════════════ */}
-      <section className="bg-[#0d1117] py-28 sm:py-36">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      <section className="bg-[#0d1117] py-16 sm:py-20">
+        <div className="max-w-6xl mx-auto px-5 sm:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             <h2
-              className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight"
               style={{ fontFamily: "var(--font-display)" }}
             >
               25 Years Inside the World's Most
               <br className="hidden sm:block" />
               <span className="text-[oklch(0.82_0.15_75)]"> Complex Enterprises</span>
             </h2>
+            <p
+              className="mt-3 text-sm text-white/40"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              100+ engagements. $24B+ in decisions brokered. Names you know.
+            </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-            {clients.map((client, i) => (
-              <motion.div
-                key={client.name}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.03 }}
-                className="group relative bg-white/[0.03] border border-white/[0.06] rounded-lg p-5 hover:bg-white/[0.08] hover:border-[oklch(0.82_0.15_75)]/30 transition-all duration-300 cursor-default"
-              >
-                <h3
-                  className="text-sm font-bold text-white/40 group-hover:text-white transition-colors duration-300 mb-0"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
-                  {client.name}
-                </h3>
-                <p
-                  className="text-[11px] text-white/0 group-hover:text-white/50 transition-all duration-300 mt-1.5 leading-snug"
-                  style={{ fontFamily: "var(--font-body)" }}
-                >
-                  {client.context}
-                </p>
-              </motion.div>
+          {/* Tier 1: Power Row */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-px bg-white/[0.04] rounded-lg overflow-hidden border border-white/[0.06]">
+            {tier1Clients.map((c) => (
+              <div key={c.name} className="bg-[#0d1117] p-3 sm:p-4">
+                <ClientCard name={c.name} context={c.context} />
+              </div>
             ))}
+          </div>
+
+          {/* Tier 2: Expandable */}
+          <AnimatePresence>
+            {showAllClients && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.25, ease: "easeInOut" }}
+                className="overflow-hidden"
+              >
+                <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-px bg-white/[0.04] rounded-lg overflow-hidden border border-white/[0.06] mt-3">
+                  {tier2Clients.map((c) => (
+                    <div key={c.name} className="bg-[#0d1117] p-3 sm:p-4">
+                      <ClientCard name={c.name} context={c.context} />
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {/* Toggle Button */}
+          <div className="flex justify-center mt-6">
+            <button
+              onClick={() => setShowAllClients(!showAllClients)}
+              className="text-xs font-semibold tracking-[0.15em] uppercase text-white/40 hover:text-white/70 transition-colors"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              {showAllClients ? "\u2014 Show Less" : "+ View All Clients"}
+            </button>
           </div>
         </div>
       </section>
@@ -332,8 +386,10 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════════
           SELECTED ENGAGEMENTS
       ═══════════════════════════════════════════════════ */}
-      <section className="bg-[#0a0f1a] py-28 sm:py-36">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      <section className="relative bg-[#0a0f1a] py-28 sm:py-36 overflow-hidden">
+        <div className="glass-orb glass-orb-blue w-[400px] h-[400px] -bottom-40 -left-40" />
+        <div className="glass-orb glass-orb-amber w-[250px] h-[250px] top-20 right-10" />
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -362,7 +418,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.12 }}
-                className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-8 hover:border-white/[0.15] transition-all duration-300"
+                className="glass-card p-8 hover:border-white/[0.15] transition-all duration-300"
               >
                 <div
                   className="w-1 h-10 rounded-full mb-6"
@@ -587,8 +643,10 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════════
           EXECUTIVE TESTIMONIAL CAROUSEL
       ═══════════════════════════════════════════════════ */}
-      <section className="bg-[#0f1419] py-28 sm:py-36">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      <section className="relative bg-[#0f1419] py-28 sm:py-36 overflow-hidden">
+        <div className="glass-orb glass-orb-rust w-[350px] h-[350px] -top-20 left-1/3" />
+        <div className="glass-orb glass-orb-amber w-[200px] h-[200px] bottom-10 right-20" />
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -33,3 +33,20 @@
 - [x] Add owner notification on new lead submission
 - [x] Add loading state and error handling to contact form
 - [x] Write vitest tests for lead submission (8 tests, all passing)
+
+## Blog Enhancements
+- [x] Generate compelling thumbnail images for each blog post (Japanese minimalism + sacred geometry style)
+- [x] Evaluate date display strategy — removed dates for timelessness
+- [x] Integrate generated images into blog components
+- [x] Research and add 20 more prescient blog posts from RampRate/TonyGreenberg archives
+- [x] Add credibility grading system (Did it come true? Importance? Validity?)
+- [x] Add "Proved True" / "Wave of the Future" toggle/button per post
+- [x] Position blog as proof RampRate sees the future — "We are the articles"
+- [x] Rebuild client logo wall: two-tier expandable grid, grayscale text-as-logo, context lines
+- [x] Fix Reuben/Rob Holmes swap on About page
+- [x] Fix cut-off heads on team photos (object-position adjusted)
+- [x] AI-enhance team photos to be uniform and slightly stylized
+- [x] Add LinkedIn links to all team members
+- [x] Upload blog thumbnails to S3 and integrate into Blog page
+- [x] Add glassmorphic design elements across the site (cards, overlays, frosted glass effects)
+- [x] Add simulated "why I support RampRate" quotes for each advisor on About page
