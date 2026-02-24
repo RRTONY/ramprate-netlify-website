@@ -57,36 +57,63 @@ const caseStudies = [
   },
 ];
 
-/* ── ALL 28 REAL TESTIMONIALS ── */
+/* ── ALL 28 REAL TESTIMONIALS — ordered by formal priority ── */
 const testimonials = [
-  { quote: "Partnering with RampRate was and continues to be game-changing for Syntropy. Within just a couple of months we expanded our reach beyond what we thought was possible. RampRate's experience navigating telecom and cloud serves as an invaluable asset.", name: "Domantas Jaskunas", title: "Co-Founder", company: "Syntropy" },
-  { quote: "RampRate was a risk-free proposition money-wise. If they didn't save or create us at least twice their initial fee we'd get a full refund. They hit 27% savings and the relationships are stronger than ever.", name: "Paul Santana", title: "Manager of Data Center Operations", company: "eBay" },
-  { quote: "Tony's network is of a depth that allows almost instantaneous connectivity at the highest level with significant yield across industries.", name: "Wulf Kaal", title: "Entrepreneur & Co-Founder", company: "Menagerie" },
-  { quote: "As our key growth consultant, investor and activator, Tony and RampRate's team have under-promised and over-delivered for more than 4 years. They are a force of nature.", name: "Kipras Kazlauskas", title: "Co-Founder", company: "Syntropy" },
-  { quote: "Intel engaged RampRate as we launched our Digital Home content strategy & alliances group. They provided valuable and highly targeted research — truly understanding our needs, timeline and budget.", name: "Ron Vaisbort", title: "Executive", company: "Intel" },
-  { quote: "We can count on RampRate to be precise, timely and create millions in value. They are no-nonsense data driven and responsive to a T.", name: "Dean Nelson", title: "VP Global Foundation Services", company: "eBay" },
+  // #1 — Phil Wiser, 16-year relationship, top executive
   { quote: "For over 16 years, RampRate helped my companies understand the differences between suppliers. They saved us millions, created agility and new budget out of thin air with each engagement.", name: "Phil Wiser", title: "EVP & CTO", company: "ViacomCBS" },
+  // #2 — Accenture, 20-40% savings
   { quote: "Each time they have saved significant time in negotiating and closing contracts, which provided at least 20 if not 40% savings over what we could have done alone.", name: "Michael Montalto", title: "Consultant", company: "Accenture" },
-  { quote: "Keeping us focused, educating us on our options, identifying well qualified suppliers, and operating under tight deadlines were all things that RampRate did exceptionally well.", name: "Todd Miller", title: "CIO", company: "SF Chronicle – Hearst Corp" },
-  { quote: "RampRate has been my most reliable global resource and is ready to perform at a moment's notice. They made scaling easier.", name: "Paul Sams", title: "COO", company: "Blizzard Entertainment" },
-  { quote: "Tony and his team are very well connected in the global high-tech community. He is a generous giver of his time and energy to worthy causes, driving impact to become measurable, attainable and reportable.", name: "William Quigley", title: "Managing Director", company: "WAX / Clearstone Venture Partners" },
-  { quote: "Since engaging them they have helped me significantly reduce my cost structure through several major outsourcing deals worth deep 8 figures. They made me look like a hero to my executive management.", name: "Peter Borner", title: "Former Head of IT", company: "Sony Music" },
-  { quote: "RampRate helped us cut the clutter, gain insight and distill our team's thoughts for over 50 digital media, IT and product studies. RampRate is an invaluable partner for us.", name: "Gary Share", title: "Windows Marketing and Product", company: "Microsoft" },
-  { quote: "Not only did RampRate save us an incredible amount of time, resources, and money, but also we know we have the best possible solution for our needs now and far beyond.", name: "Ian Rodgers", title: "CEO Beats Music, GM Yahoo Music", company: "Beats Music (acquired by Apple)" },
-  { quote: "They brought in two other providers, had all providers re-quote, and lowered overall prices between 17-36%. They helped us achieve breakthrough innovative best-of-breed SLA coverage.", name: "Charles Butler", title: "Director of Network Operations", company: "AOL" },
-  { quote: "RampRate's comprehensive, organized expert approach to assessing our needs allowed us to complete this process in record time.", name: "Michael Whelan", title: "CIO", company: "Primedia / MSNBC" },
-  { quote: "RampRate simply got us better pricing and better SLA protections than we got for ourselves!", name: "Ryan Hughes", title: "Network Operations", company: "National Hockey League" },
-  { quote: "RampRate handled our project with the utmost professionalism and requisite confidentiality. They work fast, saved us over 40% and months of due diligence.", name: "Andrew Robbins", title: "Vice President of New Media", company: "Miramax" },
-  { quote: "RampRate was adaptable, brilliant and innovative. Their team stayed on schedule and stayed within the price. We saved millions.", name: "Niles Triget", title: "Executive", company: "Thomson Reuters / Delphion" },
-  { quote: "When we receive a RampRate RFP it is professionally prepared and provides the information required for WTG to provide a quality proposal.", name: "Stacey McCormick", title: "Director of Sales", company: "World Telecom Group" },
+  // #3 — Disney / Warner Bros
   { quote: "The deal that RampRate got for the Walt Disney Internet Group was one of the best deals in IT services I saw during my tenure at Disney.", name: "Robert Gonsalves", title: "Former Director of Production Operations", company: "Warner Bros. Online / Walt Disney" },
-  { quote: "I have always considered RampRate a trusted advisor when it comes to digital entertainment services. RampRate combines a unique approach with consulting professionals who deliver results.", name: "Geoff Campbell", title: "Former VP", company: "Sony Corporation of America" },
-  { quote: "RampRate are out-of-the-box thinkers and are extremely professional. The caliber of their teams is excellent.", name: "Isabel Maxwell", title: "Entrepreneur at Large", company: "" },
-  { quote: "In a field filled with prognosticators, RampRate applies sound business judgment and analytics to assist senior management in making crucial, time-sensitive decisions.", name: "Jay Samit", title: "Former EVP", company: "Sony Corporation of America" },
-  { quote: "RampRate is in a league of its own when it comes to matching the right solutions with the right clients.", name: "Kevin Shively", title: "Executive Director", company: "International Webcasting Association" },
+  // #4 — Sony, deep 8-figure deals
+  { quote: "Since engaging them they have helped me significantly reduce my cost structure through several major outsourcing deals worth deep 8 figures. They made me look like a hero to my executive management.", name: "Peter Borner", title: "Former Head of IT", company: "Sony Music" },
+  // #5 — Microsoft, hundreds of millions in spend
   { quote: "Your team stayed on schedule and stayed within the price dozens of times across hundreds of millions in spend. You have always saved us tremendous time and money.", name: "Rich Lappenbusch", title: "Executive", company: "Microsoft" },
-  { quote: "I would recommend either he or his firm unequivocally for business planning, scale or cost containment. They are globally astute consummate analysts and deal pros extraordinaire.", name: "Richard Titus", title: "EVP BBC, Managing Director Razorfish LA", company: "BBC / Razorfish" },
+  // #6 — eBay VP, millions in value
+  { quote: "We can count on RampRate to be precise, timely and create millions in value. They are no-nonsense data driven and responsive to a T.", name: "Dean Nelson", title: "VP Global Foundation Services", company: "eBay" },
+  // #7 — eBay, 27% savings
+  { quote: "RampRate was a risk-free proposition money-wise. If they didn't save or create us at least twice their initial fee we'd get a full refund. They hit 27% savings and the relationships are stronger than ever.", name: "Paul Santana", title: "Manager of Data Center Operations", company: "eBay" },
+  // #8 — Blizzard COO
+  { quote: "RampRate has been my most reliable global resource and is ready to perform at a moment's notice. They made scaling easier.", name: "Paul Sams", title: "COO", company: "Blizzard Entertainment" },
+  // #9 — Microsoft, 50+ studies
+  { quote: "RampRate helped us cut the clutter, gain insight and distill our team's thoughts for over 50 digital media, IT and product studies. RampRate is an invaluable partner for us.", name: "Gary Share", title: "Windows Marketing and Product", company: "Microsoft" },
+  // #10 — Intel
+  { quote: "Intel engaged RampRate as we launched our Digital Home content strategy & alliances group. They provided valuable and highly targeted research — truly understanding our needs, timeline and budget.", name: "Ron Vaisbort", title: "Executive", company: "Intel" },
+  // #11 — Frequency/Viacom, 75% reduction
   { quote: "RampRate knows this business better than anyone. We reduced our monthly expenditure by over 75%.", name: "Blair Harrison", title: "CEO", company: "Frequency (formerly Viacom)" },
+  // #12 — Hearst CIO, 16+ years
+  { quote: "Keeping us focused, educating us on our options, identifying well qualified suppliers, and operating under tight deadlines were all things that RampRate did exceptionally well.", name: "Todd Miller", title: "CIO", company: "SF Chronicle – Hearst Corp" },
+  // #13 — BBC / Razorfish EVP
+  { quote: "I would recommend either he or his firm unequivocally for business planning, scale or cost containment. They are globally astute consummate analysts and deal pros extraordinaire.", name: "Richard Titus", title: "EVP BBC, Managing Director Razorfish LA", company: "BBC / Razorfish" },
+  // #14 — Sony VP
+  { quote: "I have always considered RampRate a trusted advisor when it comes to digital entertainment services. RampRate combines a unique approach with consulting professionals who deliver results.", name: "Geoff Campbell", title: "Former VP", company: "Sony Corporation of America" },
+  // #15 — Sony EVP
+  { quote: "In a field filled with prognosticators, RampRate applies sound business judgment and analytics to assist senior management in making crucial, time-sensitive decisions.", name: "Jay Samit", title: "Former EVP", company: "Sony Corporation of America" },
+  // #16 — Beats Music / Apple
+  { quote: "Not only did RampRate save us an incredible amount of time, resources, and money, but also we know we have the best possible solution for our needs now and far beyond.", name: "Ian Rodgers", title: "CEO Beats Music, GM Yahoo Music", company: "Beats Music (acquired by Apple)" },
+  // #17 — AOL, 17-36% reductions
+  { quote: "They brought in two other providers, had all providers re-quote, and lowered overall prices between 17-36%. They helped us achieve breakthrough innovative best-of-breed SLA coverage.", name: "Charles Butler", title: "Director of Network Operations", company: "AOL" },
+  // #18 — Miramax, 40%+ savings
+  { quote: "RampRate handled our project with the utmost professionalism and requisite confidentiality. They work fast, saved us over 40% and months of due diligence.", name: "Andrew Robbins", title: "Vice President of New Media", company: "Miramax" },
+  // #19 — Thomson Reuters, saved millions
+  { quote: "RampRate was adaptable, brilliant and innovative. Their team stayed on schedule and stayed within the price. We saved millions.", name: "Niles Triget", title: "Executive", company: "Thomson Reuters / Delphion" },
+  // #20 — WAX / Clearstone
+  { quote: "Tony and his team are very well connected in the global high-tech community. He is a generous giver of his time and energy to worthy causes, driving impact to become measurable, attainable and reportable.", name: "William Quigley", title: "Managing Director", company: "WAX / Clearstone Venture Partners" },
+  // #21 — Primedia / MSNBC CIO
+  { quote: "RampRate's comprehensive, organized expert approach to assessing our needs allowed us to complete this process in record time.", name: "Michael Whelan", title: "CIO", company: "Primedia / MSNBC" },
+  // #22 — NHL
+  { quote: "RampRate simply got us better pricing and better SLA protections than we got for ourselves!", name: "Ryan Hughes", title: "Network Operations", company: "National Hockey League" },
+  // #23 — Isabel Maxwell
+  { quote: "RampRate are out-of-the-box thinkers and are extremely professional. The caliber of their teams is excellent.", name: "Isabel Maxwell", title: "Entrepreneur at Large", company: "" },
+  // #24 — Menagerie
+  { quote: "Tony's network is of a depth that allows almost instantaneous connectivity at the highest level with significant yield across industries.", name: "Wulf Kaal", title: "Entrepreneur & Co-Founder", company: "Menagerie" },
+  // #25 — IWA
+  { quote: "RampRate is in a league of its own when it comes to matching the right solutions with the right clients.", name: "Kevin Shively", title: "Executive Director", company: "International Webcasting Association" },
+  // #26 — World Telecom Group
+  { quote: "When we receive a RampRate RFP it is professionally prepared and provides the information required for WTG to provide a quality proposal.", name: "Stacey McCormick", title: "Director of Sales", company: "World Telecom Group" },
+  // #27-28 — Syntropy consolidated at bottom
+  { quote: "Partnering with RampRate was and continues to be game-changing for Syntropy. Within just a couple of months we expanded our reach beyond what we thought was possible. RampRate's experience navigating telecom and cloud serves as an invaluable asset.", name: "Domantas Jaskunas", title: "Co-Founder", company: "Syntropy" },
+  { quote: "As our key growth consultant, investor and activator, Tony and RampRate's team have under-promised and over-delivered for more than 4 years. They are a force of nature.", name: "Kipras Kazlauskas", title: "Co-Founder", company: "Syntropy" },
 ];
 
 /* ── REAL CLIENT LOGO IMAGES from ramprate.com ── */
