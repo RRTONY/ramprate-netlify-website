@@ -51,14 +51,7 @@ export default function CTASection() {
               className="px-8 py-4 rounded-md text-sm sm:text-base font-semibold bg-white text-[oklch(0.25_0.15_260)] hover:bg-white/90 transition-all shadow-lg"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              Book a Strategy Call
-            </Link>
-            <Link
-              href="/connect"
-              className="px-8 py-4 rounded-md text-sm sm:text-base font-semibold border border-white/30 text-white hover:bg-white/10 transition-all"
-              style={{ fontFamily: "var(--font-body)" }}
-            >
-              Message Us
+              Request Principal Review
             </Link>
           </div>
         </motion.div>

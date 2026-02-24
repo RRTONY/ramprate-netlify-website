@@ -14,6 +14,7 @@ import About from "./pages/About";
 import Connect from "./pages/Connect";
 import Blog from "./pages/Blog";
 import Process from "./pages/Process";
+import Thinking from "./pages/Thinking";
 import { Redirect } from "wouter";
 
 function Router() {
@@ -29,6 +30,7 @@ function Router() {
       <Route path={"/connect"} component={Connect} />
       <Route path={"/blog"} component={Blog} />
       <Route path={"/process"} component={Process} />
+      <Route path={"/thinking"} component={Thinking} />
       <Route path={"/start"}>{() => <Redirect to="/connect" />}</Route>
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />

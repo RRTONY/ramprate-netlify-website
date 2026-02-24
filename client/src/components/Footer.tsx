@@ -16,7 +16,7 @@ const companyLinks = [
   { label: "Proof", href: "/proof" },
   { label: "About", href: "/about" },
   { label: "Blog", href: "/blog" },
-  { label: "Connect", href: "/connect" },
+  { label: "Engage", href: "/connect" },
 ];
 
 export default function Footer() {
@@ -96,7 +96,7 @@ export default function Footer() {
               className="text-xs font-semibold uppercase tracking-[0.2em] text-white/30 mb-4"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              Connect
+              Engage
             </h4>
             <a
               href="mailto:hello@ramprate.com"

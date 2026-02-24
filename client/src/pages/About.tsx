@@ -220,6 +220,50 @@ export default function About() {
         </div>
       </section>
 
+      {/* Principals, Not Pyramids */}
+      <section className="bg-[#0d1117] py-20 sm:py-28">
+        <div className="max-w-4xl mx-auto px-5 sm:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <span
+              className="text-xs font-semibold tracking-[0.2em] uppercase text-[oklch(0.82_0.15_75)]"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              Our Structure
+            </span>
+            <h2
+              className="mt-4 text-3xl sm:text-4xl font-bold text-white tracking-tight"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              Principals, Not Pyramids.
+            </h2>
+            <p
+              className="mt-6 text-base sm:text-lg text-white/60 leading-relaxed max-w-3xl"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              Every engagement is led by the same senior team that has been serving Fortune 500 companies for 25 years. No junior associates. No handoff to unknown delivery teams. The people whose names are on the testimonials are the people who serve you.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <div className="bg-white/[0.04] border border-white/[0.08] rounded-lg px-6 py-4">
+                <div className="text-2xl font-bold text-[oklch(0.82_0.15_75)]" style={{ fontFamily: "var(--font-mono)" }}>25</div>
+                <div className="text-xs text-white/40 mt-1" style={{ fontFamily: "var(--font-body)" }}>Years, same team</div>
+              </div>
+              <div className="bg-white/[0.04] border border-white/[0.08] rounded-lg px-6 py-4">
+                <div className="text-2xl font-bold text-[oklch(0.82_0.15_75)]" style={{ fontFamily: "var(--font-mono)" }}>0</div>
+                <div className="text-xs text-white/40 mt-1" style={{ fontFamily: "var(--font-body)" }}>Junior layers</div>
+              </div>
+              <div className="bg-white/[0.04] border border-white/[0.08] rounded-lg px-6 py-4">
+                <div className="text-2xl font-bold text-[oklch(0.82_0.15_75)]" style={{ fontFamily: "var(--font-mono)" }}>100%</div>
+                <div className="text-xs text-white/40 mt-1" style={{ fontFamily: "var(--font-body)" }}>Principal-led</div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Corporate Facts — enriched with Ibiza EU HQ */}
       <section className="section-light py-16 sm:py-20">
         <div className="max-w-5xl mx-auto px-5 sm:px-8">

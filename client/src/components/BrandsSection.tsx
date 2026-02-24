@@ -49,7 +49,7 @@ const brands = [
     name: "ImpactSoul",
     since: "Since 2024",
     audience: "NGOs & Stewards of Art & Artifacts",
-    description: "Tokenize assets to rally impact movements. Turn cultural treasures and purpose into powerful economic engines.",
+    description: "Born from 25 years of enterprise advisory. The next chapter. Tokenize assets to rally impact movements. Turn cultural treasures and purpose into powerful economic engines.",
     keyValue: "Millions for impact · 3× revenue · up to 10× value",
     compensation: "7.5% of asset equity to launch a movement",
     commitment: "A fan club at worst; a global brand at peak",
