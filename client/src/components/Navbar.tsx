@@ -5,8 +5,10 @@
  */
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ExternalLink } from "lucide-react";
 import Logo from "@/components/Logo";
+
+const STRATUM_URL = "https://stratumweb-2pprew4h.manus.space";
 
 const practices = [
   { label: "Sourcing", href: "/sourcing", desc: "Enterprise IT" },
@@ -79,20 +81,47 @@ export default function Navbar() {
                 {practicesOpen && (
                   <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3">
                     <div className="bg-white rounded-lg shadow-xl border border-black/5 p-4 min-w-[220px]">
-                      {practices.map((p) => (
-                        <Link
-                          key={p.href}
-                          href={p.href}
-                          className="flex items-center justify-between px-3 py-2.5 rounded-md hover:bg-[oklch(0.94_0.03_80)] transition-colors group"
-                        >
-                          <span className="text-sm font-medium text-[oklch(0.18_0.03_50)] group-hover:text-[oklch(0.82_0.15_75)]">
-                            {p.label}
-                          </span>
-                          <span className="text-xs text-[oklch(0.5_0.02_50)]">
-                            {p.desc}
-                          </span>
-                        </Link>
-                      ))}
+                      {practices.map((p) =>
+                        p.label === "Stratum" ? (
+                          <div key={p.href} className="space-y-0.5">
+                            <Link
+                              href={p.href}
+                              className="flex items-center justify-between px-3 py-2.5 rounded-md hover:bg-[oklch(0.94_0.03_80)] transition-colors group"
+                            >
+                              <span className="text-sm font-medium text-[oklch(0.18_0.03_50)] group-hover:text-[oklch(0.82_0.15_75)]">
+                                {p.label}
+                              </span>
+                              <span className="text-xs text-[oklch(0.5_0.02_50)]">
+                                {p.desc}
+                              </span>
+                            </Link>
+                            <a
+                              href={STRATUM_URL}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-1.5 px-3 py-1.5 rounded-md hover:bg-[oklch(0.94_0.03_80)] transition-colors group ml-2"
+                            >
+                              <span className="text-xs font-medium text-[oklch(0.6_0.2_280)] group-hover:text-[oklch(0.5_0.2_280)]">
+                                Deep Dive
+                              </span>
+                              <ExternalLink size={10} className="text-[oklch(0.6_0.2_280)]" />
+                            </a>
+                          </div>
+                        ) : (
+                          <Link
+                            key={p.href}
+                            href={p.href}
+                            className="flex items-center justify-between px-3 py-2.5 rounded-md hover:bg-[oklch(0.94_0.03_80)] transition-colors group"
+                          >
+                            <span className="text-sm font-medium text-[oklch(0.18_0.03_50)] group-hover:text-[oklch(0.82_0.15_75)]">
+                              {p.label}
+                            </span>
+                            <span className="text-xs text-[oklch(0.5_0.02_50)]">
+                              {p.desc}
+                            </span>
+                          </Link>
+                        )
+                      )}
                     </div>
                   </div>
                 )}
@@ -138,16 +167,28 @@ export default function Navbar() {
         <div className="lg:hidden bg-white border-t border-black/5 shadow-lg">
           <div className="px-5 py-6 space-y-1">
             {practices.map((p) => (
-              <Link
-                key={p.href}
-                href={p.href}
-                className="block px-3 py-3 text-sm font-medium text-[oklch(0.18_0.03_50)] hover:bg-[oklch(0.94_0.03_80)] rounded-md"
-              >
-                {p.label}
-                <span className="text-xs text-[oklch(0.5_0.02_50)] ml-2">
-                  {p.desc}
-                </span>
-              </Link>
+              <>
+                <Link
+                  key={p.href}
+                  href={p.href}
+                  className="block px-3 py-3 text-sm font-medium text-[oklch(0.18_0.03_50)] hover:bg-[oklch(0.94_0.03_80)] rounded-md"
+                >
+                  {p.label}
+                  <span className="text-xs text-[oklch(0.5_0.02_50)] ml-2">
+                    {p.desc}
+                  </span>
+                </Link>
+                {p.label === "Stratum" && (
+                  <a
+                    href={STRATUM_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 px-3 py-2 ml-4 text-xs font-medium text-[oklch(0.6_0.2_280)] hover:bg-[oklch(0.94_0.03_80)] rounded-md"
+                  >
+                    Stratum Deep Dive <ExternalLink size={10} />
+                  </a>
+                )}
+              </>
             ))}
             <div className="border-t border-black/5 my-3" />
             {navItems

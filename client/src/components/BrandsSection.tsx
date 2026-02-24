@@ -6,7 +6,9 @@
  */
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { TrendingUp, Zap, Grid3X3, Heart, ArrowRight } from "lucide-react";
+import { TrendingUp, Zap, Grid3X3, Heart, ArrowRight, ExternalLink } from "lucide-react";
+
+const STRATUM_URL = "https://stratumweb-2pprew4h.manus.space";
 
 const brands = [
   {
@@ -169,14 +171,27 @@ export default function BrandsSection() {
               </div>
 
               {/* CTA */}
-              <Link
-                href={brand.href}
-                className="inline-flex items-center gap-1.5 text-sm font-medium transition-colors group-hover:gap-2.5"
-                style={{ color: brand.accentColor, fontFamily: "var(--font-body)" }}
-              >
-                Explore {brand.name}
-                <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
-              </Link>
+              <div className="flex flex-col gap-2">
+                <Link
+                  href={brand.href}
+                  className="inline-flex items-center gap-1.5 text-sm font-medium transition-colors group-hover:gap-2.5"
+                  style={{ color: brand.accentColor, fontFamily: "var(--font-body)" }}
+                >
+                  Explore {brand.name}
+                  <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+                </Link>
+                {brand.name === "Stratum" && (
+                  <a
+                    href={STRATUM_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-medium text-[oklch(0.6_0.2_280)] hover:text-[oklch(0.5_0.2_280)] transition-colors"
+                    style={{ fontFamily: "var(--font-body)" }}
+                  >
+                    Deep Dive <ExternalLink size={11} />
+                  </a>
+                )}
+              </div>
             </motion.div>
           ))}
         </div>

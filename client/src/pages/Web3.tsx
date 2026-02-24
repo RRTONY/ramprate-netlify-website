@@ -8,7 +8,9 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
-import { ArrowRight, Blocks, Globe, Coins, Shield, FileText, Zap, Server, Building2, Landmark, BookOpen } from "lucide-react";
+import { ArrowRight, Blocks, Globe, Coins, Shield, FileText, Zap, Server, Building2, Landmark, BookOpen, ExternalLink } from "lucide-react";
+
+const STRATUM_URL = "https://stratumweb-2pprew4h.manus.space";
 
 /* ── EXISTING 6 SERVICE CARDS ── */
 const services = [
@@ -75,6 +77,24 @@ const relatedPosts = [
 export default function Web3() {
   return (
     <PageLayout>
+      {/* Deep Dive Banner */}
+      <div className="bg-gradient-to-r from-[oklch(0.6_0.2_280)] to-[oklch(0.5_0.18_260)] py-3">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-center gap-3">
+          <span className="text-sm text-white/90 font-medium" style={{ fontFamily: "var(--font-body)" }}>
+            Explore the full Stratum experience
+          </span>
+          <a
+            href={STRATUM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm transition-all"
+            style={{ fontFamily: "var(--font-body)" }}
+          >
+            Deep Dive <ExternalLink size={11} />
+          </a>
+        </div>
+      </div>
+
       <PageHero
         sectionLabel="Stratum — Since 2015"
         headline={
@@ -286,9 +306,20 @@ export default function Web3() {
           <p className="text-white/80 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl mx-auto" style={{ fontFamily: "var(--font-body)" }}>
             And focus on the change you want to create in the world.
           </p>
-          <Link href="/connect" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md text-sm font-semibold bg-white text-[oklch(0.35_0.1_30)] hover:bg-white/90 transition-all shadow-lg" style={{ fontFamily: "var(--font-body)" }}>
-            Start a Conversation <ArrowRight size={16} />
-          </Link>
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <Link href="/connect" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md text-sm font-semibold bg-white text-[oklch(0.35_0.1_30)] hover:bg-white/90 transition-all shadow-lg" style={{ fontFamily: "var(--font-body)" }}>
+              Start a Conversation <ArrowRight size={16} />
+            </Link>
+            <a
+              href={STRATUM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md text-sm font-semibold border-2 border-white/30 text-white hover:bg-white/10 transition-all"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              Explore Stratum Deep Dive <ExternalLink size={14} />
+            </a>
+          </div>
         </div>
       </section>
     </PageLayout>

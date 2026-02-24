@@ -4,6 +4,9 @@
  */
 import { Link } from "wouter";
 import Logo from "@/components/Logo";
+import { ExternalLink } from "lucide-react";
+
+const STRATUM_URL = "https://stratumweb-2pprew4h.manus.space";
 
 const brandLinks = [
   { label: "RampRate", href: "/sourcing" },
@@ -62,6 +65,17 @@ export default function Footer() {
                   >
                     {link.label}
                   </Link>
+                  {link.label === "Stratum" && (
+                    <a
+                      href={STRATUM_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1 text-xs text-[oklch(0.6_0.2_280)]/60 hover:text-[oklch(0.6_0.2_280)] transition-colors mt-0.5"
+                      style={{ fontFamily: "var(--font-body)" }}
+                    >
+                      Deep Dive <ExternalLink size={9} />
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
