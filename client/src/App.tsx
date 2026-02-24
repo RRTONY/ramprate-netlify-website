@@ -13,6 +13,7 @@ import Proof from "./pages/Proof";
 import About from "./pages/About";
 import Connect from "./pages/Connect";
 import Blog from "./pages/Blog";
+import { Redirect } from "wouter";
 
 function Router() {
   return (
@@ -26,6 +27,7 @@ function Router() {
       <Route path={"/about"} component={About} />
       <Route path={"/connect"} component={Connect} />
       <Route path={"/blog"} component={Blog} />
+      <Route path={"/start"}>{() => <Redirect to="/connect" />}</Route>
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>
