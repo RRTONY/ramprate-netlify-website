@@ -10,7 +10,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
-import { ArrowRight, Quote, Building2, TrendingDown, ShieldCheck, BarChart3, Linkedin, Twitter, Filter } from "lucide-react";
+import { ArrowRight, Quote, Building2, TrendingDown, ShieldCheck, BarChart3, Linkedin, Twitter, Filter, Lock, Building, Film, Gamepad2, Link2, Globe } from "lucide-react";
 
 /* ── 7 REAL CASE STUDIES from ramprate.com ── */
 const caseStudies = [
@@ -404,6 +404,163 @@ export default function Proof() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════
+          CONFIDENTIAL ENGAGEMENTS — REFERENCES UNDER NDA
+      ═══════════════════════════════════════════════════ */}
+      <section className="section-dark py-20 sm:py-28">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-14"
+          >
+            <div className="inline-flex items-center gap-2 mb-4">
+              <Lock size={14} className="text-[oklch(0.82_0.15_75)]" />
+              <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[oklch(0.82_0.15_75)]" style={{ fontFamily: "var(--font-body)" }}>
+                Confidential Engagements
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-display)" }}>
+              What Our <span className="text-[oklch(0.82_0.15_75)]">Confidential Clients</span> Say
+            </h2>
+            <p className="text-sm text-white/50 max-w-2xl mx-auto leading-relaxed italic" style={{ fontFamily: "var(--font-body)" }}>
+              Many of our most impactful engagements are protected by NDA. We've shared these with permission, with identifying details removed. References are available to qualified prospects upon request.
+            </p>
+          </motion.div>
+
+          <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+            {([
+              {
+                quote: "We brought RampRate in to validate what we thought was an optimized infrastructure spend. Within six weeks, they found $14M in annual savings we didn't know existed \u2014 without changing a single vendor relationship. What surprised us wasn't the number. It was that they understood our internal politics well enough to structure the savings so every division head felt like they won. That's not sourcing. That's organizational intelligence.",
+                attribution: "SVP, Global Infrastructure \u00b7 Fortune 100 Technology Company",
+                division: "RampRate",
+                icon: "enterprise",
+              },
+              {
+                quote: "We were two founders with a working product and no idea how to get Fortune 500 companies to return our emails. Tony's team didn't just open doors \u2014 they sat in the room with us, reframed our pitch in real time, and closed our first enterprise pilot in 11 days. That pilot became our Series B story. We went from interesting technology to investable company in one quarter.",
+                attribution: "Co-Founder & CEO \u00b7 Network Infrastructure Startup, Series B",
+                division: "Syzygy",
+                icon: "web3",
+              },
+              {
+                quote: "We've used RampRate across three CTO transitions and two corporate restructurings over 12 years. They're the only external advisor who survived every regime change \u2014 because each new CTO independently concluded they were indispensable. The institutional knowledge they carry about our infrastructure is deeper than most of our own internal teams. They've saved us eight figures cumulatively, but what I value most is that they've never once leaked a number, a name, or a strategy to anyone.",
+                attribution: "CTO \u00b7 Global Media & Entertainment Corporation",
+                division: "RampRate",
+                icon: "media",
+              },
+              {
+                quote: "Most advisors in our space either understand enterprise or understand blockchain. They found us enterprise partners who actually understood what we were building \u2014 not just executives who wanted a blockchain slide in their board deck. Within 90 days we had three paid pilots with companies whose names would break our NDA if I mentioned them.",
+                attribution: "CTO \u00b7 Layer 1 Blockchain Protocol",
+                division: "Stratum",
+                icon: "web3",
+              },
+              {
+                quote: "We were sitting on a collection worth tens of millions with no way to monetize it without selling pieces we'd spent decades acquiring. ImpactSoul designed a tokenization structure that let us retain full ownership while creating a revenue stream we never thought possible. They spent two hours understanding the cultural significance of what we held before they ever mentioned a number. That's when we knew.",
+                attribution: "Director \u00b7 Private Cultural Foundation, Latin America",
+                division: "ImpactSoul",
+                icon: "impact",
+              },
+              {
+                quote: "I've worked with Gartner, McKinsey, and two boutique sourcing firms. RampRate is the only one that put their fee at risk. They guaranteed twice their cost in savings or we'd get a refund. I thought it was a gimmick until they delivered 31% \u2014 six points above their own projection. Every recommendation came with a number, a timeline, and a name. No hand-waving.",
+                attribution: "VP, Technology Operations \u00b7 Fortune 500 E-Commerce Platform",
+                division: "RampRate",
+                icon: "enterprise",
+              },
+              {
+                quote: "We were burning runway trying to figure out US market entry on our own. RampRate's growth team restructured our go-to-market, connected us with two clinical validation partners, and helped us close a strategic investment \u2014 all in five months. They pushed back on three term sheets that would have diluted us unnecessarily. Their incentive was aligned with ours because they took equity, not cash.",
+                attribution: "Founder & CEO \u00b7 Health Technology Startup, Seed to Series A",
+                division: "Syzygy",
+                icon: "impact",
+              },
+              {
+                quote: "Our board kept asking: where's the enterprise revenue? We had a working protocol but no bridge to the companies that actually needed it. RampRate's Stratum team understood both worlds \u2014 they translated our technology into language that procurement teams and CTOs could evaluate. Two of the four enterprise deals we closed that year came directly through their network, and those deals are still active three years later.",
+                attribution: "CEO \u00b7 Decentralized Infrastructure Company",
+                division: "Stratum",
+                icon: "web3",
+              },
+              {
+                quote: "We'd been told by three consulting firms that our project was unbankable \u2014 too much social impact, not enough return profile. ImpactSoul restructured the tokenization model so the impact metrics became the value driver, not the cost center. Investors who wouldn't take our call six months earlier started reaching out to us. They built a financial instrument around our mission without asking us to compromise it.",
+                attribution: "Executive Director \u00b7 Regenerative Development NGO",
+                division: "ImpactSoul",
+                icon: "impact",
+              },
+              {
+                quote: "When you're scaling infrastructure for millions of concurrent users across four continents, you can't afford a sourcing advisor who needs a week to understand your architecture. RampRate was already fluent in our stack before the first call. They renegotiated our CDN and hosting contracts in three weeks \u2014 not three months \u2014 and the savings funded our entire Asia-Pacific expansion. They move at game speed, not consulting speed.",
+                attribution: "VP Engineering \u00b7 Major Interactive Entertainment Company",
+                division: "RampRate",
+                icon: "gaming",
+              },
+            ] as const).map((t, i) => {
+              const IconMap = { enterprise: Building, media: Film, web3: Link2, gaming: Gamepad2, impact: Globe };
+              const Icon = IconMap[t.icon];
+              const divisionColors: Record<string, string> = {
+                RampRate: "oklch(0.82 0.15 75)",
+                Syzygy: "oklch(0.7 0.2 280)",
+                Stratum: "oklch(0.65 0.2 150)",
+                ImpactSoul: "oklch(0.7 0.15 30)",
+              };
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: (i % 6) * 0.08 }}
+                  className="break-inside-avoid rounded-xl p-7 bg-white/[0.04] border border-white/[0.08] backdrop-blur-sm hover:bg-white/[0.08] transition-all"
+                >
+                  <div className="flex items-center justify-between mb-4">
+                    <Quote size={20} className="text-[oklch(0.82_0.15_75)]/30" />
+                    <div className="flex items-center gap-2">
+                      <Icon size={14} className="text-white/40" />
+                      <span
+                        className="text-[9px] px-2 py-0.5 rounded-full font-semibold tracking-wide uppercase"
+                        style={{
+                          fontFamily: "var(--font-mono)",
+                          backgroundColor: `color-mix(in oklch, ${divisionColors[t.division]}, transparent 85%)`,
+                          color: divisionColors[t.division],
+                        }}
+                      >
+                        {t.division}
+                      </span>
+                    </div>
+                  </div>
+                  <p className="text-sm text-white/70 leading-relaxed mb-5 italic" style={{ fontFamily: "var(--font-body)" }}>
+                    "{t.quote}"
+                  </p>
+                  <div className="border-t border-white/[0.06] pt-4">
+                    <div className="flex items-center gap-2">
+                      <Lock size={12} className="text-white/30 shrink-0" />
+                      <span className="text-xs text-white/40 italic" style={{ fontFamily: "var(--font-body)" }}>
+                        {t.attribution}
+                      </span>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mt-12"
+          >
+            <Link
+              href="/connect"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md text-sm font-semibold bg-[oklch(0.82_0.15_75)] text-[oklch(0.15_0.02_75)] hover:bg-[oklch(0.78_0.15_75)] transition-all shadow-lg shadow-[oklch(0.82_0.15_75)]/20"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              Request References <ArrowRight size={16} />
+            </Link>
+            <p className="text-xs text-white/30 mt-4" style={{ fontFamily: "var(--font-body)" }}>
+              References available to qualified prospects under NDA
+            </p>
+          </motion.div>
         </div>
       </section>
 
