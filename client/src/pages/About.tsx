@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Linkedin, Twitter } from "lucide-react";
 
 /* ── REAL CORE TEAM (5) — enriched bios from paste ── */
 const coreTeam = [
@@ -16,30 +16,40 @@ const coreTeam = [
     role: "Founder & CEO",
     img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/pXhfZFSxoHWvNtJl.jpg",
     bio: "25+ years. Helped take Exodus Communications public (revenue $5M to $600M). Founded RampRate in 2000. 250+ enterprise clients including Microsoft, eBay, Nike, Sony, CBS, Intel, Hearst. 75+ strategy/sourcing projects for Microsoft alone. Investor/advisor to 25+ impact startups across blockchain, psychedelic medicine, healthcare. Emissary to Bhutan's Gross National Happiness Centre. Speaker at Harvard, USC. Published in Forbes, Business Insider, HuffPost. Clinton Global Initiative, Aspen Institute, Tech Coast Angels.",
+    linkedin: "https://www.linkedin.com/in/tonygreenberg",
+    twitter: "https://x.com/thinktony",
   },
   {
     name: "Alex Veytsel",
     role: "Co-Founder & CSO",
     img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/rKUjHJhkfaGAoLgr.png",
     bio: "Expert in digital media business models, revenue streams, and technical infrastructure. Business planning and strategy advisor to Microsoft, Sony, Intel on value chain mapping, partner strategies, and pioneering business models. Joined RampRate 2004. As a sourcing advisor, he has helped both major TV networks (NBC, Fox) and industry pioneers (iFilm, Audible) reduce costs, improve performance, and reinvest negotiated savings in innovative technologies. Former senior research analyst at Aberdeen Group.",
+    linkedin: "https://www.linkedin.com/in/aveytsel",
+    twitter: null,
   },
   {
     name: "Josh Bykowski",
     role: "Corporate Development & Legal",
     img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/RMQMfjHVdQbFgjvi.png",
     bio: "Licensed US attorney. M&A advisory, data privacy, IP, emerging technologies. Expertise in blockchain technology and role as a Voting Associate for a decentralized organization with over $250 million AUM. Recognized by Columbia Law School's Blog on Corporations and Capital Markets. Panelist at legal CLE conferences.",
+    linkedin: "https://www.linkedin.com/in/josh-bykowski-b445211b5",
+    twitter: null,
   },
   {
     name: "Rob Holmes",
     role: "Web3 & Grants Manager, ImpactSoul",
     img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/elFOqWUcwPCIIOQB.png",
     bio: "Web3 strategist and business development advisor. Over seven years in the space helping founders, protocols, and ecosystems bridge crypto and the physical world — focusing on tokenized infrastructure, DePIN, clean energy, and real-world asset (RWA) integration. Before Web3, spent a decade in engineering and infrastructure, beginning at Halcrow, one of the UK's oldest engineering firms.",
+    linkedin: "https://www.linkedin.com/in/rob-holmes-7a479016",
+    twitter: null,
   },
   {
     name: "Jeff Alinsangan",
     role: "Operations",
     img: null,
     bio: "Leads operations at RampRate, ensuring the firm's advisory engagements run with precision and efficiency across all four practice areas.",
+    linkedin: "https://www.linkedin.com/in/jeff-alinsangan-b3bb78",
+    twitter: null,
   },
 ];
 
@@ -50,60 +60,80 @@ const boardAdvisors = [
     role: "Strategic Advisor",
     img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/ILlNmwvCsckXBqPO.jpg",
     bio: "Recently retired from Deloitte where he led business development nationally for the Blockchain and Digital Asset Practice as well as globally for the Wine Practice. Portfolio Success Leader for select private equity firms. Co-founder of Abundant Village.",
+    linkedin: "https://pr.linkedin.com/in/stuartnewton",
+    twitter: null,
   },
   {
     name: "Gulliver Smithers",
     role: "ex-CTO Sony D2C",
     img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/eUVmQqArMuCNZtXr.png",
     bio: "Product-oriented CTO with over 20 years across media. Previously CTO at Sony D2C, VP of Product at the BBC, CTO at Base79 (successful exit), and Director of On-Demand at ITV. Expertise spans streaming architecture, product management, and multi-platform development.",
+    linkedin: "https://uk.linkedin.com/in/gulliversmithers",
+    twitter: "https://x.com/GulliverSmither",
   },
   {
     name: "Purvee Kondal",
     role: "VP Sephora, Global Procurement",
     img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/DmFFlqTRTIEZwtwI.webp",
     bio: "Vice President at SEPHORA, Global Procurement Officer. Over 15 years at J&J, GE, Capgemini, Ross Stores, Globality, and Albertsons. Pioneering Indian American woman to hold the NACD.DC designation. MBA from Kellogg at Northwestern University.",
+    linkedin: "https://www.linkedin.com/in/purveek",
+    twitter: null,
   },
   {
     name: "Curt Hessler",
     role: "ex-Asst. Secretary of Treasury",
     img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/YLsgxbxwspMjUSdw.png",
     bio: "Served as Assistant Secretary of the Treasury for Economic Policy. Senior positions at Unisys and Times-Mirror Group. Chairman and founding CEO of 101communications. Rhodes Scholar. Harvard BA, Yale Law JD, UC Berkeley MA in Economics.",
+    linkedin: "https://www.linkedin.com/in/curt-hessler-a3682b3a",
+    twitter: null,
   },
   {
     name: "Barry Patmore",
     role: "34yr Accenture Partner",
     img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/yOBAXZZhcHZhmOMj.png",
     bio: "Distinguished 34-year career at Accenture. Clients included Microsoft, Disney, Visa, JPL. Managing partner of Pacific Northwest and Southern California offices. Co-developed Method/1 and collaborated with Michael Hammer on business process re-engineering.",
+    linkedin: "https://www.linkedin.com/in/barry-patmore-8188b526",
+    twitter: null,
   },
   {
     name: "Peter Gross",
     role: "VP Bloom Energy",
     img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/kkqxDucjDNUUXIpQ.png",
     bio: "Former CEO EYP Mission Critical Facilities. Data center strategic planning, design, operations. VP at Bloom Energy with deep expertise in sustainable energy infrastructure. Advisory board member at Redivider.",
+    linkedin: "https://www.linkedin.com/in/petrgross",
+    twitter: null,
   },
   {
     name: "Peter Hirshberg",
     role: "ex-Apple, $1B Enterprise Revenue",
     img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/QmgSWAnZPqduAHKb.png",
     bio: "9 years at Apple, grew enterprise revenue to $1B annually. Chairman of the executive committee of Technorati, tracking over 100 million Weblogs. Co-founder and chairman of The Conversation Group. Clients included AOL, Microsoft, NBC, Estee Lauder.",
+    linkedin: "https://www.linkedin.com/in/hirshberg",
+    twitter: "https://x.com/hirshberg",
   },
   {
     name: "Joe Weinman",
     role: "Author, Cloudonomics",
     img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/OXBRrCfquIfGdqNH.png",
     bio: "Author of 'Cloudonomics: The Business Value of Cloud Computing' (Wiley). Awarded 20 U.S. and international patents. Senior executive at Telx, AT&T, Bell Labs, and Hewlett Packard. Named Top 10 Cloud Computing Leader. Cornell BS, UW-Madison MS in Computer Science.",
+    linkedin: "https://www.linkedin.com/in/joeweinman",
+    twitter: "https://x.com/joeweinman",
   },
   {
     name: "Sandy Climan",
     role: "ex-CAA / Universal Studios",
     img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/jeEhGYbagnzDkfJe.jpg",
     bio: "CEO of Entertainment Media Ventures. Senior management at Creative Artists Agency, representing Robert Redford, Robert De Niro, Kevin Costner. EVP and President of Worldwide Business Development for Universal Studios. Producer of 'The Aviator.' Harvard BA, Harvard MBA, Harvard MS in Health Policy.",
+    linkedin: "https://www.linkedin.com/in/sandycliman",
+    twitter: "https://x.com/ClimanSandy",
   },
   {
     name: "Tyler Kolodney",
     role: "ex-Baltimore Orioles",
     img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/UVyoiPewtvstKrsa.jpg",
     bio: "Former executive with the Baltimore Orioles organization, bringing sports industry expertise and business development acumen to RampRate's advisory board.",
+    linkedin: "https://www.linkedin.com/in/tyler-kolodny-451522192",
+    twitter: "https://x.com/kolodnytyler",
   },
 ];
 
@@ -277,8 +307,24 @@ export default function About() {
                   </div>
                 )}
                 <div className="p-6">
-                  <h3 className="text-lg font-bold" style={{ fontFamily: "var(--font-display)" }}>{m.name}</h3>
-                  <p className="text-xs font-semibold text-[oklch(0.55_0.15_30)] mt-1 tracking-wide uppercase" style={{ fontFamily: "var(--font-body)" }}>{m.role}</p>
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <h3 className="text-lg font-bold" style={{ fontFamily: "var(--font-display)" }}>{m.name}</h3>
+                      <p className="text-xs font-semibold text-[oklch(0.55_0.15_30)] mt-1 tracking-wide uppercase" style={{ fontFamily: "var(--font-body)" }}>{m.role}</p>
+                    </div>
+                    <div className="flex gap-2 shrink-0 mt-1">
+                      {m.linkedin && (
+                        <a href={m.linkedin} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-[oklch(0.55_0.15_30)]/10 flex items-center justify-center hover:bg-[oklch(0.55_0.15_30)]/20 transition-colors">
+                          <Linkedin size={14} className="text-[oklch(0.55_0.15_30)]" />
+                        </a>
+                      )}
+                      {m.twitter && (
+                        <a href={m.twitter} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-[oklch(0.55_0.15_30)]/10 flex items-center justify-center hover:bg-[oklch(0.55_0.15_30)]/20 transition-colors">
+                          <Twitter size={14} className="text-[oklch(0.55_0.15_30)]" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
                   <p className="mt-3 text-sm text-[oklch(0.45_0.02_50)] leading-relaxed line-clamp-5" style={{ fontFamily: "var(--font-body)" }}>{m.bio}</p>
                 </div>
               </motion.div>
@@ -315,8 +361,24 @@ export default function About() {
                   </div>
                 )}
                 <div className="p-5">
-                  <h3 className="text-base font-bold" style={{ fontFamily: "var(--font-display)" }}>{m.name}</h3>
-                  <p className="text-xs text-[oklch(0.55_0.15_30)] mt-0.5 font-semibold" style={{ fontFamily: "var(--font-body)" }}>{m.role}</p>
+                  <div className="flex items-start justify-between gap-2">
+                    <div>
+                      <h3 className="text-base font-bold" style={{ fontFamily: "var(--font-display)" }}>{m.name}</h3>
+                      <p className="text-xs text-[oklch(0.55_0.15_30)] mt-0.5 font-semibold" style={{ fontFamily: "var(--font-body)" }}>{m.role}</p>
+                    </div>
+                    <div className="flex gap-1.5 shrink-0 mt-0.5">
+                      {m.linkedin && (
+                        <a href={m.linkedin} target="_blank" rel="noopener noreferrer" className="w-7 h-7 rounded-full bg-[oklch(0.55_0.15_30)]/10 flex items-center justify-center hover:bg-[oklch(0.55_0.15_30)]/20 transition-colors">
+                          <Linkedin size={12} className="text-[oklch(0.55_0.15_30)]" />
+                        </a>
+                      )}
+                      {m.twitter && (
+                        <a href={m.twitter} target="_blank" rel="noopener noreferrer" className="w-7 h-7 rounded-full bg-[oklch(0.55_0.15_30)]/10 flex items-center justify-center hover:bg-[oklch(0.55_0.15_30)]/20 transition-colors">
+                          <Twitter size={12} className="text-[oklch(0.55_0.15_30)]" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
                   <p className="mt-2 text-xs text-[oklch(0.45_0.02_50)] leading-relaxed line-clamp-3" style={{ fontFamily: "var(--font-body)" }}>{m.bio}</p>
                 </div>
               </motion.div>

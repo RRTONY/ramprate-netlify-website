@@ -200,10 +200,49 @@ export default function Process() {
           { value: "90", label: "Days to proof" },
           { value: "25", label: "Years refined" },
         ]}
-      />
+      >
+        {/* 3 hero buttons from the deck: FIND YOUR ME → FIND YOUR WAY → FIND YOUR OUR */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.9 }}
+          className="mt-10 flex flex-wrap gap-4"
+        >
+          <a
+            href="#me-way-our"
+            className="group inline-flex items-center gap-3 px-6 py-3.5 rounded-lg border-2 border-[oklch(0.6_0.2_280)] bg-[oklch(0.6_0.2_280)]/10 hover:bg-[oklch(0.6_0.2_280)]/25 transition-all"
+          >
+            <User size={18} className="text-[oklch(0.6_0.2_280)]" />
+            <span className="text-sm font-bold tracking-wider uppercase text-white" style={{ fontFamily: "var(--font-body)" }}>
+              Find Your <span className="text-[oklch(0.6_0.2_280)]">Me</span>
+            </span>
+            <ArrowRight size={16} className="text-white/40 group-hover:translate-x-1 transition-transform" />
+          </a>
+          <a
+            href="#find-way"
+            className="group inline-flex items-center gap-3 px-6 py-3.5 rounded-lg border-2 border-[oklch(0.82_0.15_75)] bg-[oklch(0.82_0.15_75)]/10 hover:bg-[oklch(0.82_0.15_75)]/25 transition-all"
+          >
+            <Compass size={18} className="text-[oklch(0.82_0.15_75)]" />
+            <span className="text-sm font-bold tracking-wider uppercase text-white" style={{ fontFamily: "var(--font-body)" }}>
+              Find Your <span className="text-[oklch(0.82_0.15_75)]">Way</span>
+            </span>
+            <ArrowRight size={16} className="text-white/40 group-hover:translate-x-1 transition-transform" />
+          </a>
+          <a
+            href="#find-our"
+            className="group inline-flex items-center gap-3 px-6 py-3.5 rounded-lg border-2 border-[oklch(0.55_0.2_160)] bg-[oklch(0.55_0.2_160)]/10 hover:bg-[oklch(0.55_0.2_160)]/25 transition-all"
+          >
+            <Users size={18} className="text-[oklch(0.55_0.2_160)]" />
+            <span className="text-sm font-bold tracking-wider uppercase text-white" style={{ fontFamily: "var(--font-body)" }}>
+              Find Your <span className="text-[oklch(0.55_0.2_160)]">Our</span>
+            </span>
+            <ArrowRight size={16} className="text-white/40 group-hover:translate-x-1 transition-transform" />
+          </a>
+        </motion.div>
+      </PageHero>
 
       {/* ═══ 3-PHASE OVERVIEW: Me → Way → Our ═══ */}
-      <section className="section-dark py-20 sm:py-28">
+      <section id="me-way-our" className="section-dark py-20 sm:py-28 scroll-mt-20">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -237,11 +276,12 @@ export default function Process() {
             {meWayOur.map((item, i) => (
               <motion.div
                 key={item.label}
+                id={item.label === "ME" ? "find-me" : item.label === "WAY" ? "find-way" : "find-our"}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: i * 0.15 }}
-                className="relative bg-white/[0.04] border border-white/[0.08] rounded-xl p-7 overflow-hidden"
+                className="relative bg-white/[0.04] border border-white/[0.08] rounded-xl p-7 overflow-hidden scroll-mt-24"
               >
                 {/* Top accent bar */}
                 <div
@@ -309,7 +349,7 @@ export default function Process() {
       </section>
 
       {/* ═══ DIAGNOSE ═══ */}
-      <section className="section-warm py-20 sm:py-28">
+      <section id="flow-circuit" className="section-warm py-20 sm:py-28 scroll-mt-20">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

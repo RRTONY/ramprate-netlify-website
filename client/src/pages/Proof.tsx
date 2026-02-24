@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
-import { ArrowRight, Quote, Building2, TrendingDown, ShieldCheck, BarChart3 } from "lucide-react";
+import { ArrowRight, Quote, Building2, TrendingDown, ShieldCheck, BarChart3, Linkedin, Twitter } from "lucide-react";
 
 /* ── 7 REAL CASE STUDIES from ramprate.com ── */
 const caseStudies = [
@@ -115,19 +115,27 @@ const additionalClients = [
   "AOL", "Razorfish",
 ];
 
-/* ── REAL BOARD MEMBERS from spec ── */
+/* ── REAL BOARD MEMBERS from spec — with social links ── */
 const boardMembers = [
-  { name: "Stuart Newton", role: "ex-Deloitte Blockchain", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/ILlNmwvCsckXBqPO.jpg" },
-  { name: "Gulliver Smithers", role: "ex-CTO Sony", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/eUVmQqArMuCNZtXr.png" },
-  { name: "Purvee Kondal", role: "VP Sephora", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/DmFFlqTRTIEZwtwI.webp" },
-  { name: "Curt Hessler", role: "ex-Treasury / Rhodes Scholar", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/YLsgxbxwspMjUSdw.png" },
-  { name: "Barry Patmore", role: "34yr Accenture", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/yOBAXZZhcHZhmOMj.png" },
-  { name: "Peter Gross", role: "VP Bloom Energy", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/kkqxDucjDNUUXIpQ.png" },
-  { name: "Peter Hirshberg", role: "ex-Apple $1B", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/QmgSWAnZPqduAHKb.png" },
-  { name: "Joe Weinman", role: "Cloudonomics", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/OXBRrCfquIfGdqNH.png" },
-  { name: "Sandy Climan", role: "ex-CAA / Universal", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/jeEhGYbagnzDkfJe.jpg" },
-  { name: "Tyler Kolodney", role: "ex-Orioles", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/UVyoiPewtvstKrsa.jpg" },
+  { name: "Stuart Newton", role: "ex-Deloitte Blockchain", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/ILlNmwvCsckXBqPO.jpg", linkedin: "https://pr.linkedin.com/in/stuartnewton" },
+  { name: "Gulliver Smithers", role: "ex-CTO Sony", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/eUVmQqArMuCNZtXr.png", linkedin: "https://uk.linkedin.com/in/gulliversmithers" },
+  { name: "Purvee Kondal", role: "VP Sephora", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/DmFFlqTRTIEZwtwI.webp", linkedin: "https://www.linkedin.com/in/purveek" },
+  { name: "Curt Hessler", role: "ex-Treasury / Rhodes Scholar", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/YLsgxbxwspMjUSdw.png", linkedin: "https://www.linkedin.com/in/curt-hessler-a3682b3a" },
+  { name: "Barry Patmore", role: "34yr Accenture", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/yOBAXZZhcHZhmOMj.png", linkedin: "https://www.linkedin.com/in/barry-patmore-8188b526" },
+  { name: "Peter Gross", role: "VP Bloom Energy", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/kkqxDucjDNUUXIpQ.png", linkedin: "https://www.linkedin.com/in/petrgross" },
+  { name: "Peter Hirshberg", role: "ex-Apple $1B", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/QmgSWAnZPqduAHKb.png", linkedin: "https://www.linkedin.com/in/hirshberg" },
+  { name: "Joe Weinman", role: "Cloudonomics", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/OXBRrCfquIfGdqNH.png", linkedin: "https://www.linkedin.com/in/joeweinman" },
+  { name: "Sandy Climan", role: "ex-CAA / Universal", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/jeEhGYbagnzDkfJe.jpg", linkedin: "https://www.linkedin.com/in/sandycliman" },
+  { name: "Tyler Kolodney", role: "ex-Orioles", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663242884547/UVyoiPewtvstKrsa.jpg", linkedin: "https://www.linkedin.com/in/tyler-kolodny-451522192" },
 ];
+
+/* ── Social links lookup for testimonial authors ── */
+const testimonialSocials: Record<string, { linkedin?: string; twitter?: string }> = {
+  "Kevin Shively": { linkedin: "https://www.linkedin.com/in/kevinshively", twitter: "https://x.com/shiveman" },
+  "Rich Lappenbusch": { linkedin: "https://www.linkedin.com/in/richlappenbusch", twitter: "https://x.com/richlap" },
+  "Richard Titus": { linkedin: "https://www.linkedin.com/in/rxdxt", twitter: "https://x.com/richardtitus" },
+  "Blair Harrison": { linkedin: "https://www.linkedin.com/in/theblairharrison", twitter: "https://x.com/blairharrison" },
+};
 
 export default function Proof() {
   return (
@@ -237,8 +245,11 @@ export default function Proof() {
                 <div className="w-20 h-20 mx-auto rounded-full overflow-hidden bg-white/10 mb-3">
                   <img src={m.img} alt={m.name} className="w-full h-full object-cover" loading="lazy" />
                 </div>
-                <div className="text-sm font-semibold text-white" style={{ fontFamily: "var(--font-body)" }}>{m.name}</div>
+                <a href={m.linkedin} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-white hover:text-[oklch(0.55_0.15_30)] transition-colors" style={{ fontFamily: "var(--font-body)" }}>{m.name}</a>
                 <div className="text-xs text-white/50" style={{ fontFamily: "var(--font-body)" }}>{m.role}</div>
+                <a href={m.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex mt-1.5 w-5 h-5 rounded-full bg-white/10 items-center justify-center hover:bg-white/20 transition-colors">
+                  <Linkedin size={10} className="text-white/60" />
+                </a>
               </motion.div>
             ))}
           </div>
@@ -279,9 +290,27 @@ export default function Proof() {
                   "{t.quote}"
                 </p>
                 <div className="border-t border-black/5 pt-4">
-                  <div className="text-sm font-semibold" style={{ fontFamily: "var(--font-body)" }}>{t.name}</div>
-                  <div className="text-xs text-[oklch(0.5_0.02_50)]" style={{ fontFamily: "var(--font-body)" }}>
-                    {t.title}{t.company ? `, ${t.company}` : ""}
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-sm font-semibold" style={{ fontFamily: "var(--font-body)" }}>{t.name}</div>
+                      <div className="text-xs text-[oklch(0.5_0.02_50)]" style={{ fontFamily: "var(--font-body)" }}>
+                        {t.title}{t.company ? `, ${t.company}` : ""}
+                      </div>
+                    </div>
+                    {testimonialSocials[t.name] && (
+                      <div className="flex gap-1.5">
+                        {testimonialSocials[t.name].linkedin && (
+                          <a href={testimonialSocials[t.name].linkedin} target="_blank" rel="noopener noreferrer" className="w-6 h-6 rounded-full bg-[oklch(0.55_0.15_30)]/10 flex items-center justify-center hover:bg-[oklch(0.55_0.15_30)]/20 transition-colors">
+                            <Linkedin size={11} className="text-[oklch(0.55_0.15_30)]" />
+                          </a>
+                        )}
+                        {testimonialSocials[t.name].twitter && (
+                          <a href={testimonialSocials[t.name].twitter} target="_blank" rel="noopener noreferrer" className="w-6 h-6 rounded-full bg-[oklch(0.55_0.15_30)]/10 flex items-center justify-center hover:bg-[oklch(0.55_0.15_30)]/20 transition-colors">
+                            <Twitter size={11} className="text-[oklch(0.55_0.15_30)]" />
+                          </a>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </div>
               </motion.div>
