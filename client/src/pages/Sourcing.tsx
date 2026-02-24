@@ -214,8 +214,10 @@ export default function Sourcing() {
       {/* ═══════════════════════════════════════════════════
           THE 10 MOST PRESSING QUESTIONS
       ═══════════════════════════════════════════════════ */}
-      <section id="questions" className="section-dark py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      <section id="questions" className="relative section-dark overflow-hidden py-20 sm:py-28">
+        <div className="glass-orb-blue w-[350px] h-[350px] -top-40 -right-40" />
+        <div className="glass-orb-amber w-[200px] h-[200px] bottom-20 -left-20" />
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -306,8 +308,10 @@ export default function Sourcing() {
       {/* ═══════════════════════════════════════════════════
           HOW IT WORKS — AI + Humans + Transaction Architects
       ═══════════════════════════════════════════════════ */}
-      <section className="section-warm py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      <section className="relative section-warm overflow-hidden py-20 sm:py-28">
+        <div className="glass-orb-rust w-[300px] h-[300px] -bottom-32 -right-32" />
+        <div className="glass-orb-amber w-[180px] h-[180px] top-10 -left-20" />
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
           <div className="text-center mb-16">
             <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[oklch(0.55_0.15_30)]" style={{ fontFamily: "var(--font-body)" }}>
               How It Works
@@ -355,8 +359,10 @@ export default function Sourcing() {
       {/* ═══════════════════════════════════════════════════
           PRODUCT CAPABILITIES — The 6 pillars
       ═══════════════════════════════════════════════════ */}
-      <section className="section-light py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      <section className="relative section-light overflow-hidden py-20 sm:py-28">
+        <div className="glass-orb-amber w-[280px] h-[280px] -bottom-32 -left-32" />
+        <div className="glass-orb-rust w-[160px] h-[160px] top-20 -right-20" />
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
           <div className="mb-14">
             <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[oklch(0.55_0.15_30)]" style={{ fontFamily: "var(--font-body)" }}>
               What We Do
@@ -397,8 +403,10 @@ export default function Sourcing() {
       {/* ═══════════════════════════════════════════════════
           SPY INDEX — The Engine
       ═══════════════════════════════════════════════════ */}
-      <section className="section-dark py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      <section className="relative section-dark overflow-hidden py-20 sm:py-28">
+        <div className="glass-orb-blue w-[350px] h-[350px] -top-40 -right-40" />
+        <div className="glass-orb-amber w-[200px] h-[200px] bottom-20 -left-20" />
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[oklch(0.82_0.15_75)]" style={{ fontFamily: "var(--font-body)" }}>
@@ -460,8 +468,10 @@ export default function Sourcing() {
       {/* ═══════════════════════════════════════════════════
           WHAT WE SOURCE — Service Categories
       ═══════════════════════════════════════════════════ */}
-      <section className="section-warm py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      <section className="relative section-warm overflow-hidden py-20 sm:py-28">
+        <div className="glass-orb-rust w-[300px] h-[300px] -bottom-32 -right-32" />
+        <div className="glass-orb-amber w-[180px] h-[180px] top-10 -left-20" />
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
           <div className="text-center mb-14">
             <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[oklch(0.55_0.15_30)]" style={{ fontFamily: "var(--font-body)" }}>
               Service Categories
@@ -501,8 +511,10 @@ export default function Sourcing() {
       {/* ═══════════════════════════════════════════════════
           TESTIMONIALS
       ═══════════════════════════════════════════════════ */}
-      <section className="section-light py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      <section className="relative section-light overflow-hidden py-20 sm:py-28">
+        <div className="glass-orb-amber w-[280px] h-[280px] -bottom-32 -left-32" />
+        <div className="glass-orb-rust w-[160px] h-[160px] top-20 -right-20" />
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
           <h2 className="text-3xl sm:text-4xl font-bold mb-12" style={{ fontFamily: "var(--font-display)" }}>
             What Our Clients Say
           </h2>

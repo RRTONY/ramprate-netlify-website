@@ -51,3 +51,13 @@
 - [x] Add glassmorphic design elements across the site (cards, overlays, frosted glass effects)
 - [x] Add simulated "why I support RampRate" quotes for each advisor on About page
 - [x] Add 10 confidential NDA testimonials section to Proof page with lock icons, industry icons, division tags, carousel, and "Request References" CTA
+## Full Glassmorphic Pass
+- [x] Homepage remaining (Operate, Compensation, Client Wall, Brands)
+- [x] Process page (phase cards, Flow Circuit, Economics, Guarantee)
+- [x] Proof page (case study cards, testimonial cards, confidential section)
+- [x] About page (team cards, advisor cards, corporate facts, values)
+- [x] Blog page (grid cards, filter bar, stats)
+- [x] Thinking page + remove dates
+- [x] Connect page (form card, contact cards)
+- [x] Practice sub-pages (sourcing, growth, web3, impact)
+- [ ] Fix blog thumbnail alt text overlay bug

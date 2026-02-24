@@ -78,8 +78,10 @@ export default function Impact() {
       />
 
       {/* What is ImpactSoul */}
-      <section className="section-warm py-20 sm:py-28">
-        <div className="max-w-5xl mx-auto px-5 sm:px-8">
+      <section className="relative section-warm overflow-hidden py-20 sm:py-28">
+        <div className="glass-orb-rust w-[300px] h-[300px] -bottom-32 -right-32" />
+        <div className="glass-orb-amber w-[180px] h-[180px] top-10 -left-20" />
+        <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-8">
           <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[oklch(0.55_0.15_30)]" style={{ fontFamily: "var(--font-body)" }}>
             The Mission
           </span>
@@ -98,8 +100,10 @@ export default function Impact() {
       </section>
 
       {/* Impact DNA™ Process — REAL from paste */}
-      <section className="section-light py-20 sm:py-28">
-        <div className="max-w-5xl mx-auto px-5 sm:px-8">
+      <section className="relative section-light overflow-hidden py-20 sm:py-28">
+        <div className="glass-orb-amber w-[280px] h-[280px] -bottom-32 -left-32" />
+        <div className="glass-orb-rust w-[160px] h-[160px] top-20 -right-20" />
+        <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-8">
           <div className="text-center mb-14">
             <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[oklch(0.55_0.15_30)]" style={{ fontFamily: "var(--font-body)" }}>
               Syzygy Methodology
@@ -157,8 +161,10 @@ export default function Impact() {
       </section>
 
       {/* B Corp */}
-      <section className="section-warm py-16 sm:py-20">
-        <div className="max-w-5xl mx-auto px-5 sm:px-8">
+      <section className="relative section-warm overflow-hidden py-16 sm:py-20">
+        <div className="glass-orb-rust w-[300px] h-[300px] -bottom-32 -right-32" />
+        <div className="glass-orb-amber w-[180px] h-[180px] top-10 -left-20" />
+        <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-8">
           <div className="bg-white rounded-2xl p-8 sm:p-10 shadow-sm border border-black/5 flex flex-col sm:flex-row items-center gap-8">
             <div className="w-20 h-20 shrink-0 rounded-full border-4 border-[oklch(0.55_0.15_30)] flex items-center justify-center">
               <span className="text-3xl font-bold text-[oklch(0.55_0.15_30)]" style={{ fontFamily: "var(--font-display)" }}>B</span>
@@ -174,8 +180,10 @@ export default function Impact() {
       </section>
 
       {/* Services Grid */}
-      <section className="section-light py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      <section className="relative section-light overflow-hidden py-20 sm:py-28">
+        <div className="glass-orb-amber w-[280px] h-[280px] -bottom-32 -left-32" />
+        <div className="glass-orb-rust w-[160px] h-[160px] top-20 -right-20" />
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
               How We Create <span className="text-[oklch(0.55_0.15_30)]">Impact</span>
@@ -203,8 +211,10 @@ export default function Impact() {
       </section>
 
       {/* Commitment */}
-      <section className="section-dark py-20 sm:py-28">
-        <div className="max-w-5xl mx-auto px-5 sm:px-8 text-center">
+      <section className="relative section-dark overflow-hidden py-20 sm:py-28">
+        <div className="glass-orb-blue w-[350px] h-[350px] -top-40 -right-40" />
+        <div className="glass-orb-amber w-[200px] h-[200px] bottom-20 -left-20" />
+        <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-8 text-center">
           <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[oklch(0.55_0.15_30)]" style={{ fontFamily: "var(--font-body)" }}>
             Our Commitment
           </span>
@@ -230,8 +240,10 @@ export default function Impact() {
       </section>
 
       {/* Related Blog Posts */}
-      <section className="section-warm py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      <section className="relative section-warm overflow-hidden py-20 sm:py-28">
+        <div className="glass-orb-rust w-[300px] h-[300px] -bottom-32 -right-32" />
+        <div className="glass-orb-amber w-[180px] h-[180px] top-10 -left-20" />
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
           <h2 className="text-3xl sm:text-4xl font-bold mb-10" style={{ fontFamily: "var(--font-display)" }}>
             Impact <span className="text-[oklch(0.55_0.15_30)]">Insights</span>
           </h2>

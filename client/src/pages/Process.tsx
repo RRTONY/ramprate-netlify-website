@@ -242,8 +242,10 @@ export default function Process() {
       </PageHero>
 
       {/* ═══ 3-PHASE OVERVIEW: Me → Way → Our ═══ */}
-      <section id="me-way-our" className="section-dark py-20 sm:py-28 scroll-mt-20">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      <section id="me-way-our" className="relative section-dark py-20 sm:py-28 scroll-mt-20 overflow-hidden">
+        <div className="glass-orb glass-orb-blue w-[350px] h-[350px] -top-40 -right-40" />
+        <div className="glass-orb glass-orb-amber w-[200px] h-[200px] bottom-20 -left-20" />
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -281,7 +283,7 @@ export default function Process() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: i * 0.15 }}
-                className="relative bg-white/[0.04] border border-white/[0.08] rounded-xl p-7 overflow-hidden scroll-mt-24"
+                className="glass-card p-7 overflow-hidden scroll-mt-24"
               >
                 {/* Top accent bar */}
                 <div
@@ -349,8 +351,10 @@ export default function Process() {
       </section>
 
       {/* ═══ DIAGNOSE ═══ */}
-      <section id="flow-circuit" className="section-warm py-20 sm:py-28 scroll-mt-20">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      <section id="flow-circuit" className="relative section-warm py-20 sm:py-28 scroll-mt-20 overflow-hidden">
+        <div className="glass-orb glass-orb-rust w-[300px] h-[300px] -bottom-32 -right-32" />
+        <div className="glass-orb glass-orb-amber w-[180px] h-[180px] top-10 -left-20" />
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -378,7 +382,7 @@ export default function Process() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl border border-black/5 p-7 shadow-sm"
+              className="glass-card-warm p-7"
             >
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-10 h-10 rounded-lg bg-[oklch(0.55_0.2_190)]/10 flex items-center justify-center">
@@ -403,7 +407,7 @@ export default function Process() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="bg-white rounded-xl border border-black/5 p-7 shadow-sm"
+              className="glass-card-warm p-7"
             >
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-10 h-10 rounded-lg bg-[oklch(0.82_0.15_75)]/10 flex items-center justify-center">
@@ -480,8 +484,10 @@ export default function Process() {
       </section>
 
       {/* ═══ ACTIVATE ═══ */}
-      <section className="section-dark py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      <section className="relative section-dark py-20 sm:py-28 overflow-hidden">
+        <div className="glass-orb glass-orb-blue w-[280px] h-[280px] top-10 -right-32" />
+        <div className="glass-orb glass-orb-rust w-[200px] h-[200px] -bottom-20 left-10" />
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -509,7 +515,7 @@ export default function Process() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-7"
+              className="glass-card p-7"
             >
               <div className="flex items-center justify-between mb-5">
                 <span className="text-xs font-bold tracking-wider text-[oklch(0.55_0.2_190)]" style={{ fontFamily: "var(--font-mono)" }}>03</span>
@@ -532,7 +538,7 @@ export default function Process() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-7"
+              className="glass-card p-7"
             >
               <div className="flex items-center justify-between mb-5">
                 <span className="text-xs font-bold tracking-wider text-[oklch(0.55_0.2_190)]" style={{ fontFamily: "var(--font-mono)" }}>04</span>
@@ -555,7 +561,7 @@ export default function Process() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-7"
+              className="glass-card p-7"
             >
               <div className="flex items-center justify-between mb-5">
                 <span className="text-xs font-bold tracking-wider text-[oklch(0.55_0.2_190)]" style={{ fontFamily: "var(--font-mono)" }}>05</span>
@@ -576,8 +582,10 @@ export default function Process() {
       </section>
 
       {/* ═══ EXECUTE & DELIVER ═══ */}
-      <section className="section-warm py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      <section className="relative section-warm py-20 sm:py-28 overflow-hidden">
+        <div className="glass-orb glass-orb-amber w-[300px] h-[300px] -top-32 -left-32" />
+        <div className="glass-orb glass-orb-rust w-[180px] h-[180px] bottom-20 right-10" />
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -605,7 +613,7 @@ export default function Process() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl border border-black/5 p-7 shadow-sm"
+              className="glass-card-warm p-7"
             >
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-10 h-10 rounded-lg bg-[oklch(0.55_0.2_190)]/10 flex items-center justify-center">
@@ -630,7 +638,7 @@ export default function Process() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="bg-white rounded-xl border border-black/5 p-7 shadow-sm"
+              className="glass-card-warm p-7"
             >
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-10 h-10 rounded-lg bg-[oklch(0.55_0.2_160)]/10 flex items-center justify-center">
@@ -690,8 +698,10 @@ export default function Process() {
       </section>
 
       {/* ═══ THE COMPLETE MAP ═══ */}
-      <section className="section-dark py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      <section className="relative section-dark py-20 sm:py-28 overflow-hidden">
+        <div className="glass-orb glass-orb-amber w-[350px] h-[350px] -bottom-40 -right-40" />
+        <div className="glass-orb glass-orb-blue w-[200px] h-[200px] top-20 -left-20" />
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -741,7 +751,7 @@ export default function Process() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="flex flex-col sm:flex-row gap-4 sm:gap-8 p-5 rounded-lg bg-white/[0.03] border border-white/[0.06]"
+                className="glass-card flex flex-col sm:flex-row gap-4 sm:gap-8 p-5"
               >
                 <div className="sm:w-44 shrink-0">
                   <span

@@ -78,8 +78,10 @@ export default function Growth() {
       />
 
       {/* What is Syzygy */}
-      <section className="section-warm py-20 sm:py-28">
-        <div className="max-w-5xl mx-auto px-5 sm:px-8">
+      <section className="relative section-warm overflow-hidden py-20 sm:py-28">
+        <div className="glass-orb-rust w-[300px] h-[300px] -bottom-32 -right-32" />
+        <div className="glass-orb-amber w-[180px] h-[180px] top-10 -left-20" />
+        <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-8">
           <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[oklch(0.55_0.15_30)]" style={{ fontFamily: "var(--font-body)" }}>
             The Model
           </span>
@@ -98,8 +100,10 @@ export default function Growth() {
       </section>
 
       {/* Highlight Services Grid */}
-      <section className="section-light py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      <section className="relative section-light overflow-hidden py-20 sm:py-28">
+        <div className="glass-orb-amber w-[280px] h-[280px] -bottom-32 -left-32" />
+        <div className="glass-orb-rust w-[160px] h-[160px] top-20 -right-20" />
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
               How We Help Founders <span className="text-[oklch(0.55_0.15_30)]">Win</span>
@@ -127,8 +131,10 @@ export default function Growth() {
       </section>
 
       {/* ALL 10 Advisory Services — numbered list from paste */}
-      <section className="section-warm py-20 sm:py-28">
-        <div className="max-w-5xl mx-auto px-5 sm:px-8">
+      <section className="relative section-warm overflow-hidden py-20 sm:py-28">
+        <div className="glass-orb-rust w-[300px] h-[300px] -bottom-32 -right-32" />
+        <div className="glass-orb-amber w-[180px] h-[180px] top-10 -left-20" />
+        <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-8">
           <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[oklch(0.55_0.15_30)]" style={{ fontFamily: "var(--font-body)" }}>
             Startup Advisory Services
           </span>
@@ -159,8 +165,10 @@ export default function Growth() {
       </section>
 
       {/* Fee Structure & Process — REAL from paste */}
-      <section className="section-dark py-20 sm:py-28">
-        <div className="max-w-5xl mx-auto px-5 sm:px-8">
+      <section className="relative section-dark overflow-hidden py-20 sm:py-28">
+        <div className="glass-orb-blue w-[350px] h-[350px] -top-40 -right-40" />
+        <div className="glass-orb-amber w-[200px] h-[200px] bottom-20 -left-20" />
+        <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-8">
           <div className="grid md:grid-cols-2 gap-10">
             <div>
               <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[oklch(0.55_0.15_30)]" style={{ fontFamily: "var(--font-body)" }}>

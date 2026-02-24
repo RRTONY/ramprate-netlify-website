@@ -790,8 +790,10 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════════
           HOW WE OPERATE
       ═══════════════════════════════════════════════════ */}
-      <section className="section-warm py-24 sm:py-32">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      <section className="relative section-warm py-24 sm:py-32 overflow-hidden">
+        <div className="glass-orb glass-orb-rust w-[350px] h-[350px] -top-32 -right-32" />
+        <div className="glass-orb glass-orb-amber w-[200px] h-[200px] bottom-10 left-10" />
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -820,7 +822,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.12 }}
-                className="relative bg-white rounded-xl p-8 border border-black/5 shadow-sm"
+                className="glass-card-warm p-8"
               >
                 <div className="flex items-center gap-3 mb-5">
                   <div className="w-12 h-12 rounded-lg bg-[oklch(0.55_0.15_30)]/10 flex items-center justify-center">
@@ -854,8 +856,10 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════════
           COMPENSATION — Aligned With Value Created
       ═══════════════════════════════════════════════════ */}
-      <section className="section-light py-24 sm:py-32">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      <section className="relative section-light py-24 sm:py-32 overflow-hidden">
+        <div className="glass-orb glass-orb-amber w-[300px] h-[300px] -bottom-32 -left-32" />
+        <div className="glass-orb glass-orb-rust w-[180px] h-[180px] top-20 right-20" />
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -882,7 +886,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-white rounded-xl p-8 border border-black/5 shadow-sm"
+              className="glass-card-warm p-8"
             >
               <div className="space-y-5">
                 <div className="flex items-start gap-4">

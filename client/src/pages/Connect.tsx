@@ -78,8 +78,10 @@ export default function Connect() {
         subCopy="And focus on the change you want to create in the world. The first conversation is always free."
       />
 
-      <section className="section-warm py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      <section className="relative section-warm overflow-hidden py-20 sm:py-28">
+        <div className="glass-orb-rust w-[300px] h-[300px] -bottom-32 -right-32" />
+        <div className="glass-orb-amber w-[180px] h-[180px] top-10 -left-20" />
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
           <div className="grid lg:grid-cols-5 gap-12">
             {/* Form */}
             <div className="lg:col-span-3">

@@ -136,7 +136,9 @@ export default function Thinking() {
       />
 
       {/* Article Archive */}
-      <section className="bg-[#0d1117] py-24 sm:py-32">
+      <section className="relative bg-[#0d1117] py-24 sm:py-32 overflow-hidden">
+        <div className="glass-orb glass-orb-blue w-[300px] h-[300px] -top-32 -right-32" />
+        <div className="glass-orb glass-orb-rust w-[200px] h-[200px] bottom-10 -left-20" />
         <div className="max-w-4xl mx-auto px-5 sm:px-8">
           {/* Author note */}
           <motion.div
@@ -178,14 +180,6 @@ export default function Thinking() {
                       transition={{ delay: i * 0.05 }}
                       className="group flex items-start gap-6 sm:gap-10 py-7 border-b border-white/[0.06] hover:bg-white/[0.02] -mx-4 px-4 rounded-lg transition-all duration-300"
                     >
-                      {/* Year */}
-                      <span
-                        className="text-sm font-bold text-[oklch(0.82_0.15_75)]/60 shrink-0 w-12 pt-0.5"
-                        style={{ fontFamily: "var(--font-mono)" }}
-                      >
-                        {article.year}
-                      </span>
-
                       {/* Content */}
                       <div className="flex-1 min-w-0">
                         <h3

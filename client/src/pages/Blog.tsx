@@ -484,7 +484,9 @@ export default function Blog() {
 
       {/* Featured Post */}
       {featured && (
-        <section className="bg-[#0a0f1a] py-16 sm:py-20">
+        <section className="relative bg-[#0a0f1a] py-16 sm:py-20 overflow-hidden">
+        <div className="glass-orb glass-orb-blue w-[350px] h-[350px] -top-40 -right-40" />
+        <div className="glass-orb glass-orb-amber w-[200px] h-[200px] bottom-20 -left-20" />
           <div className="max-w-5xl mx-auto px-5 sm:px-8">
             <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[oklch(0.82_0.15_75)]" style={{ fontFamily: "var(--font-body)" }}>
               Featured
@@ -563,7 +565,9 @@ export default function Blog() {
       </section>
 
       {/* Blog Grid */}
-      <section className="bg-[#0a0f1a] py-16 sm:py-24">
+      <section className="relative bg-[#0a0f1a] py-16 sm:py-24 overflow-hidden">
+        <div className="glass-orb glass-orb-rust w-[300px] h-[300px] -bottom-32 -left-32" />
+        <div className="glass-orb glass-orb-amber w-[180px] h-[180px] top-20 -right-20" />
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {filtered.map((post, i) => {

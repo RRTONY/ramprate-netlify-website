@@ -206,8 +206,10 @@ export default function Proof() {
       />
 
       {/* Case Studies — REAL from ramprate.com */}
-      <section className="section-warm py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      <section className="relative section-warm py-20 sm:py-28 overflow-hidden">
+        <div className="glass-orb glass-orb-rust w-[300px] h-[300px] -top-32 -right-32" />
+        <div className="glass-orb glass-orb-amber w-[200px] h-[200px] bottom-10 -left-20" />
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
           <div className="mb-14">
             <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[oklch(0.55_0.15_30)]" style={{ fontFamily: "var(--font-body)" }}>
               Case Studies
@@ -224,7 +226,7 @@ export default function Proof() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="bg-white rounded-xl p-7 border border-black/5 shadow-sm hover:shadow-md transition-shadow"
+                className="glass-card-warm p-7 hover:shadow-md transition-shadow"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 rounded-lg bg-[oklch(0.55_0.15_30)]/10 flex items-center justify-center shrink-0">
@@ -270,13 +272,14 @@ export default function Proof() {
             {additionalClients.map((c) => (
               <span key={c} className="text-xs font-medium text-[oklch(0.55_0.02_50)]" style={{ fontFamily: "var(--font-body)" }}>{c}</span>
             ))}
-          </div>
+           </div>
         </div>
       </section>
 
       {/* Board of Advisors */}
-      <section className="section-dark py-16 sm:py-20">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      <section className="relative section-dark py-16 sm:py-20 overflow-hidden">
+        <div className="glass-orb glass-orb-rust w-[200px] h-[200px] top-0 -left-20" />
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8" style={{ fontFamily: "var(--font-display)" }}>
             Board of <span className="text-[oklch(0.55_0.15_30)]">Advisors</span>
           </h2>
@@ -317,9 +320,11 @@ export default function Proof() {
         </div>
       </section>
 
-      {/* 30 Testimonials — interleaved Principal + Firm — masonry layout with filter */}
-      <section className="section-light py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      {/* 30 Testimonialss — interleaved Principal + Firm — masonry layout with filter */}
+      <section className="relative section-light py-20 sm:py-28 overflow-hidden">
+        <div className="glass-orb glass-orb-amber w-[300px] h-[300px] -bottom-32 -left-32" />
+        <div className="glass-orb glass-orb-rust w-[180px] h-[180px] top-20 -right-20" />
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-2" style={{ fontFamily: "var(--font-display)" }}>
@@ -410,8 +415,10 @@ export default function Proof() {
       {/* ═══════════════════════════════════════════════════
           CONFIDENTIAL ENGAGEMENTS — REFERENCES UNDER NDA
       ═══════════════════════════════════════════════════ */}
-      <section className="section-dark py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      <section className="relative section-dark py-20 sm:py-28 overflow-hidden">
+        <div className="glass-orb glass-orb-blue w-[350px] h-[350px] -bottom-40 -right-40" />
+        <div className="glass-orb glass-orb-amber w-[200px] h-[200px] top-20 -left-20" />
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -510,7 +517,7 @@ export default function Proof() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: (i % 6) * 0.08 }}
-                  className="break-inside-avoid rounded-xl p-7 bg-white/[0.04] border border-white/[0.08] backdrop-blur-sm hover:bg-white/[0.08] transition-all"
+                  className="glass-card break-inside-avoid p-7 hover:bg-white/[0.08] transition-all"
                 >
                   <div className="flex items-center justify-between mb-4">
                     <Quote size={20} className="text-[oklch(0.82_0.15_75)]/30" />

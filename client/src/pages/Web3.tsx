@@ -92,8 +92,10 @@ export default function Web3() {
       />
 
       {/* What is Stratum */}
-      <section className="section-warm py-20 sm:py-28">
-        <div className="max-w-5xl mx-auto px-5 sm:px-8">
+      <section className="relative section-warm overflow-hidden py-20 sm:py-28">
+        <div className="glass-orb-rust w-[300px] h-[300px] -bottom-32 -right-32" />
+        <div className="glass-orb-amber w-[180px] h-[180px] top-10 -left-20" />
+        <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-8">
           <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[oklch(0.55_0.15_30)]" style={{ fontFamily: "var(--font-body)" }}>
             The Bridge
           </span>
@@ -112,8 +114,10 @@ export default function Web3() {
       </section>
 
       {/* Services Grid — high-level */}
-      <section className="section-light py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      <section className="relative section-light overflow-hidden py-20 sm:py-28">
+        <div className="glass-orb-amber w-[280px] h-[280px] -bottom-32 -left-32" />
+        <div className="glass-orb-rust w-[160px] h-[160px] top-20 -right-20" />
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
               What We <span className="text-[oklch(0.55_0.15_30)]">Build</span>
@@ -141,8 +145,10 @@ export default function Web3() {
       </section>
 
       {/* All 7 Blockchain Advisory Services — from paste */}
-      <section className="section-warm py-20 sm:py-28">
-        <div className="max-w-5xl mx-auto px-5 sm:px-8">
+      <section className="relative section-warm overflow-hidden py-20 sm:py-28">
+        <div className="glass-orb-rust w-[300px] h-[300px] -bottom-32 -right-32" />
+        <div className="glass-orb-amber w-[180px] h-[180px] top-10 -left-20" />
+        <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-8">
           <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[oklch(0.55_0.15_30)]" style={{ fontFamily: "var(--font-body)" }}>
             Blockchain Advisory
           </span>
@@ -171,8 +177,10 @@ export default function Web3() {
       </section>
 
       {/* Published Insights — REAL from paste */}
-      <section className="section-dark py-20 sm:py-28">
-        <div className="max-w-5xl mx-auto px-5 sm:px-8">
+      <section className="relative section-dark overflow-hidden py-20 sm:py-28">
+        <div className="glass-orb-blue w-[350px] h-[350px] -top-40 -right-40" />
+        <div className="glass-orb-amber w-[200px] h-[200px] bottom-20 -left-20" />
+        <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-8">
           <div className="flex items-center gap-3 mb-8">
             <BookOpen size={20} className="text-[oklch(0.55_0.15_30)]" />
             <h2 className="text-2xl sm:text-3xl font-bold text-white" style={{ fontFamily: "var(--font-display)" }}>
@@ -206,8 +214,10 @@ export default function Web3() {
       </section>
 
       {/* Commitment */}
-      <section className="section-light py-20 sm:py-28">
-        <div className="max-w-5xl mx-auto px-5 sm:px-8 text-center">
+      <section className="relative section-light overflow-hidden py-20 sm:py-28">
+        <div className="glass-orb-amber w-[280px] h-[280px] -bottom-32 -left-32" />
+        <div className="glass-orb-rust w-[160px] h-[160px] top-20 -right-20" />
+        <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-8 text-center">
           <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[oklch(0.55_0.15_30)]" style={{ fontFamily: "var(--font-body)" }}>
             Our Commitment
           </span>
@@ -233,8 +243,10 @@ export default function Web3() {
       </section>
 
       {/* Related Blog Posts — REAL from ramprate.com */}
-      <section className="section-warm py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      <section className="relative section-warm overflow-hidden py-20 sm:py-28">
+        <div className="glass-orb-rust w-[300px] h-[300px] -bottom-32 -right-32" />
+        <div className="glass-orb-amber w-[180px] h-[180px] top-10 -left-20" />
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
           <h2 className="text-3xl sm:text-4xl font-bold mb-10" style={{ fontFamily: "var(--font-display)" }}>
             Web3 <span className="text-[oklch(0.55_0.15_30)]">Insights</span>
           </h2>

@@ -208,8 +208,10 @@ export default function About() {
       />
 
       {/* Founder's Story — REAL from ramprate.com/values/ */}
-      <section className="section-warm py-20 sm:py-28">
-        <div className="max-w-4xl mx-auto px-5 sm:px-8">
+      <section className="relative section-warm overflow-hidden py-20 sm:py-28">
+        <div className="glass-orb-rust w-[300px] h-[300px] -bottom-32 -right-32" />
+        <div className="glass-orb-amber w-[180px] h-[180px] top-10 -left-20" />
+        <div className="relative z-10 max-w-4xl mx-auto px-5 sm:px-8">
           <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[oklch(0.55_0.15_30)]" style={{ fontFamily: "var(--font-body)" }}>
             Founder's Story
           </span>
@@ -275,8 +277,10 @@ export default function About() {
       </section>
 
       {/* Corporate Facts — enriched with Ibiza EU HQ */}
-      <section className="section-light py-16 sm:py-20">
-        <div className="max-w-5xl mx-auto px-5 sm:px-8">
+      <section className="relative section-light overflow-hidden py-16 sm:py-20">
+        <div className="glass-orb-amber w-[280px] h-[280px] -bottom-32 -left-32" />
+        <div className="glass-orb-rust w-[160px] h-[160px] top-20 -right-20" />
+        <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-8">
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-8" style={{ fontFamily: "var(--font-display)" }}>
             Corporate <span className="text-[oklch(0.55_0.15_30)]">Facts</span>
           </h2>
@@ -307,8 +311,10 @@ export default function About() {
       </section>
 
       {/* Timeline — REAL milestones from ramprate.com */}
-      <section className="section-dark py-20 sm:py-28">
-        <div className="max-w-4xl mx-auto px-5 sm:px-8">
+      <section className="relative section-dark overflow-hidden py-20 sm:py-28">
+        <div className="glass-orb-blue w-[350px] h-[350px] -top-40 -right-40" />
+        <div className="glass-orb-amber w-[200px] h-[200px] bottom-20 -left-20" />
+        <div className="relative z-10 max-w-4xl mx-auto px-5 sm:px-8">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-12" style={{ fontFamily: "var(--font-display)" }}>
             Our <span className="text-[oklch(0.55_0.15_30)]">Journey</span>
           </h2>
@@ -331,8 +337,10 @@ export default function About() {
       </section>
 
       {/* Core Team — REAL 5 from spec */}
-      <section className="section-light py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      <section className="relative section-light overflow-hidden py-20 sm:py-28">
+        <div className="glass-orb-amber w-[280px] h-[280px] -bottom-32 -left-32" />
+        <div className="glass-orb-rust w-[160px] h-[160px] top-20 -right-20" />
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4" style={{ fontFamily: "var(--font-display)" }}>
             Core <span className="text-[oklch(0.55_0.15_30)]">Team</span>
           </h2>
@@ -388,8 +396,10 @@ export default function About() {
       </section>
 
       {/* Board of Advisors — REAL 10 from spec */}
-      <section className="section-warm py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      <section className="relative section-warm overflow-hidden py-20 sm:py-28">
+        <div className="glass-orb-rust w-[300px] h-[300px] -bottom-32 -right-32" />
+        <div className="glass-orb-amber w-[180px] h-[180px] top-10 -left-20" />
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-12" style={{ fontFamily: "var(--font-display)" }}>
             Board of <span className="text-[oklch(0.55_0.15_30)]">Advisors</span>
           </h2>
@@ -448,8 +458,10 @@ export default function About() {
       </section>
 
       {/* Concentric Model */}
-      <section className="section-dark py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      <section className="relative section-dark overflow-hidden py-20 sm:py-28">
+        <div className="glass-orb-blue w-[350px] h-[350px] -top-40 -right-40" />
+        <div className="glass-orb-amber w-[200px] h-[200px] bottom-20 -left-20" />
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-12" style={{ fontFamily: "var(--font-display)" }}>
             The <span className="text-[oklch(0.55_0.15_30)]">Concentric</span> Model
           </h2>
@@ -477,8 +489,10 @@ export default function About() {
       </section>
 
       {/* Values — REAL from ramprate.com/values/ — enriched from paste */}
-      <section className="section-warm py-20 sm:py-28">
-        <div className="max-w-5xl mx-auto px-5 sm:px-8">
+      <section className="relative section-warm overflow-hidden py-20 sm:py-28">
+        <div className="glass-orb-rust w-[300px] h-[300px] -bottom-32 -right-32" />
+        <div className="glass-orb-amber w-[180px] h-[180px] top-10 -left-20" />
+        <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-8">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4" style={{ fontFamily: "var(--font-display)" }}>
             Our <span className="text-[oklch(0.55_0.15_30)]">Values</span> & Principles
           </h2>
