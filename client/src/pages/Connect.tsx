@@ -8,16 +8,16 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
-import { Mail, MapPin, Phone, Calendar, Send, CheckCircle, ArrowRight, Globe } from "lucide-react";
+import { Mail, MapPin, Phone, Calendar, Send, CheckCircle, ArrowRight, Globe, Loader2 } from "lucide-react";
 import { toast } from "sonner";
+import { trpc } from "@/lib/trpc";
 
 const inquiryTypes = [
-  "IT Sourcing / Cost Optimization",
-  "Growth Advisory / Syzygy",
-  "Web3 / Stratum",
-  "Impact / ImpactSoul",
-  "General Inquiry",
-  "Press / Media",
+  { label: "IT Sourcing / Cost Optimization", value: "sourcing" as const },
+  { label: "Growth Advisory / Syzygy", value: "growth" as const },
+  { label: "Web3 / Stratum", value: "web3" as const },
+  { label: "Impact / ImpactSoul", value: "impact" as const },
+  { label: "General Inquiry", value: "general" as const },
 ];
 
 /* ── OFFICE LOCATIONS — REAL from paste ── */
@@ -35,14 +35,34 @@ export default function Connect() {
     name: "",
     email: "",
     company: "",
-    type: "",
+    title: "",
+    phone: "",
+    practice: "" as string,
     message: "",
+  });
+
+  const submitLead = trpc.lead.submit.useMutation({
+    onSuccess: () => {
+      setSubmitted(true);
+      toast.success("Message sent! We'll be in touch within 24 hours.");
+    },
+    onError: (error) => {
+      toast.error(error.message || "Something went wrong. Please try again.");
+    },
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    toast.success("Message sent! We'll be in touch within 24 hours.");
+    submitLead.mutate({
+      name: formData.name,
+      email: formData.email,
+      company: formData.company || undefined,
+      title: formData.title || undefined,
+      phone: formData.phone || undefined,
+      practice: (formData.practice as "sourcing" | "growth" | "web3" | "impact" | "general") || "general",
+      message: formData.message || undefined,
+      source: "connect-page",
+    });
   };
 
   return (
@@ -85,7 +105,7 @@ export default function Connect() {
                   <div className="grid sm:grid-cols-2 gap-5 mb-5">
                     <div>
                       <label className="block text-xs font-medium text-[oklch(0.4_0.02_50)] mb-2 uppercase tracking-wider" style={{ fontFamily: "var(--font-body)" }}>
-                        Name
+                        Name *
                       </label>
                       <input
                         type="text"
@@ -99,7 +119,7 @@ export default function Connect() {
                     </div>
                     <div>
                       <label className="block text-xs font-medium text-[oklch(0.4_0.02_50)] mb-2 uppercase tracking-wider" style={{ fontFamily: "var(--font-body)" }}>
-                        Email
+                        Email *
                       </label>
                       <input
                         type="email"
@@ -112,34 +132,64 @@ export default function Connect() {
                       />
                     </div>
                   </div>
-                  <div className="mb-5">
-                    <label className="block text-xs font-medium text-[oklch(0.4_0.02_50)] mb-2 uppercase tracking-wider" style={{ fontFamily: "var(--font-body)" }}>
-                      Company
-                    </label>
-                    <input
-                      type="text"
-                      value={formData.company}
-                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      className="w-full px-4 py-3 rounded-md border border-black/10 bg-[oklch(0.97_0.01_80)] text-sm focus:outline-none focus:border-[oklch(0.55_0.15_30)] focus:ring-1 focus:ring-[oklch(0.55_0.15_30)]/20 transition-colors"
-                      style={{ fontFamily: "var(--font-body)" }}
-                      placeholder="Your company"
-                    />
+                  <div className="grid sm:grid-cols-2 gap-5 mb-5">
+                    <div>
+                      <label className="block text-xs font-medium text-[oklch(0.4_0.02_50)] mb-2 uppercase tracking-wider" style={{ fontFamily: "var(--font-body)" }}>
+                        Company
+                      </label>
+                      <input
+                        type="text"
+                        value={formData.company}
+                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                        className="w-full px-4 py-3 rounded-md border border-black/10 bg-[oklch(0.97_0.01_80)] text-sm focus:outline-none focus:border-[oklch(0.55_0.15_30)] focus:ring-1 focus:ring-[oklch(0.55_0.15_30)]/20 transition-colors"
+                        style={{ fontFamily: "var(--font-body)" }}
+                        placeholder="Your company"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-medium text-[oklch(0.4_0.02_50)] mb-2 uppercase tracking-wider" style={{ fontFamily: "var(--font-body)" }}>
+                        Title
+                      </label>
+                      <input
+                        type="text"
+                        value={formData.title}
+                        onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+                        className="w-full px-4 py-3 rounded-md border border-black/10 bg-[oklch(0.97_0.01_80)] text-sm focus:outline-none focus:border-[oklch(0.55_0.15_30)] focus:ring-1 focus:ring-[oklch(0.55_0.15_30)]/20 transition-colors"
+                        style={{ fontFamily: "var(--font-body)" }}
+                        placeholder="Your title"
+                      />
+                    </div>
                   </div>
-                  <div className="mb-5">
-                    <label className="block text-xs font-medium text-[oklch(0.4_0.02_50)] mb-2 uppercase tracking-wider" style={{ fontFamily: "var(--font-body)" }}>
-                      I'm interested in
-                    </label>
-                    <select
-                      value={formData.type}
-                      onChange={(e) => setFormData({ ...formData, type: e.target.value })}
-                      className="w-full px-4 py-3 rounded-md border border-black/10 bg-[oklch(0.97_0.01_80)] text-sm focus:outline-none focus:border-[oklch(0.55_0.15_30)] focus:ring-1 focus:ring-[oklch(0.55_0.15_30)]/20 transition-colors"
-                      style={{ fontFamily: "var(--font-body)" }}
-                    >
-                      <option value="">Select a topic</option>
-                      {inquiryTypes.map((t) => (
-                        <option key={t} value={t}>{t}</option>
-                      ))}
-                    </select>
+                  <div className="grid sm:grid-cols-2 gap-5 mb-5">
+                    <div>
+                      <label className="block text-xs font-medium text-[oklch(0.4_0.02_50)] mb-2 uppercase tracking-wider" style={{ fontFamily: "var(--font-body)" }}>
+                        Phone
+                      </label>
+                      <input
+                        type="tel"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        className="w-full px-4 py-3 rounded-md border border-black/10 bg-[oklch(0.97_0.01_80)] text-sm focus:outline-none focus:border-[oklch(0.55_0.15_30)] focus:ring-1 focus:ring-[oklch(0.55_0.15_30)]/20 transition-colors"
+                        style={{ fontFamily: "var(--font-body)" }}
+                        placeholder="+1 (555) 000-0000"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-medium text-[oklch(0.4_0.02_50)] mb-2 uppercase tracking-wider" style={{ fontFamily: "var(--font-body)" }}>
+                        I'm interested in
+                      </label>
+                      <select
+                        value={formData.practice}
+                        onChange={(e) => setFormData({ ...formData, practice: e.target.value })}
+                        className="w-full px-4 py-3 rounded-md border border-black/10 bg-[oklch(0.97_0.01_80)] text-sm focus:outline-none focus:border-[oklch(0.55_0.15_30)] focus:ring-1 focus:ring-[oklch(0.55_0.15_30)]/20 transition-colors"
+                        style={{ fontFamily: "var(--font-body)" }}
+                      >
+                        <option value="">Select a topic</option>
+                        {inquiryTypes.map((t) => (
+                          <option key={t.value} value={t.value}>{t.label}</option>
+                        ))}
+                      </select>
+                    </div>
                   </div>
                   <div className="mb-6">
                     <label className="block text-xs font-medium text-[oklch(0.4_0.02_50)] mb-2 uppercase tracking-wider" style={{ fontFamily: "var(--font-body)" }}>
@@ -156,10 +206,19 @@ export default function Connect() {
                   </div>
                   <button
                     type="submit"
-                    className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md text-sm font-semibold bg-[oklch(0.55_0.15_30)] text-white hover:bg-[oklch(0.48_0.15_30)] transition-all shadow-lg shadow-[oklch(0.55_0.15_30)]/20"
+                    disabled={submitLead.isPending}
+                    className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md text-sm font-semibold bg-[oklch(0.55_0.15_30)] text-white hover:bg-[oklch(0.48_0.15_30)] transition-all shadow-lg shadow-[oklch(0.55_0.15_30)]/20 disabled:opacity-60 disabled:cursor-not-allowed"
                     style={{ fontFamily: "var(--font-body)" }}
                   >
-                    <Send size={16} /> Send Message
+                    {submitLead.isPending ? (
+                      <>
+                        <Loader2 size={16} className="animate-spin" /> Sending...
+                      </>
+                    ) : (
+                      <>
+                        <Send size={16} /> Send Message
+                      </>
+                    )}
                   </button>
                 </form>
               )}

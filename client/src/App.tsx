@@ -16,8 +16,8 @@ import Blog from "./pages/Blog";
 import Process from "./pages/Process";
 import Thinking from "./pages/Thinking";
 import { Redirect } from "wouter";
-
 function Router() {
+  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path={"/"} component={Home} />

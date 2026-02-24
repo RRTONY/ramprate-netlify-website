@@ -5,11 +5,12 @@
  * REAL board members from spec
  * ZERO fabrication.
  */
-import { motion } from "framer-motion";
+import { useState, useMemo } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
-import { ArrowRight, Quote, Building2, TrendingDown, ShieldCheck, BarChart3, Linkedin, Twitter } from "lucide-react";
+import { ArrowRight, Quote, Building2, TrendingDown, ShieldCheck, BarChart3, Linkedin, Twitter, Filter } from "lucide-react";
 
 /* ── 7 REAL CASE STUDIES from ramprate.com ── */
 const caseStudies = [
@@ -169,7 +170,22 @@ const testimonialSocials: Record<string, { linkedin?: string; twitter?: string }
   "Blair Harrison": { linkedin: "https://www.linkedin.com/in/theblairharrison", twitter: "https://x.com/blairharrison" },
 };
 
+const CATEGORIES = ["All", "Enterprise", "Media", "Blockchain", "Gaming", "Finance"] as const;
+
 export default function Proof() {
+  const [activeFilter, setActiveFilter] = useState<string>("All");
+
+  const filteredTestimonials = useMemo(() => {
+    if (activeFilter === "All") return testimonials;
+    return testimonials.filter((t) => t.tag === activeFilter);
+  }, [activeFilter]);
+
+  const counts = useMemo(() => {
+    const map: Record<string, number> = { All: testimonials.length };
+    testimonials.forEach((t) => { map[t.tag] = (map[t.tag] || 0) + 1; });
+    return map;
+  }, []);
+
   return (
     <PageLayout>
       <PageHero
@@ -301,17 +317,38 @@ export default function Proof() {
         </div>
       </section>
 
-      {/* 30 Testimonials — interleaved Principal + Firm — masonry layout */}
+      {/* 30 Testimonials — interleaved Principal + Firm — masonry layout with filter */}
       <section className="section-light py-20 sm:py-28">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4" style={{ fontFamily: "var(--font-display)" }}>
-            What Our <span className="text-[oklch(0.55_0.15_30)]">Clients</span> Say
-          </h2>
-          <p className="text-sm text-[oklch(0.5_0.02_50)] mb-12" style={{ fontFamily: "var(--font-body)" }}>
-            30 voices. Two decades. One consistent thread: Tony and his team deliver.
-          </p>
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
+            <div>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-2" style={{ fontFamily: "var(--font-display)" }}>
+                What Our <span className="text-[oklch(0.55_0.15_30)]">Clients</span> Say
+              </h2>
+              <p className="text-sm text-[oklch(0.5_0.02_50)]" style={{ fontFamily: "var(--font-body)" }}>
+                {activeFilter === "All" ? "30 voices. Two decades. One consistent thread: Tony and his team deliver." : `${filteredTestimonials.length} ${activeFilter} testimonials.`}
+              </p>
+            </div>
+            <div className="flex items-center gap-1.5 flex-wrap">
+              <Filter size={14} className="text-[oklch(0.5_0.02_50)] mr-1" />
+              {CATEGORIES.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setActiveFilter(cat)}
+                  className={`text-[11px] px-3 py-1.5 rounded-full font-semibold tracking-wide transition-all ${
+                    activeFilter === cat
+                      ? "bg-[oklch(0.55_0.15_30)] text-white shadow-sm"
+                      : "bg-[oklch(0.94_0.03_80)] text-[oklch(0.45_0.02_50)] hover:bg-[oklch(0.90_0.04_60)]"
+                  }`}
+                  style={{ fontFamily: "var(--font-mono)" }}
+                >
+                  {cat} <span className="opacity-60 ml-0.5">({counts[cat] || 0})</span>
+                </button>
+              ))}
+            </div>
+          </div>
           <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-            {testimonials.map((t, i) => (
+            {filteredTestimonials.map((t, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 16 }}

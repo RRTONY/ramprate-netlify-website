@@ -22,3 +22,14 @@
 - [ ] Approach: Speed & De-Risk | Connections | Clean Up Messes | Align Profit+Purpose
 - [ ] Commitment: Skin in the game (4 comp models)
 - [ ] CTA: "Trust us with what you have to do"
+
+## Full-Stack Upgrade & Backend
+- [x] Add full-stack capabilities (db, server, user) via webdev_add_feature
+- [x] Fix homepage error (useAuth not imported after upgrade merge)
+- [x] Create leads database table (name, email, company, title, phone, practice, message, source, status)
+- [x] Add lead query helpers in server/db.ts (createLead, getLeads, getLeadById)
+- [x] Create lead.submit tRPC procedure with Zod validation
+- [x] Wire Connect page form to tRPC lead.submit mutation
+- [x] Add owner notification on new lead submission
+- [x] Add loading state and error handling to contact form
+- [x] Write vitest tests for lead submission (8 tests, all passing)
