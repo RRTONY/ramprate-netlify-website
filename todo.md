@@ -64,3 +64,4 @@
 - [x] Add Stratum deep-dive links (https://stratumweb-2pprew4h.manus.space) throughout the site wherever Stratum is referenced
 - [x] Interlink Flow Circuit throughout the site in business-relevant contexts
 - [x] Interlink FindMyMe throughout the site in business-relevant contexts
+- [x] Add Google Forms exit survey (forms.gle/K5QuamnhVYKAxx22A) — persistent trigger on every page + exit-intent popup

@@ -16,6 +16,7 @@ import Blog from "./pages/Blog";
 import Process from "./pages/Process";
 import Thinking from "./pages/Thinking";
 import { Redirect } from "wouter";
+import ExitSurvey from "./components/ExitSurvey";
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
@@ -45,6 +46,7 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <Router />
+          <ExitSurvey />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
