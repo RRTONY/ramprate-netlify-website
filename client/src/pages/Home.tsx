@@ -132,6 +132,11 @@ const testimonials = [
     name: "Kevin Shively",
     title: "Executive Director, International Webcasting Association",
   },
+  {
+    quote: "Under-promised and over-delivered for more than 4 years. They paid for themselves by accelerating our growth by years.",
+    name: "Kipras Kazlauskas",
+    title: "Co-Founder, Syntropy",
+  },
 ];
 
 /* ── HOW WE OPERATE ── */
@@ -232,7 +237,7 @@ export default function Home() {
                 className="mt-6 text-lg sm:text-xl text-white/70 leading-relaxed max-w-xl"
                 style={{ fontFamily: "var(--font-body)" }}
               >
-                We don't sell decks. We execute outcomes.
+                The right person. The right room. The right time.
               </motion.p>
 
               <motion.div
@@ -278,7 +283,7 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════════
           CLIENT DOMINANCE WALL
       ═══════════════════════════════════════════════════ */}
-      <section className="bg-[#0d1117] py-24 sm:py-32">
+      <section className="bg-[#0d1117] py-28 sm:py-36">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -327,7 +332,7 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════════
           SELECTED ENGAGEMENTS
       ═══════════════════════════════════════════════════ */}
-      <section className="bg-[#0a0f1a] py-24 sm:py-32">
+      <section className="bg-[#0a0f1a] py-28 sm:py-36">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -582,7 +587,7 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════════
           EXECUTIVE TESTIMONIAL CAROUSEL
       ═══════════════════════════════════════════════════ */}
-      <section className="bg-[#0a0f1a] py-24 sm:py-32">
+      <section className="bg-[#0f1419] py-28 sm:py-36">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
