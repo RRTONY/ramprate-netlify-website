@@ -1,16 +1,31 @@
 /*
  * /growth — Syzygy: Growth Advisory for Founders & Impactpreneurs
- * ALL CONTENT FROM: fusionramp.netlify.app (Syzygy brand section)
+ * ALL CONTENT FROM: ramprate.com + content migration paste
+ * 10 startup advisory services, fee structure, process.
  * ZERO fabrication.
  */
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
-import { ArrowRight, Rocket, Users, Target, Compass, LineChart, Handshake } from "lucide-react";
+import { ArrowRight, Rocket, Users, Target, Compass, LineChart, Handshake, Search, FileText, Coins, Award, Shield, Megaphone, FlaskConical } from "lucide-react";
 
-/* Real content from fusionramp.netlify.app */
-const services = [
+/* ── ALL 10 STARTUP ADVISORY SERVICES — REAL from paste ── */
+const advisoryServices = [
+  { num: "01", icon: Search, title: "The Audit", desc: "Validate you can deliver on core promises. Build a roadmap for growth." },
+  { num: "02", icon: Target, title: "Positioning", desc: "Core value proposition clarity for all your audiences — investors, customers, partners." },
+  { num: "03", icon: FileText, title: "Marketing Cleanup", desc: "Investor decks, white papers, website made clear and compelling." },
+  { num: "04", icon: Handshake, title: "Critical Partnerships", desc: "Complementary tech, channels, accelerators connected through our network." },
+  { num: "05", icon: Users, title: "Recruiting", desc: "Employees, contractors, advisors, service providers — the right people at the right time." },
+  { num: "06", icon: Shield, title: "Social Impact Strategies", desc: "Find the lever to do good. Measure and report your impact." },
+  { num: "07", icon: FlaskConical, title: "Strategic Research", desc: "Customers, competitors, partners identified. Markets quantified with data." },
+  { num: "08", icon: LineChart, title: "Strategy Validation", desc: "Staffing, product roadmap, partners pressure-tested with data." },
+  { num: "09", icon: Coins, title: "Token / IPO Amplification", desc: "Liquidity management, exchange listings, price/volume optimization." },
+  { num: "10", icon: Award, title: "Advisory Board Membership", desc: "Tony Greenberg and network lend name and reputation publicly to your company." },
+];
+
+/* ── EXISTING SERVICES (higher-level categories) ── */
+const highlightServices = [
   {
     icon: Target,
     title: "Anchor Clients",
@@ -58,7 +73,7 @@ export default function Growth() {
         stats={[
           { value: "Since", label: "2018" },
           { value: "For", label: "Founders & Impactpreneurs" },
-          { value: "Comp", label: "Break-even cash; upside in equity/tokens" },
+          { value: "Comp", label: "Equity/tokens + commission + retainers" },
         ]}
       />
 
@@ -82,7 +97,7 @@ export default function Growth() {
         </div>
       </section>
 
-      {/* Services Grid */}
+      {/* Highlight Services Grid */}
       <section className="section-light py-20 sm:py-28">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           <div className="text-center mb-14">
@@ -91,7 +106,7 @@ export default function Growth() {
             </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((s, i) => (
+            {highlightServices.map((s, i) => (
               <motion.div
                 key={s.title}
                 initial={{ opacity: 0, y: 20 }}
@@ -111,29 +126,88 @@ export default function Growth() {
         </div>
       </section>
 
-      {/* Commitment — REAL from netlify */}
-      <section className="section-dark py-20 sm:py-28">
-        <div className="max-w-5xl mx-auto px-5 sm:px-8 text-center">
+      {/* ALL 10 Advisory Services — numbered list from paste */}
+      <section className="section-warm py-20 sm:py-28">
+        <div className="max-w-5xl mx-auto px-5 sm:px-8">
           <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[oklch(0.55_0.15_30)]" style={{ fontFamily: "var(--font-body)" }}>
-            Our Commitment
+            Startup Advisory Services
           </span>
-          <h2 className="mt-4 text-3xl sm:text-4xl font-bold text-white" style={{ fontFamily: "var(--font-display)" }}>
-            Aligned Milestones
+          <h2 className="mt-4 text-3xl sm:text-4xl font-bold tracking-tight mb-10" style={{ fontFamily: "var(--font-display)" }}>
+            The Full <span className="text-[oklch(0.55_0.15_30)]">Playbook</span>
           </h2>
-          <p className="mt-6 text-lg text-white/60 leading-relaxed max-w-2xl mx-auto" style={{ fontFamily: "var(--font-body)" }}>
-            Break-even cash with upside in equity or tokens. We hit your milestones or we share the pain. Custom-designed milestones for you.
-          </p>
-          <div className="mt-12 grid sm:grid-cols-3 gap-6">
-            {[
-              { label: "Compensation", value: "Break-even cash; upside in equity / tokens" },
-              { label: "Commitment", value: "Custom-designed milestones for you" },
-              { label: "Key Value", value: "Kick down barriers · Find allies · Focus on build" },
-            ].map((item) => (
-              <div key={item.label} className="bg-white/5 rounded-xl p-6 border border-white/10">
-                <div className="text-xs text-white/40 uppercase tracking-wider mb-2" style={{ fontFamily: "var(--font-body)" }}>{item.label}</div>
-                <div className="text-sm text-white/80 leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>{item.value}</div>
-              </div>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {advisoryServices.map((s, i) => (
+              <motion.div
+                key={s.num}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.06 }}
+                className="flex gap-4 bg-white rounded-lg p-5 border border-black/5"
+              >
+                <div className="text-2xl font-bold text-[oklch(0.55_0.15_30)]/20 shrink-0 w-10" style={{ fontFamily: "var(--font-mono)" }}>
+                  {s.num}
+                </div>
+                <div>
+                  <h3 className="text-sm font-bold mb-1" style={{ fontFamily: "var(--font-display)" }}>{s.title}</h3>
+                  <p className="text-xs text-[oklch(0.45_0.02_50)] leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>{s.desc}</p>
+                </div>
+              </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Fee Structure & Process — REAL from paste */}
+      <section className="section-dark py-20 sm:py-28">
+        <div className="max-w-5xl mx-auto px-5 sm:px-8">
+          <div className="grid md:grid-cols-2 gap-10">
+            <div>
+              <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[oklch(0.55_0.15_30)]" style={{ fontFamily: "var(--font-body)" }}>
+                Fee Structure
+              </span>
+              <h2 className="mt-4 text-3xl font-bold text-white mb-6" style={{ fontFamily: "var(--font-display)" }}>
+                Aligned Incentives
+              </h2>
+              <div className="space-y-4">
+                {[
+                  { label: "Equity / Tokens", desc: "We take a stake in your success, aligning our incentives with your growth trajectory." },
+                  { label: "Commission on Revenue", desc: "We earn when you earn — tied to the revenue we help generate through our network." },
+                  { label: "Project Fees / Retainers", desc: "Structured engagements for specific deliverables with clear milestones." },
+                ].map((f) => (
+                  <div key={f.label} className="bg-white/5 rounded-lg p-5 border border-white/10">
+                    <div className="text-sm font-bold text-white mb-1" style={{ fontFamily: "var(--font-body)" }}>{f.label}</div>
+                    <p className="text-xs text-white/50 leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>{f.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div>
+              <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[oklch(0.55_0.15_30)]" style={{ fontFamily: "var(--font-body)" }}>
+                Our Process
+              </span>
+              <h2 className="mt-4 text-3xl font-bold text-white mb-6" style={{ fontFamily: "var(--font-display)" }}>
+                How We Engage
+              </h2>
+              <div className="space-y-4">
+                {[
+                  { step: "1", title: "Review", desc: "We review your presentations, investor materials, and product documentation." },
+                  { step: "2", title: "Down-Select", desc: "We determine fit based on impact potential, market opportunity, and team capability." },
+                  { step: "3", title: "Deep Dive", desc: "Interviews with your customers, investors, and partners to validate the opportunity." },
+                  { step: "4", title: "Activate", desc: "We deploy our network, advisory board, and enterprise connections on your behalf." },
+                ].map((s) => (
+                  <div key={s.step} className="flex gap-4 items-start">
+                    <div className="w-8 h-8 rounded-full bg-[oklch(0.55_0.15_30)] flex items-center justify-center shrink-0">
+                      <span className="text-xs font-bold text-white" style={{ fontFamily: "var(--font-mono)" }}>{s.step}</span>
+                    </div>
+                    <div>
+                      <div className="text-sm font-bold text-white" style={{ fontFamily: "var(--font-body)" }}>{s.title}</div>
+                      <p className="text-xs text-white/50 leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>{s.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>

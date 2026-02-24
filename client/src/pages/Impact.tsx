@@ -1,61 +1,61 @@
 /*
  * /impact — ImpactSoul: ESG & Impact Advisory
- * ALL CONTENT FROM: fusionramp.netlify.app (ImpactSoul brand section)
- * + real blog posts about Impact from ramprate.com
+ * ALL CONTENT FROM: ramprate.com + content migration paste
+ * Impact DNA™ 3-step process, outcomes, B Corp, services, blog posts.
  * ZERO fabrication.
  */
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
-import { ArrowRight, Heart, Globe, Gem, Palette, Users, TrendingUp } from "lucide-react";
+import { ArrowRight, Heart, Globe, Gem, Palette, Users, TrendingUp, Search, Stethoscope, RefreshCw, CheckCircle2 } from "lucide-react";
 
 const services = [
+  { icon: Gem, title: "Tokenize Assets", desc: "Turn cultural treasures, art, artifacts, and purpose-driven assets into powerful economic engines through tokenization — creating new revenue streams and global accessibility." },
+  { icon: Heart, title: "Rally Impact Movements", desc: "Build communities around your cause. We design engagement models that turn passive supporters into active participants and economic stakeholders." },
+  { icon: TrendingUp, title: "3× Revenue, Up to 10× Value", desc: "Our models are designed to multiply — not just sustain. We create economic structures where impact drives revenue and revenue amplifies impact." },
+  { icon: Globe, title: "Global Brand Building", desc: "Transform your organization from a local operation into a globally recognized brand. At worst you get a fan club — at peak, a global movement." },
+  { icon: Palette, title: "Art & Cultural Stewardship", desc: "Specialized advisory for NGOs and stewards of art and artifacts. We help you preserve, protect, and monetize cultural heritage through modern technology." },
+  { icon: Users, title: "Community-Driven Economics", desc: "Design token economies and community structures where every participant has skin in the game — aligning incentives from donors to operators to beneficiaries." },
+];
+
+/* ── IMPACT DNA™ PROCESS — REAL from paste ── */
+const dnaSteps = [
   {
-    icon: Gem,
-    title: "Tokenize Assets",
-    desc: "Turn cultural treasures, art, artifacts, and purpose-driven assets into powerful economic engines through tokenization — creating new revenue streams and global accessibility.",
+    num: "01",
+    icon: Search,
+    title: "Discover",
+    desc: "Engage team, clients, partners, investors, community. Map impact priorities. Identify conflicts between stated values and actual practices.",
+    color: "oklch(0.55_0.15_30)",
   },
   {
-    icon: Heart,
-    title: "Rally Impact Movements",
-    desc: "Build communities around your cause. We design engagement models that turn passive supporters into active participants and economic stakeholders.",
+    num: "02",
+    icon: Stethoscope,
+    title: "Diagnose",
+    desc: "Find disconnects between vision and actions. Deep focus on supply chain and external perception. Are we aligned? Do we vote our values with our budget?",
+    color: "oklch(0.50_0.12_40)",
   },
   {
-    icon: TrendingUp,
-    title: "3× Revenue, Up to 10× Value",
-    desc: "Our models are designed to multiply — not just sustain. We create economic structures where impact drives revenue and revenue amplifies impact.",
-  },
-  {
-    icon: Globe,
-    title: "Global Brand Building",
-    desc: "Transform your organization from a local operation into a globally recognized brand. At worst you get a fan club — at peak, a global movement.",
-  },
-  {
-    icon: Palette,
-    title: "Art & Cultural Stewardship",
-    desc: "Specialized advisory for NGOs and stewards of art and artifacts. We help you preserve, protect, and monetize cultural heritage through modern technology.",
-  },
-  {
-    icon: Users,
-    title: "Community-Driven Economics",
-    desc: "Design token economies and community structures where every participant has skin in the game — aligning incentives from donors to operators to beneficiaries.",
+    num: "03",
+    icon: RefreshCw,
+    title: "Realign",
+    desc: "Build better teams. Buy from shared-values partners. Uplift unheard voices. Create structures where impact and revenue reinforce each other.",
+    color: "oklch(0.45_0.10_50)",
   },
 ];
 
+const dnaOutcomes = [
+  "Better talent attracted",
+  "Investor goals aligned",
+  "Brand equity improved",
+  "Morale & retention increased",
+  "Closer partnerships",
+  "Feel good about work every day",
+];
+
 const relatedPosts = [
-  {
-    title: "Energy as Impact",
-    date: "August 15, 2023",
-    url: "https://ramprate.com/energy-as-impact/",
-    tag: "Energy",
-  },
-  {
-    title: "Edge Data Center Provider Redivider Expands Advisory Board",
-    date: "July 5, 2023",
-    url: "https://ramprate.com/edge-data-center-provider-redivider-expands-advisory/",
-    tag: "Advisory",
-  },
+  { title: "Energy as Impact", date: "August 15, 2023", url: "https://ramprate.com/energy-as-impact/", tag: "Energy" },
+  { title: "Edge Data Center Provider Redivider Expands Advisory Board", date: "July 5, 2023", url: "https://ramprate.com/edge-data-center-provider-redivider-expands-advisory/", tag: "Advisory" },
 ];
 
 export default function Impact() {
@@ -97,8 +97,67 @@ export default function Impact() {
         </div>
       </section>
 
+      {/* Impact DNA™ Process — REAL from paste */}
+      <section className="section-light py-20 sm:py-28">
+        <div className="max-w-5xl mx-auto px-5 sm:px-8">
+          <div className="text-center mb-14">
+            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[oklch(0.55_0.15_30)]" style={{ fontFamily: "var(--font-body)" }}>
+              Syzygy Methodology
+            </span>
+            <h2 className="mt-4 text-3xl sm:text-4xl font-bold tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
+              Impact DNA™
+            </h2>
+            <p className="mt-4 text-base text-[oklch(0.45_0.02_50)] max-w-2xl mx-auto leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
+              A three-step process to align your organization's values with its actions — and turn that alignment into economic advantage.
+            </p>
+          </div>
+
+          {/* 3 Steps */}
+          <div className="grid md:grid-cols-3 gap-6 mb-14">
+            {dnaSteps.map((step, i) => (
+              <motion.div
+                key={step.num}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.15 }}
+                className="bg-white rounded-xl p-7 border border-black/5 relative overflow-hidden"
+              >
+                <div className="absolute top-4 right-4 text-5xl font-black text-black/[0.04]" style={{ fontFamily: "var(--font-mono)" }}>
+                  {step.num}
+                </div>
+                <div className="w-11 h-11 rounded-lg flex items-center justify-center mb-5" style={{ backgroundColor: `${step.color}` + "1a" }}>
+                  <step.icon size={20} style={{ color: step.color }} />
+                </div>
+                <h3 className="text-xl font-bold mb-3" style={{ fontFamily: "var(--font-display)" }}>
+                  {step.title}
+                </h3>
+                <p className="text-sm text-[oklch(0.45_0.02_50)] leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
+                  {step.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Outcomes */}
+          <div className="bg-[oklch(0.97_0.01_80)] rounded-xl p-8 border border-black/5">
+            <h3 className="text-lg font-bold mb-5" style={{ fontFamily: "var(--font-display)" }}>
+              Outcomes
+            </h3>
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
+              {dnaOutcomes.map((outcome) => (
+                <div key={outcome} className="flex items-center gap-3">
+                  <CheckCircle2 size={16} className="text-[oklch(0.55_0.15_30)] shrink-0" />
+                  <span className="text-sm text-[oklch(0.4_0.02_50)]" style={{ fontFamily: "var(--font-body)" }}>{outcome}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* B Corp */}
-      <section className="section-light py-16 sm:py-20">
+      <section className="section-warm py-16 sm:py-20">
         <div className="max-w-5xl mx-auto px-5 sm:px-8">
           <div className="bg-white rounded-2xl p-8 sm:p-10 shadow-sm border border-black/5 flex flex-col sm:flex-row items-center gap-8">
             <div className="w-20 h-20 shrink-0 rounded-full border-4 border-[oklch(0.55_0.15_30)] flex items-center justify-center">
@@ -143,7 +202,7 @@ export default function Impact() {
         </div>
       </section>
 
-      {/* Commitment — REAL from netlify */}
+      {/* Commitment */}
       <section className="section-dark py-20 sm:py-28">
         <div className="max-w-5xl mx-auto px-5 sm:px-8 text-center">
           <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[oklch(0.55_0.15_30)]" style={{ fontFamily: "var(--font-body)" }}>
@@ -170,7 +229,7 @@ export default function Impact() {
         </div>
       </section>
 
-      {/* Related Blog Posts — REAL from ramprate.com */}
+      {/* Related Blog Posts */}
       <section className="section-warm py-20 sm:py-28">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           <h2 className="text-3xl sm:text-4xl font-bold mb-10" style={{ fontFamily: "var(--font-display)" }}>

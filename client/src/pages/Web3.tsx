@@ -1,35 +1,36 @@
 /*
  * /web3 — Stratum: Web3 Advisory (Enterprise & NGO Bridge)
- * ALL CONTENT FROM: fusionramp.netlify.app (Stratum brand section)
- * + real blog posts about Web3 from ramprate.com
+ * ALL CONTENT FROM: ramprate.com + content migration paste
+ * 7 blockchain services, published insights, blog posts.
  * ZERO fabrication.
  */
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
-import { ArrowRight, Blocks, Globe, Coins, Shield, FileText, Zap } from "lucide-react";
+import { ArrowRight, Blocks, Globe, Coins, Shield, FileText, Zap, Server, Building2, Landmark, BookOpen } from "lucide-react";
 
+/* ── EXISTING 6 SERVICE CARDS ── */
 const services = [
   {
     icon: Blocks,
-    title: "Enterprise Blockchain Integration",
-    desc: "Connect blockchain technology to enterprise infrastructure for transformative solutions. We bridge the gap between Web3 innovation and enterprise-grade requirements.",
+    title: "Enterprise Blockchain Bridge",
+    desc: "Connecting Fortune 500 to Web3. Deep links to blockchain ecosystem: top ICO advisors, large mining pools, enterprise distributed app platforms.",
   },
   {
     icon: Coins,
     title: "Non-Dilutive Funding",
-    desc: "Access non-dilutive capital through grants, DAOs, and tokenized funding mechanisms. We've facilitated grants in excess of €4 million through partnerships like DevxDAO and XPRIZE.",
+    desc: "Non-dilutive funding through tokenized models. We've facilitated grants in excess of €4 million through partnerships like DevxDAO and XPRIZE.",
   },
   {
     icon: Globe,
-    title: "DAO Governance & Structure",
-    desc: "Design and implement decentralized governance structures that actually work. From token economics to voting mechanisms to community management.",
+    title: "DAO Governance Design",
+    desc: "DAO governance design for multi-stakeholder consortia. From token economics to voting mechanisms to community management.",
   },
   {
     icon: Shield,
     title: "Regulatory Navigation",
-    desc: "Navigate the evolving regulatory landscape for digital assets, tokens, and decentralized organizations with guidance from our network of legal and compliance experts.",
+    desc: "Custom consulting for blockchain orientation and roadmapping. Navigate the evolving regulatory landscape for digital assets, tokens, and decentralized organizations.",
   },
   {
     icon: FileText,
@@ -43,37 +44,32 @@ const services = [
   },
 ];
 
+/* ── ALL 7 BLOCKCHAIN ADVISORY SERVICES — REAL from paste ── */
+const blockchainServices = [
+  { title: "Low-Cost Power for Mining", desc: "Megawatts of low-cost power for proof of work and mining pools." },
+  { title: "Turnkey Mining Solutions", desc: "Turnkey mining solutions for investors looking to enter the space." },
+  { title: "Enterprise Hosting for Trusted Nodes", desc: "Enterprise partners for hosting trusted nodes on major networks." },
+  { title: "Blockchain Orientation & Roadmapping", desc: "Custom consulting for blockchain orientation and strategic roadmapping." },
+  { title: "Enterprise Blockchain Bridge", desc: "Connecting Fortune 500 to Web3 — bridging the gap between enterprise and decentralized technology." },
+  { title: "Non-Dilutive Funding", desc: "Non-dilutive funding through tokenized models and DAO grant programs." },
+  { title: "DAO Governance Design", desc: "DAO governance design for multi-stakeholder consortia and community-driven organizations." },
+];
+
+/* ── PUBLISHED INSIGHTS — REAL from paste ── */
+const publishedInsights = [
+  { title: "From Supply Chain to the Blockchain", url: "https://ramprate.com/from-supply-chain-to-the-blockchain/" },
+  { title: "Enterprise Blockchain: Can Big Business Co-opt an Existential Threat?", url: "https://ramprate.com/enterprise-blockchain-can-big-business-co-opt-an-existential-threat/" },
+  { title: "Historical Perspective on Blockchain", url: "https://ramprate.com/historical-perspective-on-blockchain/" },
+  { title: "What Solutions Are Best Built with Blockchain — Or NOT", url: "https://ramprate.com/what-solutions-are-best-built-with-blockchain-or-not/" },
+  { title: "The Ball and Blockchain: Obstacles to a World-Changing Trajectory", url: "https://ramprate.com/the-ball-and-blockchain-obstacles-to-a-world-changing-trajectory/" },
+];
+
 const relatedPosts = [
-  {
-    title: "Republic's Mirror Tokens — SpaceX and Beyond",
-    date: "July 22, 2025",
-    url: "https://ramprate.com/republics-mirror-tokens-spacex-and-beyond/",
-    tag: "Tokens",
-  },
-  {
-    title: "UNI Token Price Surge: A Reflection of the Market's Hunger for Effective Governance?",
-    date: "March 5, 2024",
-    url: "https://ramprate.com/uni-token-price-surge-a-reflection-of-the-markets-hunger-for-effective-governance/",
-    tag: "Governance",
-  },
-  {
-    title: "The Need for Burning Man to Convert into a DAO",
-    date: "August 17, 2023",
-    url: "https://ramprate.com/convert-burning-man-dao-menagerie/",
-    tag: "DAO",
-  },
-  {
-    title: "RampRate Works with DevxDAO and XPRIZE to Announce a Grant in Excess of €4 Million",
-    date: "January 23, 2023",
-    url: "https://ramprate.com/ramprate-works-with-devxdao-and-xprize/",
-    tag: "Grants",
-  },
-  {
-    title: "World Economic Forum: DAVOS 2022",
-    date: "May 19, 2022",
-    url: "https://ramprate.com/davos-2022-world-economic-forum-here-we-come/",
-    tag: "WEF",
-  },
+  { title: "Republic's Mirror Tokens — SpaceX and Beyond", date: "July 22, 2025", url: "https://ramprate.com/republics-mirror-tokens-spacex-and-beyond/", tag: "Tokens" },
+  { title: "UNI Token Price Surge: A Reflection of the Market's Hunger for Effective Governance?", date: "March 5, 2024", url: "https://ramprate.com/uni-token-price-surge-a-reflection-of-the-markets-hunger-for-effective-governance/", tag: "Governance" },
+  { title: "The Need for Burning Man to Convert into a DAO", date: "August 17, 2023", url: "https://ramprate.com/convert-burning-man-dao-menagerie/", tag: "DAO" },
+  { title: "RampRate Works with DevxDAO and XPRIZE to Announce a Grant in Excess of €4 Million", date: "January 23, 2023", url: "https://ramprate.com/ramprate-works-with-devxdao-and-xprize/", tag: "Grants" },
+  { title: "World Economic Forum: DAVOS 2022", date: "May 19, 2022", url: "https://ramprate.com/davos-2022-world-economic-forum-here-we-come/", tag: "WEF" },
 ];
 
 export default function Web3() {
@@ -87,7 +83,7 @@ export default function Web3() {
             <span className="text-[oklch(0.55_0.15_30)]">Transformative Technology</span>
           </>
         }
-        subCopy="Connect blockchain to enterprise for transformative technology and non-dilutive funding solutions. Web3 — Enterprise & NGO Bridge."
+        subCopy="Deep links to blockchain ecosystem: top ICO advisors, large mining pools, enterprise distributed app platforms. Non-dilutive funding and zero-cost transformative tech."
         stats={[
           { value: "Since", label: "2015" },
           { value: "For", label: "Enterprise & NGO Bridge" },
@@ -115,7 +111,7 @@ export default function Web3() {
         </div>
       </section>
 
-      {/* Services Grid */}
+      {/* Services Grid — high-level */}
       <section className="section-light py-20 sm:py-28">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           <div className="text-center mb-14">
@@ -144,16 +140,81 @@ export default function Web3() {
         </div>
       </section>
 
-      {/* Commitment — REAL from netlify */}
+      {/* All 7 Blockchain Advisory Services — from paste */}
+      <section className="section-warm py-20 sm:py-28">
+        <div className="max-w-5xl mx-auto px-5 sm:px-8">
+          <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[oklch(0.55_0.15_30)]" style={{ fontFamily: "var(--font-body)" }}>
+            Blockchain Advisory
+          </span>
+          <h2 className="mt-4 text-3xl sm:text-4xl font-bold tracking-tight mb-10" style={{ fontFamily: "var(--font-display)" }}>
+            Full-Spectrum <span className="text-[oklch(0.55_0.15_30)]">Services</span>
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {blockchainServices.map((s, i) => (
+              <motion.div
+                key={s.title}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.06 }}
+                className="bg-white rounded-lg p-5 border border-black/5 flex gap-4 items-start"
+              >
+                <div className="w-2 h-2 rounded-full bg-[oklch(0.55_0.15_30)] mt-1.5 shrink-0" />
+                <div>
+                  <h3 className="text-sm font-bold mb-1" style={{ fontFamily: "var(--font-display)" }}>{s.title}</h3>
+                  <p className="text-xs text-[oklch(0.45_0.02_50)] leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>{s.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Published Insights — REAL from paste */}
       <section className="section-dark py-20 sm:py-28">
+        <div className="max-w-5xl mx-auto px-5 sm:px-8">
+          <div className="flex items-center gap-3 mb-8">
+            <BookOpen size={20} className="text-[oklch(0.55_0.15_30)]" />
+            <h2 className="text-2xl sm:text-3xl font-bold text-white" style={{ fontFamily: "var(--font-display)" }}>
+              Published <span className="text-[oklch(0.55_0.15_30)]">Insights</span>
+            </h2>
+          </div>
+          <p className="text-white/50 text-sm mb-8 leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
+            Our blockchain article series — deep dives into enterprise blockchain adoption, supply chain transformation, and the obstacles to a world-changing trajectory.
+          </p>
+          <div className="space-y-3">
+            {publishedInsights.map((insight, i) => (
+              <motion.a
+                key={insight.title}
+                href={insight.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, x: -12 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-6 py-4 border border-white/10 hover:bg-white/10 transition-colors group"
+              >
+                <span className="text-sm text-white/80 font-medium group-hover:text-white transition-colors" style={{ fontFamily: "var(--font-body)" }}>
+                  {insight.title}
+                </span>
+                <ArrowRight size={14} className="text-[oklch(0.55_0.15_30)] shrink-0" />
+              </motion.a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Commitment */}
+      <section className="section-light py-20 sm:py-28">
         <div className="max-w-5xl mx-auto px-5 sm:px-8 text-center">
           <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[oklch(0.55_0.15_30)]" style={{ fontFamily: "var(--font-body)" }}>
             Our Commitment
           </span>
-          <h2 className="mt-4 text-3xl sm:text-4xl font-bold text-white" style={{ fontFamily: "var(--font-display)" }}>
+          <h2 className="mt-4 text-3xl sm:text-4xl font-bold" style={{ fontFamily: "var(--font-display)" }}>
             Right Person in the Room from All Sides
           </h2>
-          <p className="mt-6 text-lg text-white/60 leading-relaxed max-w-2xl mx-auto" style={{ fontFamily: "var(--font-body)" }}>
+          <p className="mt-6 text-lg text-[oklch(0.45_0.02_50)] leading-relaxed max-w-2xl mx-auto" style={{ fontFamily: "var(--font-body)" }}>
             Compensation tied to percentage of value created. We convene the right people and create real bridges between Web3 innovation and enterprise adoption.
           </p>
           <div className="mt-12 grid sm:grid-cols-3 gap-6">
@@ -162,9 +223,9 @@ export default function Web3() {
               { label: "Commitment", value: "Right person in the room from all sides" },
               { label: "Key Value", value: "Non-dilutive capital & zero-cost transformative tech" },
             ].map((item) => (
-              <div key={item.label} className="bg-white/5 rounded-xl p-6 border border-white/10">
-                <div className="text-xs text-white/40 uppercase tracking-wider mb-2" style={{ fontFamily: "var(--font-body)" }}>{item.label}</div>
-                <div className="text-sm text-white/80 leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>{item.value}</div>
+              <div key={item.label} className="bg-[oklch(0.97_0.01_80)] rounded-xl p-6 border border-black/5">
+                <div className="text-xs text-[oklch(0.5_0.02_50)] uppercase tracking-wider mb-2" style={{ fontFamily: "var(--font-body)" }}>{item.label}</div>
+                <div className="text-sm text-[oklch(0.3_0.02_50)] leading-relaxed font-medium" style={{ fontFamily: "var(--font-body)" }}>{item.value}</div>
               </div>
             ))}
           </div>

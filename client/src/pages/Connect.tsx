@@ -1,13 +1,14 @@
 /*
  * /connect — Contact / Start a Conversation.
- * Content from fusionramp.netlify.app "Connect" section + ramprate.com contact info.
+ * ALL CONTENT FROM: ramprate.com + content migration paste
+ * Contact form + hello@ramprate.com + office locations (Santa Monica HQ, Ibiza EU HQ)
  * ZERO fabrication.
  */
 import { useState } from "react";
 import { motion } from "framer-motion";
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
-import { Mail, MapPin, Phone, Calendar, Send, CheckCircle, ArrowRight } from "lucide-react";
+import { Mail, MapPin, Phone, Calendar, Send, CheckCircle, ArrowRight, Globe } from "lucide-react";
 import { toast } from "sonner";
 
 const inquiryTypes = [
@@ -17,6 +18,15 @@ const inquiryTypes = [
   "Impact / ImpactSoul",
   "General Inquiry",
   "Press / Media",
+];
+
+/* ── OFFICE LOCATIONS — REAL from paste ── */
+const offices = [
+  { city: "Santa Monica, CA", role: "US Headquarters", country: "United States" },
+  { city: "Ibiza, Spain", role: "EU Headquarters", country: "Europe" },
+  { city: "Massachusetts", role: "East Coast Office", country: "United States" },
+  { city: "North Carolina", role: "Southeast Office", country: "United States" },
+  { city: "Florida", role: "Southeast Office", country: "United States" },
 ];
 
 export default function Connect() {
@@ -157,7 +167,7 @@ export default function Connect() {
 
             {/* Sidebar */}
             <div className="lg:col-span-2 space-y-6">
-              {/* Calendly placeholder */}
+              {/* Calendly */}
               <div className="bg-white rounded-xl p-7 border border-black/5 shadow-sm">
                 <div className="flex items-center gap-3 mb-4">
                   <Calendar size={20} className="text-[oklch(0.55_0.15_30)]" />
@@ -199,18 +209,30 @@ export default function Connect() {
                     </span>
                   </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <MapPin size={18} className="text-[oklch(0.55_0.15_30)] mt-0.5 shrink-0" />
-                  <div>
-                    <div className="text-xs font-medium text-[oklch(0.4_0.02_50)] uppercase tracking-wider mb-1" style={{ fontFamily: "var(--font-body)" }}>Location</div>
-                    <span className="text-sm text-[oklch(0.35_0.02_50)]" style={{ fontFamily: "var(--font-body)" }}>
-                      Los Angeles, CA
-                    </span>
-                  </div>
+              </div>
+
+              {/* Office Locations — REAL from paste */}
+              <div className="bg-white rounded-xl p-7 border border-black/5 shadow-sm">
+                <div className="flex items-center gap-3 mb-5">
+                  <Globe size={18} className="text-[oklch(0.55_0.15_30)]" />
+                  <h3 className="text-base font-bold" style={{ fontFamily: "var(--font-display)" }}>
+                    Office Locations
+                  </h3>
+                </div>
+                <div className="space-y-4">
+                  {offices.map((o) => (
+                    <div key={o.city} className="flex items-start gap-3">
+                      <MapPin size={14} className="text-[oklch(0.55_0.15_30)] mt-0.5 shrink-0" />
+                      <div>
+                        <div className="text-sm font-semibold text-[oklch(0.3_0.02_50)]" style={{ fontFamily: "var(--font-body)" }}>{o.city}</div>
+                        <div className="text-xs text-[oklch(0.5_0.02_50)]" style={{ fontFamily: "var(--font-body)" }}>{o.role}</div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
 
-              {/* Guarantee — REAL from ramprate.com */}
+              {/* Guarantee */}
               <div className="bg-[oklch(0.97_0.01_80)] rounded-xl p-7 border border-[oklch(0.55_0.15_30)]/10">
                 <h4 className="text-base font-bold mb-2" style={{ fontFamily: "var(--font-display)" }}>
                   The RampRate Guarantee

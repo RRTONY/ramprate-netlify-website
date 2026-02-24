@@ -1,7 +1,8 @@
 /*
  * /blog — Blog listing page
- * ALL CONTENT FROM: ramprate.com blog (10 real posts)
- * Links to real ramprate.com URLs
+ * ALL CONTENT FROM: ramprate.com blog
+ * Includes all posts from paste: UNI token, TonyG here, Redivider, DevxDAO/XPRIZE,
+ * B Corp certification, 5 blockchain articles, plus existing posts.
  * ZERO fabrication.
  */
 import { motion } from "framer-motion";
@@ -11,11 +12,12 @@ import PageHero from "@/components/PageHero";
 import { ArrowRight, Calendar, Tag } from "lucide-react";
 
 const blogPosts = [
+  /* ── EXISTING + NEW from paste ── */
   {
     title: "Patience in the AI Infrastructure Gold Rush: The Second Mouse Gets the Cheese",
     date: "October 31, 2025",
     url: "https://ramprate.com/patience-in-the-ai-infrastructure-gold-rush-the-second-mouse-gets-the-cheese/",
-    excerpt: "The AI infrastructure market is experiencing a gold rush, with billions being poured into data centers, GPU clusters, and networking equipment. But as history has shown us repeatedly, the first movers don't always win — sometimes the second mouse gets the cheese.",
+    excerpt: "The AI infrastructure market is experiencing a gold rush, with billions being poured into data centers, GPU clusters, and networking equipment. But as history has shown us repeatedly, the first movers don't always win.",
     tags: ["AI", "Infrastructure", "Strategy"],
     featured: true,
   },
@@ -23,7 +25,7 @@ const blogPosts = [
     title: "Republic's Mirror Tokens — SpaceX and Beyond",
     date: "July 22, 2025",
     url: "https://ramprate.com/republics-mirror-tokens-spacex-and-beyond/",
-    excerpt: "Republic has pioneered a novel approach to democratizing access to private market investments through mirror tokens, starting with SpaceX. This represents a fundamental shift in how retail investors can participate in previously inaccessible opportunities.",
+    excerpt: "Republic has pioneered a novel approach to democratizing access to private market investments through mirror tokens, starting with SpaceX. A fundamental shift in how retail investors can participate in previously inaccessible opportunities.",
     tags: ["Web3", "Tokens", "Investment"],
   },
   {
@@ -34,10 +36,17 @@ const blogPosts = [
     tags: ["Web3", "Governance", "DeFi"],
   },
   {
+    title: "TonyG Here — Data Center World Return",
+    date: "October 2023",
+    url: "https://ramprate.com/tonyg-here-data-center-world/",
+    excerpt: "Tony Greenberg returns to Data Center World to share insights on the evolving landscape of enterprise infrastructure, sourcing intelligence, and the intersection of technology and impact.",
+    tags: ["Infrastructure", "Events", "Sourcing"],
+  },
+  {
     title: "The Need for Burning Man to Convert into a DAO",
     date: "August 17, 2023",
     url: "https://ramprate.com/convert-burning-man-dao-menagerie/",
-    excerpt: "The recent challenges surrounding Burning Man ticket distribution highlight broader issues within the event's organizational and logistical structures. Converting Burning Man into a Decentralized Autonomous Organization (DAO) could be the solution.",
+    excerpt: "The recent challenges surrounding Burning Man ticket distribution highlight broader issues within the event's organizational and logistical structures. Converting Burning Man into a DAO could be the solution.",
     tags: ["Web3", "DAO", "Culture"],
   },
   {
@@ -58,15 +67,58 @@ const blogPosts = [
     title: "RampRate Works with DevxDAO and XPRIZE to Announce a Grant in Excess of €4 Million",
     date: "January 23, 2023",
     url: "https://ramprate.com/ramprate-works-with-devxdao-and-xprize/",
-    excerpt: "A new collaboration in advanced communities. DevxDAO and XPRIZE announce a grant in excess of €3 million, facilitated by RampRate's network and advisory capabilities.",
+    excerpt: "A new collaboration in advanced communities. DevxDAO and XPRIZE announce a grant in excess of €4 million, facilitated by RampRate's network and advisory capabilities.",
     tags: ["Web3", "Grants", "XPRIZE"],
+  },
+  {
+    title: "RampRate Achieves B Corp Certification",
+    date: "December 2022",
+    url: "https://ramprate.com/ramprate-b-corp-certification/",
+    excerpt: "RampRate is now a Certified B Corporation — meeting the highest standards of verified social and environmental performance, public transparency, and legal accountability. We don't just advise on impact — we live it.",
+    tags: ["Impact", "B Corp", "ESG"],
   },
   {
     title: "World Economic Forum: DAVOS 2022",
     date: "May 19, 2022",
     url: "https://ramprate.com/davos-2022-world-economic-forum-here-we-come/",
-    excerpt: "Tony Greenberg and Wulf Kaal are hitting the road and heading to Davos for the World Economic Forum May 22-26, primarily to support DevXDao, Casper, and talk about Menagerie — a community-building platform for Web3.",
+    excerpt: "Tony Greenberg and Wulf Kaal are hitting the road and heading to Davos for the World Economic Forum May 22-26, primarily to support DevXDao, Casper, and talk about Menagerie.",
     tags: ["Web3", "Davos", "WEF"],
+  },
+  /* ── 5 BLOCKCHAIN ARTICLE SERIES — from paste ── */
+  {
+    title: "From Supply Chain to the Blockchain",
+    date: "2022",
+    url: "https://ramprate.com/from-supply-chain-to-the-blockchain/",
+    excerpt: "How blockchain technology is transforming supply chain management — from provenance tracking to smart contracts that automate compliance and payment across global networks.",
+    tags: ["Blockchain", "Supply Chain"],
+  },
+  {
+    title: "Enterprise Blockchain: Can Big Business Co-opt an Existential Threat?",
+    date: "2022",
+    url: "https://ramprate.com/enterprise-blockchain-can-big-business-co-opt-an-existential-threat/",
+    excerpt: "Blockchain was born as a challenge to centralized institutions. Now those same institutions are adopting it. Can enterprise blockchain co-exist with decentralization's original ethos?",
+    tags: ["Blockchain", "Enterprise"],
+  },
+  {
+    title: "Historical Perspective on Blockchain",
+    date: "2022",
+    url: "https://ramprate.com/historical-perspective-on-blockchain/",
+    excerpt: "A deep dive into the historical context of blockchain technology — from cryptographic predecessors to Bitcoin's genesis block to the current enterprise adoption wave.",
+    tags: ["Blockchain", "History"],
+  },
+  {
+    title: "What Solutions Are Best Built with Blockchain — Or NOT",
+    date: "2022",
+    url: "https://ramprate.com/what-solutions-are-best-built-with-blockchain-or-not/",
+    excerpt: "Not every problem needs a blockchain solution. A rigorous framework for evaluating when distributed ledger technology adds genuine value — and when it's just hype.",
+    tags: ["Blockchain", "Strategy"],
+  },
+  {
+    title: "The Ball and Blockchain: Obstacles to a World-Changing Trajectory",
+    date: "2022",
+    url: "https://ramprate.com/the-ball-and-blockchain-obstacles-to-a-world-changing-trajectory/",
+    excerpt: "Blockchain has world-changing potential, but significant obstacles remain — from scalability and energy consumption to regulatory uncertainty and user experience challenges.",
+    tags: ["Blockchain", "Analysis"],
   },
 ];
 
@@ -156,7 +208,7 @@ export default function Blog() {
                 transition={{ delay: (i % 3) * 0.08 }}
                 className="bg-[oklch(0.97_0.01_80)] rounded-xl p-7 border border-black/5 hover:shadow-md transition-shadow group"
               >
-                <div className="flex gap-2 mb-3">
+                <div className="flex flex-wrap gap-2 mb-3">
                   {post.tags.map(t => (
                     <span key={t} className="px-2 py-0.5 rounded-full bg-[oklch(0.55_0.15_30)]/10 text-[oklch(0.55_0.15_30)] text-[10px] font-medium">{t}</span>
                   ))}
