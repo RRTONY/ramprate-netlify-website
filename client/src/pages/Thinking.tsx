@@ -257,7 +257,7 @@ export default function Thinking() {
               className="inline-flex items-center gap-2 px-8 py-4 rounded-md text-sm font-bold bg-white text-[oklch(0.35_0.1_30)] hover:bg-white/90 transition-all shadow-lg"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              Request Principal Review <ArrowUpRight size={16} />
+              Tell Us What's Broken <ArrowUpRight size={16} />
             </a>
           </motion.div>
         </div>

@@ -51,7 +51,7 @@ export default function CTASection() {
               className="px-8 py-4 rounded-md text-sm sm:text-base font-semibold bg-white text-[oklch(0.25_0.15_260)] hover:bg-white/90 transition-all shadow-lg"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              Request Principal Review
+              Tell Us What's Broken
             </Link>
           </div>
         </motion.div>

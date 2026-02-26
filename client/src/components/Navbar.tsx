@@ -146,7 +146,7 @@ export default function Navbar() {
             className="ml-2 px-5 py-2.5 rounded-md text-sm font-semibold transition-all duration-300 bg-[oklch(0.82_0.15_75)] text-[oklch(0.18_0.03_50)] hover:bg-[oklch(0.78_0.16_75)] shadow-sm"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            Request Principal Review
+            Tell Us What's Broken
           </Link>
         </div>
 
@@ -207,7 +207,7 @@ export default function Navbar() {
                 href="/connect"
                 className="block text-center px-5 py-3 rounded-md text-sm font-semibold bg-[oklch(0.82_0.15_75)] text-[oklch(0.18_0.03_50)]"
               >
-                Request Principal Review
+                Tell Us What's Broken
               </Link>
             </div>
           </div>

@@ -56,21 +56,21 @@ const tier2Clients = [
 /* ── SELECTED ENGAGEMENTS ── */
 const engagements = [
   {
-    label: "Global Entertainment Conglomerate",
+    label: "ViacomCBS / Hearst",
     stats: "75% infrastructure cost reduction",
-    detail: "16+ year relationship across multiple CTO tenures. Created methodology adopted at exec level. Millions in reinvestable budget.",
+    detail: "16+ year relationship across multiple CTO tenures. Created methodology adopted at exec level. Millions in reinvestable budget freed across Broadcast, Satellite, Telecom, Cloud, and CDN.",
     accent: "oklch(0.82 0.15 75)",
   },
   {
-    label: "Fortune 500 E-Commerce Platform",
+    label: "eBay",
     stats: "27% savings while strengthening relationships",
-    detail: "Risk-free model: 2x fee guarantee or full refund. Millions in ongoing value.",
+    detail: "Risk-free model: 2× fee guarantee or full refund. Global data center optimization. Millions in ongoing value. Vendor relationships stronger than before.",
     accent: "oklch(0.6 0.2 280)",
   },
   {
-    label: "Growth-Stage Network Startup",
+    label: "Syntropy",
     stats: "US market penetration in months",
-    detail: "4+ year daily advisory. Accelerated growth by years. Converted enterprise traction to next-stage momentum.",
+    detail: "4+ year daily advisory. Accelerated growth by years. Enterprise partnerships converted to next-stage momentum. Under-promised, over-delivered.",
     accent: "oklch(0.65 0.2 150)",
   },
 ];
@@ -249,9 +249,9 @@ export default function Home() {
                   className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.05] tracking-tight"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
-                  We Turn Strategy
+                  Where Relationships
                   <br />
-                  Into{" "}
+                  Become{" "}
                   <span className="text-[oklch(0.82_0.15_75)]">Revenue.</span>
                 </h1>
               </motion.div>
@@ -273,7 +273,7 @@ export default function Home() {
                 className="mt-6 text-lg sm:text-xl text-white/70 leading-relaxed max-w-xl"
                 style={{ fontFamily: "var(--font-body)" }}
               >
-                The right person. The right room. The right time.
+                Fix the signal. Close the deal. We don't advise from the sidelines — we execute.
               </motion.p>
 
               <motion.div
@@ -287,7 +287,7 @@ export default function Home() {
                   className="inline-flex items-center gap-2 px-8 py-4 rounded-md text-sm font-bold bg-[oklch(0.82_0.15_75)] text-[oklch(0.15_0.02_75)] hover:bg-[oklch(0.78_0.15_75)] transition-all shadow-lg shadow-[oklch(0.82_0.15_75)]/20"
                   style={{ fontFamily: "var(--font-body)" }}
                 >
-                  Request Principal Review <ArrowRight size={16} />
+                  Tell Us What's Broken <ArrowRight size={16} />
                 </Link>
                 <Link
                   href="/proof"
@@ -969,7 +969,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          CTA — Request Principal Review
+          CTA — Tell Us What's Broken
       ═══════════════════════════════════════════════════ */}
       <section className="bg-[oklch(0.55_0.15_30)] py-24 sm:py-32">
         <div className="max-w-4xl mx-auto px-5 sm:px-8 text-center">
@@ -982,7 +982,7 @@ export default function Home() {
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              Request Principal Review.
+              Tell Us What's Broken.
             </h2>
             <p
               className="text-white/70 text-base sm:text-lg leading-relaxed mb-4 max-w-2xl mx-auto"
@@ -1001,7 +1001,7 @@ export default function Home() {
               className="inline-flex items-center gap-2 px-8 py-4 rounded-md text-sm font-bold bg-white text-[oklch(0.35_0.1_30)] hover:bg-white/90 transition-all shadow-lg"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              Request Principal Review <ArrowRight size={16} />
+              Tell Us What's Broken <ArrowRight size={16} />
             </Link>
           </motion.div>
         </div>

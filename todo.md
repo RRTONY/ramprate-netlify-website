@@ -66,3 +66,8 @@
 - [x] Interlink FindMyMe throughout the site in business-relevant contexts
 - [x] Add Google Forms exit survey (forms.gle/K5QuamnhVYKAxx22A) — persistent trigger on every page + exit-intent popup
 - [x] Fix logo: combine "ramp" and "rate" into "RampRate" as one word with capital R
+## Signal Alignment Feedback
+- [x] Replace safe tagline with bolder, contrarian one — "Where Relationships Become Revenue"
+- [x] Replace "Request Principal Review" CTA with "Tell Us What's Broken" across all pages
+- [x] Name the Selected Engagements — ViacomCBS/Hearst, eBay, Syntropy
+- [x] Align CTA energy across all pages to match the bold, execution-focused identity

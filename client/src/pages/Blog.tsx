@@ -671,7 +671,7 @@ export default function Blog() {
             {provedTrueCount} articles proved true. The next one might be about your industry. Let's talk before the market catches up.
           </p>
           <Link href="/connect" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md text-sm font-semibold bg-white text-[oklch(0.35_0.1_30)] hover:bg-white/90 transition-all shadow-lg" style={{ fontFamily: "var(--font-body)" }}>
-            Request Principal Review <ArrowRight size={16} />
+            Tell Us What's Broken <ArrowRight size={16} />
           </Link>
         </div>
       </section>
