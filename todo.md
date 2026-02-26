@@ -65,3 +65,4 @@
 - [x] Interlink Flow Circuit throughout the site in business-relevant contexts
 - [x] Interlink FindMyMe throughout the site in business-relevant contexts
 - [x] Add Google Forms exit survey (forms.gle/K5QuamnhVYKAxx22A) — persistent trigger on every page + exit-intent popup
+- [x] Fix logo: combine "ramp" and "rate" into "RampRate" as one word with capital R

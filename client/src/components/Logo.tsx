@@ -1,8 +1,7 @@
 /*
  * RampRate Logo — SVG recreation of the original logo.
- * Chevron icon + "ramprate" text. "ramp" in dark, "rate" in deep purple.
- * Freshened: deeper purple (#6B21A8 → oklch), slightly tighter tracking.
- * Variants: light (white text for dark bg), dark (charcoal text for light bg).
+ * Chevron icon + "RampRate" as one word. "Ramp" in dark, "Rate" in deep purple.
+ * Capital R on both. Tighter tracking.
  */
 
 interface LogoProps {
@@ -20,7 +19,6 @@ const sizes = {
 export default function Logo({ variant = "dark", className = "", size = "md" }: LogoProps) {
   const { height, iconScale } = sizes[size];
   const textColor = variant === "light" ? "#ffffff" : "#1a1a2e";
-  // Deeper purple — shifted from the original ~#7B2FBE to a richer #6B21A8
   const purpleColor = "#6B21A8";
 
   return (
@@ -42,7 +40,7 @@ export default function Logo({ variant = "dark", className = "", size = "md" }: 
           />
         </g>
 
-        {/* "ramp" in dark/white */}
+        {/* "Ramp" in dark/white */}
         <text
           x="8"
           y="58"
@@ -52,12 +50,12 @@ export default function Logo({ variant = "dark", className = "", size = "md" }: 
           letterSpacing="-1"
           fill={textColor}
         >
-          ramp
+          Ramp
         </text>
 
-        {/* "rate" in deep purple */}
+        {/* "Rate" in deep purple — positioned tight against Ramp */}
         <text
-          x="148"
+          x="140"
           y="58"
           fontFamily="'DM Sans', system-ui, sans-serif"
           fontWeight="700"
@@ -65,12 +63,12 @@ export default function Logo({ variant = "dark", className = "", size = "md" }: 
           letterSpacing="-1"
           fill={purpleColor}
         >
-          rate
+          Rate
         </text>
 
         {/* TM */}
         <text
-          x="260"
+          x="252"
           y="38"
           fontFamily="'DM Sans', system-ui, sans-serif"
           fontWeight="400"
