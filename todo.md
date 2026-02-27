@@ -78,3 +78,4 @@
 - [x] Create Privacy Policy page
 - [x] Create Terms of Service page
 - [x] Create /values page
+- [x] Add large site-wide search bar accessible from every page (no AI, client-side, navigates to pages/blog posts)

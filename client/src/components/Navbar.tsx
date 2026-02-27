@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, ExternalLink } from "lucide-react";
 import Logo from "@/components/Logo";
+import SiteSearch from "@/components/SiteSearch";
 
 const STRATUM_URL = "https://stratumweb-2pprew4h.manus.space";
 
@@ -141,6 +142,7 @@ export default function Navbar() {
               </Link>
             )
           )}
+          <SiteSearch scrolled={scrolled} />
           <Link
             href="/connect"
             className="ml-2 px-5 py-2.5 rounded-md text-sm font-semibold transition-all duration-300 bg-[oklch(0.82_0.15_75)] text-[oklch(0.18_0.03_50)] hover:bg-[oklch(0.78_0.16_75)] shadow-sm"
