@@ -15,6 +15,9 @@ import Connect from "./pages/Connect";
 import Blog from "./pages/Blog";
 import Process from "./pages/Process";
 import Thinking from "./pages/Thinking";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
+import Values from "./pages/Values";
 import { Redirect } from "wouter";
 import ExitSurvey from "./components/ExitSurvey";
 function Router() {
@@ -32,6 +35,9 @@ function Router() {
       <Route path={"/blog"} component={Blog} />
       <Route path={"/process"} component={Process} />
       <Route path={"/thinking"} component={Thinking} />
+      <Route path={"/privacy"} component={Privacy} />
+      <Route path={"/terms"} component={Terms} />
+      <Route path={"/values"} component={Values} />
       <Route path={"/start"}>{() => <Redirect to="/connect" />}</Route>
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />

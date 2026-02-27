@@ -71,3 +71,10 @@
 - [x] Replace "Request Principal Review" CTA with "Tell Us What's Broken" across all pages
 - [x] Name the Selected Engagements — ViacomCBS/Hearst, eBay, Syntropy
 - [x] Align CTA energy across all pages to match the bold, execution-focused identity
+
+## Blog Migration & New Pages
+- [x] Add ~13 missing blog posts from old ramprate.com
+- [x] Add brand tags (RampRate/Syzygy/Stratum/ImpactSoul) to all blog posts
+- [x] Create Privacy Policy page
+- [x] Create Terms of Service page
+- [x] Create /values page

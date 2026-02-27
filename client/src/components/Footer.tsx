@@ -157,10 +157,10 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} RampRate. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-xs text-white/30 hover:text-white/50 transition-colors" style={{ fontFamily: "var(--font-body)" }}>
+            <a href="/privacy" className="text-xs text-white/30 hover:text-white/50 transition-colors" style={{ fontFamily: "var(--font-body)" }}>
               Privacy
             </a>
-            <a href="#" className="text-xs text-white/30 hover:text-white/50 transition-colors" style={{ fontFamily: "var(--font-body)" }}>
+            <a href="/terms" className="text-xs text-white/30 hover:text-white/50 transition-colors" style={{ fontFamily: "var(--font-body)" }}>
               Terms
             </a>
           </div>
