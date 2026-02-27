@@ -69,7 +69,8 @@ export default function Navbar() {
                 onMouseEnter={() => setPracticesOpen(true)}
                 onMouseLeave={() => setPracticesOpen(false)}
               >
-                <button
+                <Link
+                  href="/practices"
                   className={`text-sm font-medium tracking-wide uppercase transition-colors duration-300 ${
                     scrolled
                       ? "text-[oklch(0.35_0.03_50)] hover:text-[oklch(0.18_0.03_50)]"
@@ -78,7 +79,7 @@ export default function Navbar() {
                   style={{ fontFamily: "var(--font-body)" }}
                 >
                   {item.label}
-                </button>
+                </Link>
                 {practicesOpen && (
                   <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3">
                     <div className="bg-white rounded-lg shadow-xl border border-black/5 p-4 min-w-[220px]">

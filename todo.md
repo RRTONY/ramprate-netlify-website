@@ -82,3 +82,8 @@
 - [x] Add search to mobile menu
 - [x] Create /practices landing page
 - [x] Add search result text highlighting
+- [x] Wire Practices nav label click to /practices page
+- [x] Show popular/recent pages when search opens (before typing)
+- [ ] Generate thumbnail images for 13 new blog posts
+- [x] Group search results by category (Practices first, then Pages, then Articles) with section headers
+- [x] Make search accessible via tab key navigation
