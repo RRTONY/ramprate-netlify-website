@@ -79,3 +79,6 @@
 - [x] Create Terms of Service page
 - [x] Create /values page
 - [x] Add large site-wide search bar accessible from every page (no AI, client-side, navigates to pages/blog posts)
+- [x] Add search to mobile menu
+- [x] Create /practices landing page
+- [x] Add search result text highlighting

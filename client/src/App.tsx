@@ -18,6 +18,7 @@ import Thinking from "./pages/Thinking";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Values from "./pages/Values";
+import Practices from "./pages/Practices";
 import { Redirect } from "wouter";
 import ExitSurvey from "./components/ExitSurvey";
 function Router() {
@@ -38,6 +39,7 @@ function Router() {
       <Route path={"/privacy"} component={Privacy} />
       <Route path={"/terms"} component={Terms} />
       <Route path={"/values"} component={Values} />
+      <Route path={"/practices"} component={Practices} />
       <Route path={"/start"}>{() => <Redirect to="/connect" />}</Route>
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />

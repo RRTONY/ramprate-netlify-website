@@ -153,15 +153,18 @@ export default function Navbar() {
         </div>
 
         {/* Mobile toggle */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className={`lg:hidden p-2 transition-colors ${
-            scrolled ? "text-[oklch(0.18_0.03_50)]" : "text-white"
-          }`}
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="lg:hidden flex items-center gap-2">
+          <SiteSearch scrolled={scrolled} />
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className={`p-2 transition-colors ${
+              scrolled ? "text-[oklch(0.18_0.03_50)]" : "text-white"
+            }`}
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}

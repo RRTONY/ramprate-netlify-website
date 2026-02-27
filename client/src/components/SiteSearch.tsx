@@ -22,6 +22,7 @@ const SITE_INDEX: SearchItem[] = [
   { title: "Terms of Service", path: "/terms", type: "page", description: "Terms governing use of this website" },
   { title: "Values — Consciousness-Aligned Capital", path: "/values", type: "page", description: "Regenerative business philosophy and B Corp" },
   // Practices
+  { title: "Practices — Four Brands, One Mission", path: "/practices", type: "page", description: "RampRate, Syzygy, Stratum, ImpactSoul — all practices overview" },
   { title: "Sourcing — Enterprise IT Advisory", path: "/sourcing", type: "practice", description: "IT sourcing intelligence, vendor negotiation, SPY Index" },
   { title: "Syzygy — Growth Strategy", path: "/growth", type: "practice", description: "Founder advisory, GTM, revenue acceleration" },
   { title: "Stratum — Web3 & Blockchain", path: "/web3", type: "practice", description: "Token design, DAO governance, decentralized infrastructure" },
@@ -80,9 +81,19 @@ function fuzzyMatch(query: string, text: string): boolean {
   const q = query.toLowerCase();
   const t = text.toLowerCase();
   if (t.includes(q)) return true;
-  // simple token match
   const tokens = q.split(/\s+/);
   return tokens.every(tok => t.includes(tok));
+}
+
+function highlightMatch(text: string, query: string): React.ReactNode {
+  if (!query.trim()) return text;
+  const tokens = query.trim().split(/\s+/).filter(Boolean);
+  const pattern = tokens.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|");
+  const regex = new RegExp(`(${pattern})`, "gi");
+  const parts = text.split(regex);
+  return parts.map((part, i) =>
+    regex.test(part) ? <mark key={i} className="bg-[oklch(0.82_0.15_75)]/25 text-white rounded-sm px-0.5">{part}</mark> : part
+  );
 }
 
 const typeIcons = { page: Globe, blog: BookOpen, practice: FileText };
@@ -226,11 +237,11 @@ export default function SiteSearch({ scrolled = false }: { scrolled?: boolean })
                             <Icon size={16} className="text-white/30 shrink-0" />
                             <div className="flex-1 min-w-0">
                               <p className="text-white text-sm font-medium truncate" style={{ fontFamily: "var(--font-body)" }}>
-                                {item.title}
+                                {highlightMatch(item.title, query)}
                               </p>
                               {item.description && (
                                 <p className="text-white/40 text-xs truncate mt-0.5" style={{ fontFamily: "var(--font-body)" }}>
-                                  {item.description}
+                                  {highlightMatch(item.description, query)}
                                 </p>
                               )}
                             </div>
