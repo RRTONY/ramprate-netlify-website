@@ -1,165 +1,100 @@
-import { useState, useEffect, useRef, useCallback, useMemo } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { useLocation } from "wouter";
-import { Search, X, ArrowRight, FileText, Globe, BookOpen, TrendingUp } from "lucide-react";
+import { Search, X, Send, Loader2, Sparkles, ArrowRight, Globe, BookOpen, FileText } from "lucide-react";
+import { trpc } from "@/lib/trpc";
 
-interface SearchItem {
+/* ── Quick-nav index for instant results before AI kicks in ── */
+interface NavItem {
   title: string;
   path: string;
   type: "page" | "blog" | "practice";
-  description?: string;
-  keywords?: string;
+  keywords: string;
 }
 
-const SITE_INDEX: SearchItem[] = [
-  // Pages
-  { title: "Home", path: "/", type: "page", description: "Where Relationships Become Revenue" },
-  { title: "Process — Flow Circuit", path: "/process", type: "page", description: "How we operate: research, blueprint, activation", keywords: "methodology steps how it works" },
-  { title: "Proof — Case Results", path: "/proof", type: "page", description: "Testimonials, case studies, NDA references", keywords: "testimonials clients results" },
-  { title: "About — Team & Advisors", path: "/about", type: "page", description: "25 years of principals, not pyramids", keywords: "team people leadership tony greenberg" },
-  { title: "Blog — Thought Leadership", path: "/blog", type: "page", description: "48 articles with credibility grading", keywords: "articles writing posts" },
-  { title: "Thinking — Long-Form Analysis", path: "/thinking", type: "page", description: "Deep dives and strategic frameworks" },
-  { title: "Connect — Tell Us What's Broken", path: "/connect", type: "page", description: "Contact form for enterprise inquiries", keywords: "contact form reach out" },
-  { title: "Privacy Policy", path: "/privacy", type: "page", description: "How we handle your data" },
-  { title: "Terms of Service", path: "/terms", type: "page", description: "Terms governing use of this website" },
-  { title: "Values — Consciousness-Aligned Capital", path: "/values", type: "page", description: "Regenerative business philosophy and B Corp", keywords: "ESG regenerative b corp values mission" },
-  { title: "Practices — Four Brands, One Mission", path: "/practices", type: "page", description: "RampRate, Syzygy, Stratum, ImpactSoul — all practices overview", keywords: "services brands divisions" },
-  // Practices
-  { title: "Sourcing — Enterprise IT Advisory", path: "/sourcing", type: "practice", description: "IT sourcing intelligence, vendor negotiation, SPY Index", keywords: "data center colocation cloud hosting telecom network infrastructure procurement vendor negotiation CIO enterprise IT sourcing" },
-  { title: "Syzygy — Growth Strategy", path: "/growth", type: "practice", description: "Founder advisory, GTM, revenue acceleration", keywords: "startup founder growth GTM go to market revenue strategy scaling" },
-  { title: "Stratum — Web3 & Blockchain", path: "/web3", type: "practice", description: "Token design, DAO governance, decentralized infrastructure", keywords: "blockchain crypto token DAO web3 decentralized DeFi" },
-  { title: "ImpactSoul — Impact Consulting", path: "/impact", type: "practice", description: "ESG, B Corp, regenerative projects, grant management", keywords: "impact ESG sustainability B Corp grants NGO regenerative social" },
-  // Blog posts
-  { title: "Patience in the AI Infrastructure Gold Rush", path: "/blog", type: "blog", description: "The second mouse gets the cheese — AI infrastructure oversupply", keywords: "AI data center infrastructure oversupply" },
-  { title: "Republic's Mirror Tokens — SpaceX and Beyond", path: "/blog", type: "blog", description: "Tokenized private equity and democratized access", keywords: "tokenization SpaceX private equity" },
-  { title: "UNI Token Price Surge — Governance", path: "/blog", type: "blog", description: "DeFi governance and the UNI fee switch proposal", keywords: "DeFi Uniswap governance token" },
-  { title: "TonyG Here — Data Center World Return", path: "/blog", type: "blog", description: "Enterprise infrastructure and sourcing intelligence", keywords: "data center sourcing conference" },
-  { title: "The Need for Burning Man to Convert into a DAO", path: "/blog", type: "blog", description: "Festival governance and DAO-based event management", keywords: "DAO Burning Man governance" },
-  { title: "Energy as Impact — Redivider", path: "/blog", type: "blog", description: "Sustainable edge data centers and ESG infrastructure", keywords: "edge data center sustainability energy" },
-  { title: "Edge Data Center Provider Redivider Expands Advisory", path: "/blog", type: "blog", description: "Advisory board expansion for edge infrastructure", keywords: "edge data center advisory" },
-  { title: "RampRate Works with DevxDAO and XPRIZE", path: "/blog", type: "blog", description: "€4M+ grant for decentralized development", keywords: "DAO XPRIZE grant blockchain" },
-  { title: "RampRate Achieves B Corp Certification", path: "/blog", type: "blog", description: "Certified B Corporation — profit meets purpose", keywords: "B Corp certification impact" },
-  { title: "World Economic Forum: DAVOS 2022", path: "/blog", type: "blog", description: "Insights from Davos on global technology trends", keywords: "Davos WEF global trends" },
-  { title: "Enterprise Blockchain: Can Big Business Co-opt a Threat?", path: "/blog", type: "blog", description: "Blockchain adoption in enterprise environments", keywords: "enterprise blockchain adoption" },
-  { title: "From Supply Chain to the Blockchain", path: "/blog", type: "blog", description: "Heal the body, mind, and earth through blockchain", keywords: "supply chain blockchain" },
-  { title: "The Ball and Blockchain — Obstacles", path: "/blog", type: "blog", description: "Obstacles to blockchain's world-changing trajectory", keywords: "blockchain obstacles challenges" },
-  { title: "What Solutions Are Best Built with Blockchain — Or NOT", path: "/blog", type: "blog", description: "Framework for blockchain use case evaluation", keywords: "blockchain use cases framework" },
-  { title: "Historical Perspective on Blockchain", path: "/blog", type: "blog", description: "Blockchain's evolution and future trajectory", keywords: "blockchain history evolution" },
-  { title: "Is There Such a Thing as Price Gouging in IT?", path: "/blog", type: "blog", description: "IT pricing transparency and market dynamics", keywords: "IT pricing gouging transparency" },
-  { title: "The Myth of the RFP for Everything at Half Price", path: "/blog", type: "blog", description: "Why RFPs often fail to deliver real value", keywords: "RFP procurement sourcing" },
-  { title: "Smoking Gun Questions for Your IT Sourcing Broker", path: "/blog", type: "blog", description: "Due diligence questions for sourcing advisors", keywords: "sourcing broker due diligence" },
-  { title: "The Right Tools to Make the Right Decisions", path: "/blog", type: "blog", description: "Decision frameworks for enterprise technology", keywords: "decision framework enterprise" },
-  { title: "IT Buyers Say 'We Are OK.' Are You Sure?", path: "/blog", type: "blog", description: "Hidden risks in IT procurement complacency", keywords: "IT procurement risk" },
-  { title: "How Fast-Growth Companies Are Most Likely to Fall", path: "/blog", type: "blog", description: "Growth traps and scaling failures", keywords: "growth scaling failure startup" },
-  { title: "The CIO's Guide to Smarter Vendor Negotiation", path: "/blog", type: "blog", description: "Negotiation strategies for enterprise IT leaders", keywords: "CIO vendor negotiation enterprise" },
-  { title: "Would You Hire Someone Who Led a Rebellion?", path: "/blog", type: "blog", description: "Leadership, disruption, and unconventional talent", keywords: "leadership hiring talent" },
-  { title: "Marc Andreessen Rebuttal 2020", path: "/blog", type: "blog", description: "Response to 'It's Time to Build' — ethics in tech", keywords: "Andreessen build ethics" },
-  { title: "Save the Entrepreneur — Big Business Kills Startups", path: "/blog", type: "blog", description: "Acquisition graveyard and killer acquisitions", keywords: "startup acquisition entrepreneur" },
-  { title: "Mastering Human and Business Development", path: "/blog", type: "blog", description: "Relationship-first business development", keywords: "business development relationships" },
-  { title: "The SPY Index — 150K+ Data Points", path: "/blog", type: "blog", description: "Supplier Performance Yield across 350+ vendors", keywords: "SPY Index data supplier performance" },
-  { title: "It's Time to Uber and Airbnb Telecommunications", path: "/blog", type: "blog", description: "Telecom disruption through platform models", keywords: "telecom disruption platform" },
-  { title: "Hiding Fees in the Transparent Age", path: "/blog", type: "blog", description: "Opacity as liability in enterprise pricing", keywords: "fees transparency pricing" },
-  { title: "PERI Finance Announces IEO on Gate.io", path: "/blog", type: "blog", description: "Decentralized derivatives and synthetic assets", keywords: "DeFi derivatives IEO" },
-  { title: "Your Words Are Hammers", path: "/blog", type: "blog", description: "Communication as an instrument of force", keywords: "communication leadership" },
-  { title: "Executives from Tech Giants Join Syntropy", path: "/blog", type: "blog", description: "Enterprise talent scaling Web3 infrastructure", keywords: "Syntropy Web3 enterprise talent" },
-  { title: "New Internet — The Real-World Pied Piper", path: "/blog", type: "blog", description: "Syntropy and decentralized networking", keywords: "Syntropy decentralized internet" },
-  { title: "So Now That We Admit We Have a Problem — Part 2", path: "/blog", type: "blog", description: "IT procurement dysfunction and solutions", keywords: "IT procurement problems" },
-  { title: "Optimize & Re-Negotiate Contracts", path: "/blog", type: "blog", description: "Contract optimization as highest-ROI CIO activity", keywords: "contract negotiation optimization CIO" },
-  { title: "Scale & Buy Global IT Infrastructure", path: "/blog", type: "blog", description: "Global infrastructure procurement framework", keywords: "global infrastructure procurement scaling" },
-  { title: "Mini Episode: Tony Greenberg, CEO of RampRate", path: "/blog", type: "blog", description: "Decision frameworks for $100M+ engagements", keywords: "Tony Greenberg podcast decisions" },
-  { title: "'Boiling the Human' — H+ Summit / Harvard-Kurzweil", path: "/blog", type: "blog", description: "Human-compute convergence presented at Harvard", keywords: "transhumanism Harvard Kurzweil" },
-  { title: "Hot Sauce — Sourcing Is What I Got", path: "/blog", type: "blog", description: "Sourcing as craft built on relationships and data", keywords: "sourcing relationships craft" },
-  { title: "The Right Numbers — Supplier Fit & Blockchain", path: "/blog", type: "blog", description: "Statistical revolution in supplier scoring", keywords: "supplier scoring blockchain statistics" },
-  { title: "Build Your Shared Services", path: "/blog", type: "blog", description: "CIO strategy for shared services architecture", keywords: "shared services CIO architecture" },
-  { title: "Microsoft's Underwater Data Centers — Really?", path: "/blog", type: "blog", description: "Underwater data center viability analysis", keywords: "Microsoft underwater data center" },
-  { title: "Human Operating System", path: "/blog", type: "blog", description: "Compute and the human operating system circa 2020", keywords: "human compute operating system" },
-  { title: "The Buyers & Sellers Honesty Dance", path: "/blog", type: "blog", description: "Win-win negotiation through understanding motivation", keywords: "negotiation buyers sellers honesty" },
-  { title: "A Cynic Predicts IT and Media in 2011", path: "/blog", type: "blog", description: "Prescient predictions about IT and media convergence", keywords: "IT media predictions 2011" },
-  { title: "When Valuations Don't Mean Valuable", path: "/blog", type: "blog", description: "Startup valuations vs actual value creation", keywords: "valuations startup value" },
-  { title: "Trust Us? Are You Really My Friend?", path: "/blog", type: "blog", description: "Trust dynamics in enterprise relationships", keywords: "trust relationships enterprise" },
+const NAV_INDEX: NavItem[] = [
+  { title: "Sourcing — Enterprise IT Advisory", path: "/sourcing", type: "practice", keywords: "data center colocation cloud hosting telecom network infrastructure procurement vendor negotiation CIO sourcing SPY Index" },
+  { title: "Syzygy — Growth Strategy", path: "/growth", type: "practice", keywords: "startup founder growth GTM go to market revenue strategy scaling fundraising" },
+  { title: "Stratum — Web3 & Blockchain", path: "/web3", type: "practice", keywords: "blockchain crypto token DAO web3 decentralized DeFi" },
+  { title: "ImpactSoul — Impact Consulting", path: "/impact", type: "practice", keywords: "impact ESG sustainability B Corp grants NGO regenerative social" },
+  { title: "Practices Overview", path: "/practices", type: "page", keywords: "services brands divisions all practices" },
+  { title: "Process — How We Operate", path: "/process", type: "page", keywords: "methodology steps flow circuit" },
+  { title: "Proof — Case Results", path: "/proof", type: "page", keywords: "testimonials clients results case studies" },
+  { title: "About — Team & Advisors", path: "/about", type: "page", keywords: "team people leadership tony greenberg" },
+  { title: "Blog", path: "/blog", type: "page", keywords: "articles writing posts thought leadership" },
+  { title: "Connect", path: "/connect", type: "page", keywords: "contact form reach out engage" },
+  { title: "Values", path: "/values", type: "page", keywords: "ESG regenerative b corp values mission consciousness" },
+  { title: "Privacy Policy", path: "/privacy", type: "page", keywords: "privacy data" },
+  { title: "Terms of Service", path: "/terms", type: "page", keywords: "terms legal" },
 ];
 
-const POPULAR: SearchItem[] = [
-  SITE_INDEX.find(i => i.path === "/sourcing")!,
-  SITE_INDEX.find(i => i.path === "/growth")!,
-  SITE_INDEX.find(i => i.path === "/web3")!,
-  SITE_INDEX.find(i => i.path === "/impact")!,
-  SITE_INDEX.find(i => i.path === "/proof")!,
-  SITE_INDEX.find(i => i.path === "/connect")!,
-];
-
-function fuzzyMatch(query: string, text: string): boolean {
+function quickMatch(query: string): NavItem[] {
+  if (query.trim().length < 2) return [];
   const q = query.toLowerCase();
-  const t = text.toLowerCase();
-  if (t.includes(q)) return true;
   const tokens = q.split(/\s+/);
-  return tokens.every(tok => t.includes(tok));
-}
-
-function highlightMatch(text: string, query: string): React.ReactNode {
-  if (!query.trim()) return text;
-  const tokens = query.trim().split(/\s+/).filter(Boolean);
-  const pattern = tokens.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|");
-  const regex = new RegExp(`(${pattern})`, "gi");
-  const parts = text.split(regex);
-  return parts.map((part, i) =>
-    regex.test(part) ? <mark key={i} className="bg-[oklch(0.82_0.15_75)]/25 text-white rounded-sm px-0.5">{part}</mark> : part
-  );
+  return NAV_INDEX.filter(item => {
+    const hay = `${item.title} ${item.keywords}`.toLowerCase();
+    return tokens.every(tok => hay.includes(tok));
+  }).slice(0, 5);
 }
 
 const typeIcons = { page: Globe, blog: BookOpen, practice: FileText };
-const groupOrder: Array<{ key: SearchItem["type"]; label: string }> = [
-  { key: "practice", label: "Practice Areas" },
-  { key: "page", label: "Pages" },
-  { key: "blog", label: "Articles" },
-];
+
+interface ChatMsg {
+  role: "user" | "assistant";
+  content: string;
+}
 
 export default function SiteSearch({ scrolled = false }: { scrolled?: boolean }) {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
-  const [selectedIdx, setSelectedIdx] = useState(0);
+  const [chat, setChat] = useState<ChatMsg[]>([]);
+  const [loading, setLoading] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+  const chatEndRef = useRef<HTMLDivElement>(null);
   const [, navigate] = useLocation();
 
-  // Filter and group results
-  const filtered = useMemo(() => {
-    if (query.trim().length === 0) return [];
-    return SITE_INDEX.filter(item =>
-      fuzzyMatch(query, item.title) ||
-      fuzzyMatch(query, item.description || "") ||
-      fuzzyMatch(query, item.keywords || "")
-    );
-  }, [query]);
+  const askAI = trpc.ai.ask.useMutation();
 
-  // Build grouped flat list for keyboard nav
-  const groupedFlat = useMemo(() => {
-    const flat: Array<{ item: SearchItem; groupLabel?: string }> = [];
-    for (const g of groupOrder) {
-      const items = filtered.filter(i => i.type === g.key);
-      if (items.length === 0) continue;
-      items.forEach((item, idx) => {
-        flat.push({ item, groupLabel: idx === 0 ? g.label : undefined });
-      });
-    }
-    return flat;
-  }, [filtered]);
+  const quickResults = quickMatch(query);
+  const showQuickNav = query.trim().length >= 2 && quickResults.length > 0 && chat.length === 0;
 
   const openSearch = useCallback(() => {
     setOpen(true);
     setQuery("");
-    setSelectedIdx(0);
+    setChat([]);
+    setLoading(false);
   }, []);
 
   const closeSearch = useCallback(() => {
     setOpen(false);
     setQuery("");
+    setChat([]);
+    setLoading(false);
   }, []);
 
-  const goTo = useCallback((path: string) => {
-    navigate(path);
-    closeSearch();
-  }, [navigate, closeSearch]);
+  const handleSubmit = useCallback(async () => {
+    const q = query.trim();
+    if (!q || loading) return;
 
-  // Cmd+K / Ctrl+K shortcut
+    const newChat: ChatMsg[] = [...chat, { role: "user", content: q }];
+    setChat(newChat);
+    setQuery("");
+    setLoading(true);
+
+    try {
+      const result = await askAI.mutateAsync({
+        question: q,
+        history: chat.slice(-10),
+      });
+      setChat(prev => [...prev, { role: "assistant", content: result.answer }]);
+    } catch {
+      setChat(prev => [...prev, { role: "assistant", content: "Something went wrong. Try again or reach out at /connect." }]);
+    } finally {
+      setLoading(false);
+    }
+  }, [query, loading, chat, askAI]);
+
+  // Cmd+K / Ctrl+K
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
@@ -172,169 +107,175 @@ export default function SiteSearch({ scrolled = false }: { scrolled?: boolean })
     return () => window.removeEventListener("keydown", handler);
   }, [openSearch, closeSearch]);
 
-  // Focus input when opened
   useEffect(() => {
     if (open) setTimeout(() => inputRef.current?.focus(), 50);
   }, [open]);
 
-  // Keyboard navigation
-  const totalItems = query.trim().length > 0 ? groupedFlat.length : POPULAR.length;
+  useEffect(() => {
+    chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [chat, loading]);
+
   const onKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "ArrowDown") {
+    if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
-      setSelectedIdx(i => Math.min(i + 1, totalItems - 1));
-    } else if (e.key === "ArrowUp") {
-      e.preventDefault();
-      setSelectedIdx(i => Math.max(i - 1, 0));
-    } else if (e.key === "Enter") {
-      if (query.trim().length > 0 && groupedFlat[selectedIdx]) {
-        goTo(groupedFlat[selectedIdx].item.path);
-      } else if (query.trim().length === 0 && POPULAR[selectedIdx]) {
-        goTo(POPULAR[selectedIdx].path);
-      }
-    } else if (e.key === "Tab") {
-      // Tab cycles through results instead of leaving
-      e.preventDefault();
-      if (e.shiftKey) {
-        setSelectedIdx(i => (i - 1 + totalItems) % totalItems);
-      } else {
-        setSelectedIdx(i => (i + 1) % totalItems);
-      }
+      handleSubmit();
     }
-  };
-
-  useEffect(() => { setSelectedIdx(0); }, [query]);
-
-  const renderItem = (item: SearchItem, idx: number, showHighlight: boolean) => {
-    const Icon = typeIcons[item.type];
-    return (
-      <button
-        key={`${item.path}-${item.title}`}
-        onClick={() => goTo(item.path)}
-        onMouseEnter={() => setSelectedIdx(idx)}
-        tabIndex={0}
-        role="option"
-        aria-selected={idx === selectedIdx}
-        className={`w-full flex items-center gap-4 px-6 py-3 text-left transition-colors ${
-          idx === selectedIdx ? "bg-white/[0.06]" : "hover:bg-white/[0.03]"
-        }`}
-      >
-        <Icon size={16} className="text-white/30 shrink-0" />
-        <div className="flex-1 min-w-0">
-          <p className="text-white text-sm font-medium truncate" style={{ fontFamily: "var(--font-body)" }}>
-            {showHighlight ? highlightMatch(item.title, query) : item.title}
-          </p>
-          {item.description && (
-            <p className="text-white/40 text-xs truncate mt-0.5" style={{ fontFamily: "var(--font-body)" }}>
-              {showHighlight ? highlightMatch(item.description, query) : item.description}
-            </p>
-          )}
-        </div>
-        {idx === selectedIdx && <ArrowRight size={14} className="text-[oklch(0.82_0.15_75)] shrink-0" />}
-      </button>
-    );
   };
 
   return (
     <>
-      {/* Trigger button */}
+      {/* ── PROMINENT TRIGGER ── */}
       <button
         onClick={openSearch}
-        className={`flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-all text-sm ${
+        className={`flex items-center gap-2.5 px-4 py-2 rounded-full border transition-all text-sm group ${
           scrolled
-            ? "border-black/15 text-[oklch(0.35_0.03_50)] hover:text-[oklch(0.18_0.03_50)] hover:border-black/30"
-            : "border-white/15 text-white/50 hover:text-white/80 hover:border-white/30"
+            ? "border-black/12 bg-black/[0.03] text-[oklch(0.4_0.03_50)] hover:bg-black/[0.06] hover:border-black/20"
+            : "border-white/15 bg-white/[0.06] text-white/60 hover:bg-white/[0.1] hover:border-white/25"
         }`}
-        style={{ fontFamily: "var(--font-mono)" }}
-        aria-label="Search site"
+        style={{ fontFamily: "var(--font-body)" }}
+        aria-label="Ask RampRate AI"
       >
-        <Search size={14} />
-        <span className="hidden sm:inline text-xs">Search</span>
-        <kbd className={`hidden sm:inline text-[10px] px-1.5 py-0.5 rounded ml-1 ${scrolled ? "bg-black/5 text-black/30" : "bg-white/10 text-white/30"}`}>⌘K</kbd>
+        <Sparkles size={15} className={`${scrolled ? "text-[oklch(0.65_0.15_75)]" : "text-[oklch(0.82_0.15_75)]"}`} />
+        <span className="hidden md:inline text-xs font-medium">Ask RampRate</span>
+        <kbd className={`hidden lg:inline text-[10px] px-1.5 py-0.5 rounded-md font-mono ${
+          scrolled ? "bg-black/5 text-black/25" : "bg-white/10 text-white/25"
+        }`}>⌘K</kbd>
       </button>
 
-      {/* Overlay */}
+      {/* ── OVERLAY ── */}
       {open && (
         <div
-          className="fixed inset-0 z-[100] flex items-start justify-center pt-[12vh]"
+          className="fixed inset-0 z-[100] flex items-start justify-center pt-[8vh] sm:pt-[12vh]"
           onClick={closeSearch}
         >
-          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
+          <div className="absolute inset-0 bg-black/75 backdrop-blur-md" />
 
           <div
-            className="relative w-full max-w-2xl mx-4 rounded-2xl border border-white/15 bg-[#0d1117]/95 backdrop-blur-xl shadow-2xl overflow-hidden"
+            className="relative w-full max-w-2xl mx-3 rounded-2xl border border-white/10 bg-[#0a0f1a]/95 backdrop-blur-xl shadow-2xl overflow-hidden flex flex-col"
+            style={{ maxHeight: "75vh" }}
             onClick={e => e.stopPropagation()}
             role="dialog"
-            aria-label="Site search"
+            aria-label="RampRate AI Assistant"
           >
-            {/* Input */}
-            <div className="flex items-center gap-3 px-6 py-5 border-b border-white/10">
-              <Search size={22} className="text-[oklch(0.82_0.15_75)] shrink-0" />
-              <input
-                ref={inputRef}
-                type="text"
-                value={query}
-                onChange={e => setQuery(e.target.value)}
-                onKeyDown={onKeyDown}
-                placeholder="Search pages, articles, practices..."
-                className="flex-1 bg-transparent text-white text-lg outline-none placeholder:text-white/30"
-                style={{ fontFamily: "var(--font-body)" }}
-                role="combobox"
-                aria-expanded={true}
-                aria-controls="search-results"
-                aria-activedescendant={`search-item-${selectedIdx}`}
-              />
-              <button onClick={closeSearch} className="text-white/30 hover:text-white/60 transition-colors" tabIndex={0}>
-                <X size={20} />
+            {/* Header */}
+            <div className="px-5 py-4 border-b border-white/8 flex items-center justify-between shrink-0">
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[oklch(0.82_0.15_75)] to-[oklch(0.65_0.2_50)] flex items-center justify-center">
+                  <Sparkles size={16} className="text-[#0a0f1a]" />
+                </div>
+                <div>
+                  <p className="text-white text-sm font-semibold" style={{ fontFamily: "var(--font-display)" }}>RampRate AI</p>
+                  <p className="text-white/30 text-[10px]" style={{ fontFamily: "var(--font-mono)" }}>25 years of enterprise intelligence</p>
+                </div>
+              </div>
+              <button onClick={closeSearch} className="text-white/30 hover:text-white/60 transition-colors p-1">
+                <X size={18} />
               </button>
             </div>
 
-            <div id="search-results" role="listbox" className="max-h-[55vh] overflow-y-auto">
-              {/* Grouped search results */}
-              {query.trim().length > 0 && groupedFlat.length > 0 && (
-                <>
-                  {groupedFlat.map((entry, i) => (
-                    <div key={`${entry.item.path}-${entry.item.title}-${i}`}>
-                      {entry.groupLabel && (
-                        <div className="px-6 pt-4 pb-1">
-                          <span className="text-[10px] uppercase tracking-[0.2em] text-[oklch(0.82_0.15_75)]/60 font-semibold" style={{ fontFamily: "var(--font-mono)" }}>
-                            {entry.groupLabel}
-                          </span>
-                        </div>
-                      )}
-                      {renderItem(entry.item, i, true)}
-                    </div>
-                  ))}
-                </>
-              )}
-
-              {/* No results */}
-              {query.trim().length > 0 && groupedFlat.length === 0 && (
-                <div className="px-6 py-10 text-center text-white/30" style={{ fontFamily: "var(--font-body)" }}>
-                  No results for "{query}"
+            {/* Chat area */}
+            <div className="flex-1 overflow-y-auto px-5 py-4 space-y-4 min-h-[120px]">
+              {chat.length === 0 && !showQuickNav && (
+                <div className="text-center py-8">
+                  <p className="text-white/50 text-sm mb-4" style={{ fontFamily: "var(--font-body)" }}>
+                    Ask anything about RampRate, our practices, case results, or enterprise strategy.
+                  </p>
+                  <div className="flex flex-wrap justify-center gap-2">
+                    {["How do you save companies money?", "What is the SPY Index?", "Tell me about Web3 advisory"].map(q => (
+                      <button
+                        key={q}
+                        onClick={() => { setQuery(q); setTimeout(() => inputRef.current?.focus(), 50); }}
+                        className="px-3 py-1.5 rounded-full border border-white/10 text-white/40 text-xs hover:bg-white/5 hover:text-white/60 transition-colors"
+                        style={{ fontFamily: "var(--font-body)" }}
+                      >
+                        {q}
+                      </button>
+                    ))}
+                  </div>
                 </div>
               )}
 
-              {/* Popular pages when empty */}
-              {query.trim().length === 0 && (
-                <>
-                  <div className="px-6 pt-4 pb-1 flex items-center gap-2">
-                    <TrendingUp size={12} className="text-white/20" />
-                    <span className="text-[10px] uppercase tracking-[0.2em] text-white/30 font-semibold" style={{ fontFamily: "var(--font-mono)" }}>
-                      Popular
-                    </span>
+              {/* Quick nav results */}
+              {showQuickNav && (
+                <div>
+                  <p className="text-[10px] uppercase tracking-[0.2em] text-[oklch(0.82_0.15_75)]/50 mb-2 font-semibold" style={{ fontFamily: "var(--font-mono)" }}>Quick Navigate</p>
+                  {quickResults.map(item => {
+                    const Icon = typeIcons[item.type];
+                    return (
+                      <button
+                        key={item.path}
+                        onClick={() => { navigate(item.path); closeSearch(); }}
+                        className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/[0.05] transition-colors text-left"
+                      >
+                        <Icon size={14} className="text-white/25 shrink-0" />
+                        <span className="text-white/80 text-sm flex-1" style={{ fontFamily: "var(--font-body)" }}>{item.title}</span>
+                        <ArrowRight size={12} className="text-white/20" />
+                      </button>
+                    );
+                  })}
+                  <div className="border-t border-white/5 mt-3 pt-3">
+                    <p className="text-white/25 text-[10px] text-center" style={{ fontFamily: "var(--font-mono)" }}>Press Enter to ask the AI instead</p>
                   </div>
-                  {POPULAR.map((item, i) => renderItem(item, i, false))}
-                </>
+                </div>
               )}
+
+              {/* Chat messages */}
+              {chat.map((msg, i) => (
+                <div key={i} className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
+                  <div className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${
+                    msg.role === "user"
+                      ? "bg-[oklch(0.82_0.15_75)]/15 text-white/90 rounded-br-md"
+                      : "bg-white/[0.04] text-white/80 rounded-bl-md border border-white/5"
+                  }`} style={{ fontFamily: "var(--font-body)" }}>
+                    {msg.role === "assistant" ? (
+                      <div className="whitespace-pre-wrap">{msg.content}</div>
+                    ) : msg.content}
+                  </div>
+                </div>
+              ))}
+
+              {loading && (
+                <div className="flex justify-start">
+                  <div className="bg-white/[0.04] rounded-2xl rounded-bl-md border border-white/5 px-4 py-3 flex items-center gap-2">
+                    <Loader2 size={14} className="animate-spin text-[oklch(0.82_0.15_75)]" />
+                    <span className="text-white/40 text-sm" style={{ fontFamily: "var(--font-body)" }}>Thinking...</span>
+                  </div>
+                </div>
+              )}
+              <div ref={chatEndRef} />
             </div>
 
-            {/* Footer hint */}
-            <div className="px-6 py-3 border-t border-white/5 flex items-center gap-4 text-[10px] text-white/20" style={{ fontFamily: "var(--font-mono)" }}>
-              <span><kbd className="px-1 py-0.5 rounded bg-white/10">↑↓</kbd> navigate</span>
-              <span><kbd className="px-1 py-0.5 rounded bg-white/10">tab</kbd> cycle</span>
-              <span><kbd className="px-1 py-0.5 rounded bg-white/10">↵</kbd> select</span>
-              <span><kbd className="px-1 py-0.5 rounded bg-white/10">esc</kbd> close</span>
+            {/* Input */}
+            <div className="px-4 py-3 border-t border-white/8 shrink-0">
+              <div className="flex items-center gap-2 bg-white/[0.04] rounded-xl border border-white/10 px-4 py-3 focus-within:border-[oklch(0.82_0.15_75)]/30 transition-colors">
+                <Search size={16} className="text-white/25 shrink-0" />
+                <input
+                  ref={inputRef}
+                  type="text"
+                  value={query}
+                  onChange={e => setQuery(e.target.value)}
+                  onKeyDown={onKeyDown}
+                  placeholder={chat.length > 0 ? "Follow up..." : "Ask about sourcing, Web3, case results, strategy..."}
+                  className="flex-1 bg-transparent text-white text-sm outline-none placeholder:text-white/25"
+                  style={{ fontFamily: "var(--font-body)" }}
+                  disabled={loading}
+                />
+                <button
+                  onClick={handleSubmit}
+                  disabled={!query.trim() || loading}
+                  className="p-1.5 rounded-lg bg-[oklch(0.82_0.15_75)] text-[#0a0f1a] disabled:opacity-30 hover:bg-[oklch(0.78_0.15_75)] transition-all"
+                >
+                  <Send size={14} />
+                </button>
+              </div>
+              <div className="flex items-center justify-between mt-2 px-1">
+                <span className="text-[10px] text-white/15" style={{ fontFamily: "var(--font-mono)" }}>
+                  <kbd className="px-1 py-0.5 rounded bg-white/5">⌘K</kbd> open · <kbd className="px-1 py-0.5 rounded bg-white/5">esc</kbd> close · <kbd className="px-1 py-0.5 rounded bg-white/5">↵</kbd> send
+                </span>
+                <span className="text-[10px] text-white/15" style={{ fontFamily: "var(--font-mono)" }}>
+                  Powered by 25 years of deal intelligence
+                </span>
+              </div>
             </div>
           </div>
         </div>

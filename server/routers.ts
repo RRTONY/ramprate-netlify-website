@@ -5,6 +5,8 @@ import { publicProcedure, router } from "./_core/trpc";
 import { z } from "zod";
 import { createLead } from "./db";
 import { notifyOwner } from "./_core/notification";
+import { invokeLLM } from "./_core/llm";
+import { RAMPRATE_SYSTEM_PROMPT } from "./ramprate-knowledge";
 
 const leadInputSchema = z.object({
   name: z.string().min(1, "Name is required").max(255),
@@ -28,6 +30,32 @@ export const appRouter = router({
         success: true,
       } as const;
     }),
+  }),
+
+  ai: router({
+    ask: publicProcedure
+      .input(z.object({
+        question: z.string().min(1).max(2000),
+        history: z.array(z.object({
+          role: z.enum(["user", "assistant"]),
+          content: z.string(),
+        })).max(20).optional(),
+      }))
+      .mutation(async ({ input }) => {
+        const messages = [
+          { role: "system" as const, content: RAMPRATE_SYSTEM_PROMPT },
+          ...(input.history || []).map(m => ({
+            role: m.role as "user" | "assistant",
+            content: m.content,
+          })),
+          { role: "user" as const, content: input.question },
+        ];
+        const result = await invokeLLM({ messages });
+        const answer = typeof result.choices[0]?.message?.content === "string"
+          ? result.choices[0].message.content
+          : "That's a conversation for our principals — reach out at ramprate.com/connect.";
+        return { answer };
+      }),
   }),
 
   lead: router({
