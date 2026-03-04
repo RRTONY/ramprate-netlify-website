@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://example.com/</loc>
+    <loc>https://ramprate.netlify.app/</loc>
     <lastmod>2026-03-04</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://example.com/ramprate-homepage.pdf</loc>
+    <loc>https://ramprate.netlify.app/ramprate-homepage.pdf</loc>
     <lastmod>2026-03-04</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://example.com/ramprate-homepage.txt</loc>
+    <loc>https://ramprate.netlify.app/ramprate-homepage.txt</loc>
     <lastmod>2026-03-04</lastmod>
     <priority>0.3</priority>
   </url>
