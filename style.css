@@ -174,32 +174,33 @@ a { color: inherit; text-decoration: none; }
 .gold-text { color: var(--gold); }
 .rust-text { color: var(--rust); }
 
-/* ── CLIENT WALL ── */
-.client-grid {
+/* ── LOGO WALL ── */
+.logo-wall {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 0.25rem;
-  text-align: center;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 2rem 1.5rem;
+  align-items: center;
+  justify-items: center;
 }
-.client-card { padding: 1rem 0.5rem; }
-.client-card h3 {
-  font-family: var(--font-display);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.55);
+.logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
 }
-.client-card p {
-  font-size: 0.7rem;
-  color: rgba(255,255,255,0.28);
-  margin-top: 0.25rem;
-  line-height: 1.4;
+.logo-item img {
+  max-height: 48px;
+  max-width: 120px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(1) brightness(0.7) invert(1);
+  opacity: 0.5;
+  transition: all 0.3s ease;
 }
-.client-divider {
-  border: none;
-  border-top: 1px solid rgba(255,255,255,0.06);
-  margin: 2rem 0;
+.logo-item:hover img {
+  filter: grayscale(0) brightness(1);
+  opacity: 1;
 }
 
 /* ── ENGAGEMENTS ── */

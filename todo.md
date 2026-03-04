@@ -88,3 +88,4 @@
 - [x] Group search results by category (Practices first, then Pages, then Articles) with section headers
 - [x] Make search accessible via tab key navigation
 - [x] Replace search with prominent AI-powered natural language assistant (ingests all blogs + pages, answers in Tony/RampRate voice)
+- [ ] Download grayscale logos for all ~30 clients and replace text cards with logo images on static site
