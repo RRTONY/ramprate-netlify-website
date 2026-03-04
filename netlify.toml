@@ -1,6 +1,10 @@
 [build]
-  command = "# no build needed"
+  command = "echo 'Static site — no build needed'"
   publish = "."
+
+[build.environment]
+  NPM_FLAGS = "--production"
+  NODE_VERSION = "18"
 [[headers]]
   for = "/*"
   [headers.values]
